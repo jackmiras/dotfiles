@@ -1,0 +1,548 @@
+################################################################################
+# Pure PHP snippets                                                            #
+################################################################################
+
+snippet this "Access property or functions in the context of a class or function" i
+$this->$0
+endsnippet
+
+snippet prop "Access property or functions in the context of a class or function"
+$this->$0;
+endsnippet
+
+snippet propa= "Access property in the context of a class and attributes some value to the property"
+$this->$1 = $0;
+endsnippet
+
+snippet construct "Public function that represents the constructor of a class"
+public function __construct($1)
+{
+	$0
+}
+endsnippet
+
+snippet pubf "Public function with no parameters" i
+public function ${1:name}(): ${2:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet pubf1 "Public function with one parameter"
+public function ${1:name}(${2:typeHint} $${3:param}): ${3:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet pubf2 "Public function with two parameter"
+public function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet pubsf "Public static function with no parameters" i
+public static function ${1:name}(): ${2:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet pubsf1 "Public static function with one parameter"
+public static function ${1:name}(${2:typeHint} $${3:param}): ${3:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet pubsf2 "Public static function with two parameter"
+public static function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${4:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet prif "Private function with no parameters"
+private function ${1:name}(): ${2:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet prif1 "Private function with one parameter"
+private function ${1:name}(${2:typeHint} $${2:param}): ${3:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet prif2 "Private function with two parameters"
+private function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:typeHint}
+{
+	$0
+}
+endsnippet
+
+snippet try "Try catch block"
+try {
+	$1
+} catch (${2:Exception} $exception) {
+	$0
+}
+endsnippet
+
+snippet if "If statement with one condition"
+if ($1) {
+	$0
+}
+endsnippet
+
+snippet elseif "Elseif statement with on condition"
+elseif ($1) {
+	$0
+}
+endsnippet
+
+snippet else "Else statement with any condition"
+else {
+	$0
+}
+endsnippet
+
+snippet switch1 "Switch statement with one case condition"
+switch (${1:param}) {
+	case ${2:condition}:
+		$3
+		break;
+	default:
+		$0
+		break;
+}
+endsnippet
+
+snippet switch2 "Switch statement with two case condition"
+switch (${1:param}) {
+	case ${2:firstCondition}:
+		$3
+		break;
+	case ${4:secondCondition}:
+		$5
+		break;
+	default:
+		$0
+		break;
+}
+endsnippet
+
+snippet switch3 "Switch statement with three case condition"
+switch (${1:param}) {
+	case ${2:firstCondition}:
+		$3
+		break;
+	case ${4:secondCondition}:
+		$5
+		break;
+	case ${6:secondCondition}:
+		$7
+		break;
+	default:
+		$0
+		break;
+}
+endsnippet
+
+snippet fori "For loop with index"
+for ($${1:index} = 0; $$1 < ${2:limit}; $$1++) {
+	$0
+}
+endsnippet
+
+snippet foric "For loop with index and 'count()' function to define limit"
+for ($${1:index} = 0; count($1) < ${2:limit}; $$1++) {
+	$0
+}
+endsnippet
+
+snippet fore "Foreach loop"
+foreach ($${1:array} as $${2:value}) {
+	$0
+}
+endsnippet
+
+snippet forek "Foreach loop with key value params"
+foreach ($${1:array} as $${2:key} => $${3:value}) {
+	$0
+}
+endsnippet
+
+snippet filter "Array filter function"
+$${1:result} = array_filter($${2:array}, function ($${3:param}) {
+	return $0;
+});
+endsnippet
+
+snippet reduce "Array reduce function"
+$${1:result} = array_reduce($${2:array}, function ($${3:acc}, $${4:next}) {
+	$0;
+	return $$3;
+}, []);
+endsnippet
+
+snippet count "Count function"
+$amount = count($0);
+endsnippet
+
+snippet todo "This is a TODO reminder"
+//TODO: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet fixme "This is a FIXME reminder"
+//FIXME: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet duplicated "This is a DUPLICATED reminder"
+//DUPLICATED: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet note "This is a reminder"
+//NOTE: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet ret "Return statement"
+return $0;
+endsnippet
+
+snippet const "This is a structure to create constants"
+const ${1:CONSTANT_NAME} = "${0:constant-value}";
+endsnippet
+
+################################################################################
+# Laravel snippets                                                             #
+################################################################################
+
+snippet index "Public function that handle GET HTTP requests"
+public function index(): JsonResponse
+{
+	$0
+}
+endsnippet
+
+snippet show "Public function that handle GET HTTP request"
+public function show(Request $request, Response $response): JsonResponse
+{
+	$0
+}
+endsnippet
+
+snippet store "Public function that should handle POST HTTP request"
+public function store(Request $request, Response $response): JsonResponse
+{
+	$0
+}
+endsnippet
+
+snippet update "Public function that should handle PUT and PATCH HTTP requests"
+public function update(Request $request, Response $response): JsonResponse
+{
+	$0
+}
+endsnippet
+
+snippet destroy "Public function that should handle DELETE HTTP request"
+public function destroy(Request $request, Response $response): JsonResponse
+{
+	$0
+}
+endsnippet
+
+snippet fmake "Retrieve value from Laravel container"
+app()->make($0);
+endsnippet
+
+snippet fmakeo "Retrieve value from Laravel container an set to an object"
+$${1:object} = app()->make($0);
+endsnippet
+
+snippet make "Retrieve value from Laravel container" i
+$this->app->make($0);
+endsnippet
+
+snippet makeo "Retrieve value from Laravel container an set to an object"
+$${1:object} = $this->app->make($0);
+endsnippet
+
+snippet fsingleton "Register a value into Laravel container"
+app()->singleton(${1:key}, function () {
+	return $0;
+});
+endsnippet
+
+snippet singleton "Register a value into Laravel container"
+$this->app->singleton(${1:key}, function () {
+	return $0;
+});
+endsnippet
+
+snippet class "A standard class"
+<?php
+
+namespace ${1:Path\To\This\Class};$2
+
+class ${3:ClassName}
+{
+	$0
+}
+endsnippet
+
+snippet controller "A controller class"
+<?php
+
+namespace ${1:App}\Http\Controllers$2;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\Controller;$3
+
+class ${4:ClassName} extends Controller
+{
+	$0
+}
+endsnippet
+
+snippet middleware "A middleware class"
+<?php
+
+namespace ${1:App}\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;$2
+
+class ${3:ClassName}
+{
+	public function handle(Request $request, Closure $next)
+	{
+		$0
+		return $next($request);
+	}
+}
+endsnippet
+
+snippet provider "A service provider class"
+<?php
+
+namespace ${1:App}\Providers;
+
+use Illuminate\Support\ServiceProvider;$2
+
+class ${3:ClassName}ServiceProvider extends ServiceProvider
+{
+
+	public function register()
+	{
+		$0
+	}
+}
+endsnippet
+
+snippet model "A model class"
+<?php
+
+namespace ${1:App\Domain\Models};
+
+use Illuminate\Database\Eloquent\Model;
+
+class ${2:ClassName} extends Model
+{
+	protected $table = '$0';
+
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [];
+
+	/**
+	 * The attributes that should be hidden for arrays.
+	 *
+	 * @var array
+	 */
+	protected $hidden = [];
+
+	/**
+	 * The attributes that aren't mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $guarded = [];
+}
+endsnippet
+
+snippet resp "Response for a controller action"
+return response(${1:$body}, ${2:status});
+endsnippet
+
+snippet respj "Response with a json for a controller action"
+return response()->json(${1:$body}, ${2:status});
+endsnippet
+
+snippet fctc "Factory function that create any amount of objects"
+$${1:object} = factory(${2:Model}::class, ${3:amount})->create(${4:attributes});
+endsnippet
+
+snippet fctc1 "Factory function that create one object"
+$${1:object} = factory(${2:Model}::class)->create(${3:attributes});
+endsnippet
+
+snippet fctm "Factory function that make any amount of objects"
+$${1:object} = factory(${2:Model}::class, ${3:amount})->make(${4:attributes});
+endsnippet
+
+snippet fctm1 "Factory function that make one object"
+$${1:object} = factory(${2:Model}::class)->make(${3:attributes});
+endsnippet
+
+snippet dd "Debug and stop function"
+dd($0);
+endsnippet
+
+snippet ddj "Debug and stop function that prints value as json"
+dd(json_encode($0));
+endsnippet
+
+snippet dump "Debug function"
+dump($0);
+endsnippet
+
+snippet dumpj "Dug function that prints value as json"
+dump(json_encode($0));
+endsnippet
+
+snippet dumps "Dug function that prints value as string"
+dump('$0');
+endsnippet
+
+snippet db "Laravel DB facade"
+DB::
+endsnippet
+
+snippet table "Laravel table function from DB facade" i
+table('$0')
+	->
+endsnippet
+
+snippet unic "Laravel unic function from DB facade" i
+select('${1:name}')
+->
+endsnippet
+
+snippet select "Laravel DB facade set the columns to be selected" i
+select('${0:query}')
+->
+endsnippet
+
+snippet distinct "Laravel DB facade "
+
+snippet selectRaw "Laravel selectRaw function from DB facade" i
+selectRaw('${1:query}', ${0:params})
+->
+endsnippet
+
+snippet join "Eloquent join function" i
+join('$1', '$2', '$3', '$0')
+->
+endsnippet
+
+snippet where "Laravel where function from DB facade" i
+where('${1:column}', '${2:comparison}', '${0:value}')
+->
+endsnippet
+
+snippet whereRaw "Laravel whereRaw function from DB facade"
+whereRaw(${1:clause}, ${0:params})
+->
+endsnippet
+
+snippet groupBy "Laravel groupBy function from DB facade" i
+groupBy('${0:column}')
+->
+endsnippet
+
+snippet first "Laravel 'first()' function from DB facade retries a single row from a table"
+first();
+endsnippet
+
+snippet value "Function 'value()' from Laravel DB facade retrieves a single row / column from a table"
+value('${0:cloumn}');
+endsnippet
+
+snippet pluck "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i 
+pluck(${1:'title'})
+endsnippet
+
+snippet pluckn "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i 
+pluck(${1:'title'}, ${0:'name'});
+endsnippet
+
+snippet chunck "Function 'chunck()' from Laravel DB facade chunk results" i
+chunk(${1:size}, function (${2:params}) {
+	$0;
+});
+endsnippet
+
+snippet count "Function 'count()' from Laravel DB facade retrieve the 'count' result of the query" i
+count()
+endsnippet
+
+snippet max "Function 'max()' from Laravel DB facade retrieve the maximum value of a given column" i
+max('${0:column}')
+endsnippet
+
+snippet min "Function 'min()' from Laravel DB facade retrieve the minimum value of a given column" i
+min('${0:column}')
+endsnippet
+
+snippet avg "Function 'avg()' from Laravel DB facade retrieve the average of the values of a given column" i
+avg('${0:column}')
+endsnippet
+
+snippet exists "Function 'exists()' from Laravel DB facade determine if any rows exist for the current query" i
+exists()
+endsnippet
+
+snippet doesntExist "Function 'doesntExist()' from Laravel DB facade determine if no rows exist for the current query" i
+doesntExist()
+endsnippet
+
+snippet get "Laravel get function from DB facade" i
+get()
+endsnippet
+
+################################################################################
+# Blade snippets                                                               #
+################################################################################
+
+snippet html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		$0
+	</body>
+</html>
+endsnippet
+
+snippet @php
+@php
+	$0
+@endphp
+endsnippet
+
+snippet @foreach
+@foreach
+	$0
+@endforeach
+endsnippet

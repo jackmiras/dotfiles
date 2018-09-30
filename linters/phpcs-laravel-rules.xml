@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="phpcs-rules">
+
+  <!-- PSR1 Rules -->
+  <rule ref="PSR1.Classes.ClassDeclaration">
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace">
+      <exclude-pattern>*/database/*</exclude-pattern>
+    </exclude>
+  </rule>
+  <rule ref="PSR1.Files.SideEffects"/>
+
+  <!-- PSR2 Rules -->
+  <rule ref="PSR2.Classes.ClassDeclaration"/>
+  <rule ref="PSR2.Classes.PropertyDeclaration"/>
+  <rule ref="PSR2.ControlStructures.ControlStructureSpacing"/>
+  <rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
+  <rule ref="PSR2.ControlStructures.SwitchDeclaration"/>
+  <rule ref="PSR2.Files.EndFileNewline"/>
+  <rule ref="PSR2.Methods.MethodDeclaration"/>
+  <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+  <rule ref="PSR2.Namespaces.UseDeclaration"/>
+
+  <!-- Slevomat Rules -->
+  <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+  <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly">
+    <exclude name="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly.ReferencedGeneralException">
+      <exclude-pattern>*/Exceptions/Handler\.php</exclude-pattern>
+    </exclude>
+  </rule>
+  <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
+  <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
+  <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
+  <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
+  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+  <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
+  <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+  <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+  <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
+  <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
+  <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+  <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
+  <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
+  <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+  <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
+  <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
+  <rule ref="SlevomatCodingStandard.Commenting.EmptyComment" />
+  <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration"> 
+    <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingPropertyTypeHint">
+      <severity>0</severity>
+    </exclude>
+
+    <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification">
+      <severity>0</severity>
+    </exclude>
+
+    <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversablePropertyTypeHintSpecification">
+      <severity>0</severity>
+    </exclude>
+
+    <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification">
+      <severity>0</severity>
+    </exclude>
+
+    <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint">
+      <exclude-pattern>*/Exceptions/Handler\.php</exclude-pattern>
+    </exclude>
+  </rule>
+</ruleset>

@@ -1,0 +1,28 @@
+snippet bang "Shebang"
+#!/bin/bash
+#
+endsnippet
+
+snippet readonly "readonly property"
+readonly $1="$0"
+endsnippet
+
+snippet if "if statement with any condition"
+if [[ ${1:clause} ]]; then
+	$0
+fi
+endsnippet
+
+snippet ifelse "if statement with any condition followed by and else condition"
+if [[ ${1:clause} ]]; then
+	$2
+else
+	$0
+fi
+endsnippet
+
+snippet fun "function declaration"
+function ${1:name}() {
+	$0
+}
+endsnippet
