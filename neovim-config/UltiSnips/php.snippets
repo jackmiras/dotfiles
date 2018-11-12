@@ -3,14 +3,10 @@
 ################################################################################
 
 snippet this "Access property or functions in the context of a class or function" i
-$this->$0
-endsnippet
-
-snippet prop "Access property or functions in the context of a class or function"
 $this->$0;
 endsnippet
 
-snippet propa= "Access property in the context of a class and attributes some value to the property"
+snippet prop= "Access property in the context of a class and attributes some value to the property"
 $this->$1 = $0;
 endsnippet
 
@@ -29,7 +25,7 @@ public function ${1:name}(): ${2:typeHint}
 endsnippet
 
 snippet pubf1 "Public function with one parameter"
-public function ${1:name}(${2:typeHint} $${3:param}): ${3:typeHint}
+public function ${1:name}(${2:typeHint} $${3:param}): ${4:typeHint}
 {
 	$0
 }
@@ -87,13 +83,25 @@ endsnippet
 snippet try "Try catch block"
 try {
 	$1
-} catch (${2:Exception} $exception) {
+} catch (${2:Exception} $${3:exception}) {
 	$0
+}
+endsnippet
+
+snippet catch "Catch exception block"
+catch (${1:Exception} $${2:exception}) {
+	$0;
 }
 endsnippet
 
 snippet if "If statement with one condition"
 if ($1) {
+	$0
+}
+endsnippet
+
+snippet ifnot "If statement is not ${2:comparator}"
+if ($1 !== ${2:comparator}) {
 	$0
 }
 endsnippet
@@ -159,7 +167,7 @@ for ($${1:index} = 0; $$1 < ${2:limit}; $$1++) {
 endsnippet
 
 snippet foric "For loop with index and 'count()' function to define limit"
-for ($${1:index} = 0; count($1) < ${2:limit}; $$1++) {
+for ($${1:index} = 0; $$1 < count($$2); $$1++) {
 	$0
 }
 endsnippet
@@ -180,6 +188,12 @@ snippet filter "Array filter function"
 $${1:result} = array_filter($${2:array}, function ($${3:param}) {
 	return $0;
 });
+endsnippet
+
+snippet map "Array map function"
+$${1:result} = array_map(function ($${2:param}) {
+	return $0;
+}, $${3:array});
 endsnippet
 
 snippet reduce "Array reduce function"
@@ -215,6 +229,10 @@ endsnippet
 
 snippet const "This is a structure to create constants"
 const ${1:CONSTANT_NAME} = "${0:constant-value}";
+endsnippet
+
+snippet slice "array_slice function" i
+array_slice($${1:array}, ${2:offset}, ${0:length});
 endsnippet
 
 ################################################################################
@@ -254,6 +272,10 @@ public function destroy(Request $request, Response $response): JsonResponse
 {
 	$0
 }
+endsnippet
+
+snippet array_first "Laravel array_first helper"
+array_first($0);
 endsnippet
 
 snippet fmake "Retrieve value from Laravel container"
@@ -428,45 +450,48 @@ DB::
 endsnippet
 
 snippet table "Laravel table function from DB facade" i
-table('$0')
-	->
+table('${1:tableName}')
+	->$0
 endsnippet
 
 snippet unic "Laravel unic function from DB facade" i
 select('${1:name}')
-->
+->$0
 endsnippet
 
 snippet select "Laravel DB facade set the columns to be selected" i
-select('${0:query}')
-->
+select('${1:query}')
+->$0
 endsnippet
 
-snippet distinct "Laravel DB facade "
-
 snippet selectRaw "Laravel selectRaw function from DB facade" i
-selectRaw('${1:query}', ${0:params})
-->
+selectRaw('${1:query}', ${2:params})
+->$0
 endsnippet
 
 snippet join "Eloquent join function" i
-join('$1', '$2', '$3', '$0')
-->
+join('$1', '$2', '$3', '$4')
+->$0
 endsnippet
 
 snippet where "Laravel where function from DB facade" i
-where('${1:column}', '${2:comparison}', '${0:value}')
-->
+where('${1:column}', '${2:comparison}', '${3:value}')
+->$0
+endsnippet
+
+snippet whereIn "Laravel whereIn function from DB facade" i
+whereIn('${1:column}', ${2:values})
+->$0
 endsnippet
 
 snippet whereRaw "Laravel whereRaw function from DB facade"
-whereRaw(${1:clause}, ${0:params})
-->
+whereRaw(${1:clause}, ${2:params})
+->$0
 endsnippet
 
 snippet groupBy "Laravel groupBy function from DB facade" i
-groupBy('${0:column}')
-->
+groupBy('${1:column}')
+->$0
 endsnippet
 
 snippet first "Laravel 'first()' function from DB facade retries a single row from a table"
@@ -478,7 +503,7 @@ value('${0:cloumn}');
 endsnippet
 
 snippet pluck "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i 
-pluck(${1:'title'})
+pluck(${1:'title'});
 endsnippet
 
 snippet pluckn "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i 
@@ -492,23 +517,23 @@ chunk(${1:size}, function (${2:params}) {
 endsnippet
 
 snippet count "Function 'count()' from Laravel DB facade retrieve the 'count' result of the query" i
-count()
+count();
 endsnippet
 
 snippet max "Function 'max()' from Laravel DB facade retrieve the maximum value of a given column" i
-max('${0:column}')
+max('${0:column}');
 endsnippet
 
 snippet min "Function 'min()' from Laravel DB facade retrieve the minimum value of a given column" i
-min('${0:column}')
+min('${0:column}');
 endsnippet
 
 snippet avg "Function 'avg()' from Laravel DB facade retrieve the average of the values of a given column" i
-avg('${0:column}')
+avg('${0:column}');
 endsnippet
 
 snippet exists "Function 'exists()' from Laravel DB facade determine if any rows exist for the current query" i
-exists()
+exists();
 endsnippet
 
 snippet doesntExist "Function 'doesntExist()' from Laravel DB facade determine if no rows exist for the current query" i
