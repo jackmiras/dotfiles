@@ -3,27 +3,36 @@ call plug#begin('~/.vim/plugged')
 " Theme releated plugins
 Plug 'vim-airline/vim-airline'
 Plug 'liuchengxu/space-vim-dark'
+
 " General coding plugins
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
+
 " Fuzzy search plugins
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skwp/greplace.vim'
 Plug 'mileszs/ack.vim', {'on': 'Ack!'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdcommenter'
+Plug 'ludovicchabant/vim-gutentags'
+
 " Git releated plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 " Auto complete and file location plugins
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
+
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
+Plug 'posva/vim-vue', {'for': 'vue'}
+
 " CSS plugins
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
+
 " PHP plugins
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'}
@@ -37,22 +46,6 @@ filetype plugin indent on
 
 " Changing leader key
 let mapleader=','
-
-" Re-running ctags
-nmap <leader>tg :!ctags -R
-		\ --exclude='vendor/*'
-		\ --exclude='.git'
-		\ --exclude='node_modules'
-		\ --exclude='_ide_helper.php'
-		\ --exclude='storage/*'
-		\ --exclude='compiled.php'
-		\ --exclude='log'
-		\ --exclude='.build'
-		\ --exclude='.project'
-		\ --exclude='.idea/*'
-		\ --exclude='.settings/*'
-		\ --regex-php='/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i'
-		\ --recurse <cr>
 
 " Automatically sourcing vim and neovim config files
 augroup auto_sourcing
@@ -95,17 +88,46 @@ nmap <leader>f :tag<space>
 nmap <leader>vsp :vsplit<cr>
 nmap <leader>sp :split<cr>
 
+" Open terminal mode into the left side of screen
 nmap <leader>tm :vsplit<cr> <tab> :terminal<cr> i
 
-"""""""""""""""""""""""""Plugins configurations""""""""""""""""""""""""""""""""
+" Tabs Vim navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap td  :tabclose<CR>
+
+" Forcing me to use new keys to navigate tabs [REMOVE THIS SOON AS POSSIBLE]
+nmap gt :echo "Press 'tk' you idiot!!!"<cr>
+nmap gT :echo "Press 'tj' you idiot!!!"<cr>
+
+" Changing copy and paste from clipboard
+vmap <leader>y "+y
+nmap <leader>p "+p
+vmap <leader>y "+y
+nmap <leader>p "+p
 
 " NERDTree - configurations
-map <F1> :NERDTreeToggle<cr>
-map <F2> :NERDTreeClose<cr>
+map <F1> :NERDTreeFind<cr> 
+map <F2> :NERDTreeToggle<cr> 
 
 " ctrlp - configurations
 nmap <c-r> :CtrlPBufTag<cr>
+
+" PHP Code Sniffer fix command
+nmap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nmap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+
+"""""""""""""""""""""""""Plugins configurations""""""""""""""""""""""""""""""""
+
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+let g:ctrlp_prompt_mappings = {
+		\ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+		\ 'AcceptSelection("t")': ['<cr>'],
+    \ }
 
 " NERDCommenter - configurations
 let g:NERDSpaceDelims=1
@@ -113,6 +135,20 @@ let g:NERDCompactSexyComs=1
 let g:NERDDefaultAlign='left'
 let g:NERDCommentEmptyLines=1
 let g:NERDTrimTrailingWhitespace=1
+
+" Gutentags - configurations
+let g:gutentags_ctags_exclude_wildignore=0
+let g:gutentags_ctags_exclude=[
+		\ '.git',
+		\ '_ide_helper.php',
+		\ 'storage/*',
+		\ 'compiled.php',
+		\ 'log',
+		\ '.build',
+		\ '.project',
+		\ '.idea/*',
+		\ '.settings/*'
+	\ ]
 
 " A.L.E - configurations
 let g:ale_linters = {'php': ['phpcs', 'phpmd'] }
@@ -192,9 +228,6 @@ let g:php_cs_fixer_level = "psr2"
 let g:php_cs_fixer_config = "default"
 let g:php_cs_fixer_rules = "@PSR1,@PSR2"
 
-nmap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nmap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-
 augroup auto-php-cs-fix-on-save
 	autocmd!
 	autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
@@ -214,9 +247,11 @@ augroup auto_language_selection
 	autocmd!
 	autocmd Filetype xml setlocal ts=2 sw=2 expandtab
 	autocmd Filetype html setlocal ts=2 sw=2 expandtab
+	autocmd Filetype blade setlocal ts=2 sw=2 expandtab
 	autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 	autocmd Filetype python setlocal ts=2 sw=2 expandtab
 	autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+	autocmd Filetype vue setlocal ts=2 sw=2 expandtab
 	autocmd FileType json setlocal ts=2 sw=2 expandtab
 	autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 	autocmd Filetype php setlocal ts=4 sw=4 expandtab
@@ -289,6 +324,9 @@ set showbreak=↪
 
 " Setting up the color scheme
 colorscheme space-vim-dark
+let g:space_vim_dark_background = 234
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
 
 " Adding vertical line to delimit the number of columns allowed in the file
 highlight ColorColumn ctermbg=white guibg=#A3A3A3
