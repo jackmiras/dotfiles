@@ -15,16 +15,15 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skwp/greplace.vim'
 Plug 'mileszs/ack.vim', {'on': 'Ack!'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Git releated plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
-" Auto complete and file location plugins
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
@@ -34,10 +33,27 @@ Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
 
 " PHP plugins
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
-Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'}
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 Plug 'jwalton512/vim-blade', {'for': 'blade'}
+
+" Auto complete and file location plugins
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-match-highlight'
+Plug 'ncm2/ncm2-tern',  {'for': 'javascript', 'do': 'npm install'}
+Plug 'ncm2/ncm2-cssomni', {'for': 'css'}
+Plug 'ncm2/ncm2-html-subscope', {'for': 'html'}
+Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+
+" Snippet plugins
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 """"""""""""""""""""""""""General configurations""""""""""""""""""""""""""""""""
@@ -105,8 +121,8 @@ nmap gT :echo "Press 'tj' you idiot!!!"<cr>
 
 " Changing copy and paste from clipboard
 vmap <leader>y "+y
-nmap <leader>p "+p
 vmap <leader>y "+y
+nmap <leader>p "+p
 nmap <leader>p "+p
 
 " NERDTree - configurations
@@ -120,9 +136,35 @@ nmap <c-r> :CtrlPBufTag<cr>
 nmap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nmap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
+" Sort PHP use statements
+vmap <leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>'" }'"
+
 """""""""""""""""""""""""Plugins configurations""""""""""""""""""""""""""""""""
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" DevIcons - configurations
+set encoding=utf8
+let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 1
+
+" NERDTree - configurations
+let NERDTreeShowHidden=1
+let g:NERDTreeIndicatorMapCustom = {
+	\ "Modified"  : "✹",
+	\ "Staged"    : "✚",
+	\ "Untracked" : "✭",
+	\ "Renamed"   : "➜",
+	\ "Unmerged"  : "═",
+	\ "Deleted"   : "✖",
+	\ "Dirty"     : "✗",
+	\ "Clean"     : "✔︎",
+	\ 'Ignored'   : '☒',
+	\ "Unknown"   : "?"
+\ }
+let NERDTreeNodeDelimiter = "\u263a" " smiley face
+
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 let g:ctrlp_prompt_mappings = {
 		\ 'AcceptSelection("e")': ['<2-LeftMouse>'],
@@ -157,7 +199,7 @@ let g:ale_php_phpcs_standard='./phpcs-rules.xml'
 let g:ale_php_phpmd_ruleset='./phpmd-rules.xml'
 let g:ale_php_cs_fixer_use_global=1
 let g:ale_linters_explicit = 1
-let g:ale_completion_enabled=0
+let g:ale_completion_enabled=1
 let g:ale_sign_column_always=1
 let g:ale_sign_offset = 1000
 let g:ale_sign_error = '✖'
@@ -170,6 +212,13 @@ let g:gitgutter_max_signs=1000  " Default value
 
 " vim-airline - configurations
 set laststatus=2 " Configuring the plugin to appear all the time
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline_theme='violet'
 
 " indentLine - configurations
@@ -179,13 +228,34 @@ let g:indentLine_setConceal=1
 let g:indentLine_concealcursor='inc'
 let g:indentLine_conceallevel=2
 
-" YouCompleteMe - configurations
-let g:ycm_use_ultisnips_completer=0
-let g:ycm_key_list_stop_completion=['Esc']
-let g:ycm_key_list_select_completion=['<Down>']
-let g:ycm_key_list_previous_completion=['<Up>']
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:SuperTabDefaultCompletionType='<C-n>'
+" ncm2 - configurations
+
+" Enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Omnifunc does not run in background and may probably block the editor.
+" If you don't want to be blocked too often, you could add 180ms delay before the omni wrapper:
+" 'on_complete': ['ncm2#on_complete#delay', 180, 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+au User Ncm2Plugin call ncm2#register_source({
+		\ 'name' : 'css',
+		\ 'priority': 9, 
+		\ 'subscope_enable': 1,
+		\ 'scope': ['css','scss'],
+		\ 'mark': 'css',
+		\ 'word_pattern': '[\w\-]+',
+		\ 'complete_pattern': ':\s*',
+		\ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+		\ })
 
 " UltiSnips - configurations
 let g:UltiSnipsExpandTrigger='<tab>'
@@ -193,10 +263,29 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 " Ack - configurations
-"
+
 " I don't want to jump to the first result automatically
 cnoreabbrev Ack Ack!
 
+" Ack - PHP Find Implementations
+function! PhpImplementations(word)
+    exe 'Ack "implements.*' . a:word . ' *($|{)"'
+endfunction
+
+" Ack - PHP Find Subclasses
+function! PhpSubclasses(word)
+    exe 'Ack "extends.*' . a:word . ' *($|{)"'
+endfunction
+
+noremap <Leader>fi :call PhpImplementations('<cword>')<CR>
+noremap <Leader>fe :call PhpSubclasses('<cword>')<CR>
+
+" Ack - PHP Find Usage
+function! PhpUsage(word)
+    exe 'Ack "::' . a:word . '\(|>' . a:word . '\("'
+endfunction
+
+noremap <Leader>fu :call PhpUsage('<cword>')<CR>
 if executable('ag') 
   let g:ackprg = 'ag --vimgrep' " Setting up Ack to use Ag (The Silver Searcher)
 endif
@@ -205,23 +294,34 @@ endif
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
-" vim-php-namespace - configurations
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php imap <leader>n <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php nmap <leader>n :call PhpInsertUse()<CR>
+" Phpactor - configurations
 
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-autocmd FileType php imap <leader>nf <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php nmap <leader>nf :call PhpExpandClass()<CR>
+" Include use statement
+nmap <Leader>u :call phpactor#UseAdd()<CR>
 
-" Sort PHP use statements
-vmap <leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>'" }'"
+" Invoke the context menu
+nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+
+" Invoke the navigation menu
+nmap <Leader>nn :call phpactor#Navigate()<CR>
+
+" Goto definition of class or class member under the cursor
+nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+
+" Transform the classes in the current file
+nmap <Leader>tt :call phpactor#Transform()<CR>
+
+" Generate a new class (replacing the current file)
+nmap <Leader>cc :call phpactor#ClassNew()<CR>
+
+" Extract expression (normal mode)
+nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
+
+" Extract expression from selection
+vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+
+" Extract method from selection
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
 
 " vim-php-cs-fixer - configurations
 let g:php_cs_fixer_level = "psr2"
@@ -325,6 +425,7 @@ set showbreak=↪
 " Setting up the color scheme
 colorscheme space-vim-dark
 let g:space_vim_dark_background = 234
+hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 

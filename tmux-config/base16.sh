@@ -24,12 +24,12 @@ base05=colour7   # #D8D8D8
 base06=colour21  # #E8E8E8
 base07=colour15  # #F8F8F8
 base08=colour01  # #AB4642
-base09=colour202 #
+base09=colour208 #
 base0A=colour3   # #F7CA88
 base0B=colour2   # #A1B56C
 base0C=colour77  # #86C1B9
-base0D=colour83  # #7CAFC2
-base0E=colour135 #
+base0D=colour35  # #7CAFC2
+base0E=colour97 #
 base0F=colour17  # #A16946
 
 set -g status-left-length 32

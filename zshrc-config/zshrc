@@ -2,12 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jacksonflorentino/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="muse"
+ZSH_THEME="awesomepanda"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -94,34 +95,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias artisan="php artisan"
-alias ctags="ctags -R --exclude='vendor/*'"
-
-alias tao-test="$HOME/Projects/Aws/tradeapp-one && ssh -i 'tradeappone-apps-test.pem' ubuntu@ec2-54-152-187-205.compute-1.amazonaws.com"
-alias tao-logstash-test="$HOME/Projects/Aws/tradeapp-one && ssh -i 'tradeappone-apps-test.pem' ubuntu@ec2-52-91-167-25.compute-1.amazonaws.com"
-alias tao-api-production="$HOME/Projects/Aws/tradeapp-one && ssh -i 'tradeappone-apps-production.pem' ubuntu@ec2-54-146-181-152.compute-1.amazonaws.com"
-alias tao-web-production="$HOME/Projects/Aws/tradeapp-one && ssh -i 'tradeappone-apps-production.pem' ubuntu@ec2-54-145-252-243.compute-1.amazonaws.com"
-alias tao-logstash-production="$HOME/Projects/Aws/tradeapp-one && ssh -i 'tradeappone-apps-production.pem' ubuntu@ec2-54-146-221-232.compute-1.amazonaws.com"
-alias tao-sentry-production="$HOME/Projects/Aws/tradeapp-one && ssh -i 'tradeappone-apps-production.pem' ubuntu@ec2-174-129-188-113.compute-1.amazonaws.com"
-
-alias tim-test="$HOME/Projects/Aws/tim && ssh -i 'tim-apps-test.pem' ubuntu@ec2-54-91-127-159.compute-1.amazonaws.com"
-alias tim-web-production="$HOME/Projects/Aws/tim && ssh -i 'tim-apps-production.pem' ubuntu@ec2-54-87-133-25.compute-1.amazonaws.com"
-alias tim-api-production="$HOME/Projects/Aws/tim && ssh -i 'tim-apps-production.pem' ubuntu@ec2-52-90-234-235.compute-1.amazonaws.com"
-
-alias siv-api-production="$HOME/Projects/Aws/siv && ssh -i 'siv-production.pem' ubuntu@ec2-204-236-252-195.compute-1.amazonaws.com"
-alias siv-api-gateway="$HOME/Projects/Aws/siv && ssh -i 'siv-production.pem' ubuntu@ec2-18-206-88-104.compute-1.amazonaws.com"
-alias siv-web-production="$HOME/Projects/Aws/siv && ssh -i 'siv-production.pem' ubuntu@ec2-54-91-44-16.compute-1.amazonaws.com"
-alias siv-test="$HOME/Projects/Aws/siv && ssh -i'siv-production.pem' ubuntu@ec2-54-210-77-198.compute-1.amazonaws.com"
-alias siv-sentry-production="$HOME/Projects/Aws/siv && ssh -i 'siv-production.pem' ubuntu@ec2-54-165-59-81.compute-1.amazonaws.com"
-alias siv-elasticsearch-production="$HOME/Projects/Aws/siv && ssh -i 'siv-elk-production.pem' ubuntu@ec2-52-90-89-85.compute-1.amazonaws.com"
-
-alias hermes-web-production="$HOME/Projects/Aws/hermes && ssh -i 'hermes-apps-production.pem' ubuntu@ec2-54-85-93-181.compute-1.amazonaws.com"
-alias hermes-test="$HOME/Projects/Aws/hermes && ssh -i 'hermes-apps-test.pem' ubuntu@ec2-52-87-226-195.compute-1.amazonaws.com"
-
-# Exporting Composer PATH
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-
-# Exporting Laravel path.
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+alias cat=ccat
 
 # Automatically Running PHPUnit.
 function phpunit-watcher {
@@ -134,3 +108,23 @@ function phpunit-watcher {
         --make=$run \
         -t "$args" 
 }
+
+# Exporting Composer path.
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
+# Exporting Laravel path.
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# Exporting MySQL 5.7 path.
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# Exporting NVM path.
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Exporting sbin path.
+export PATH="/usr/local/sbin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
+[[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
