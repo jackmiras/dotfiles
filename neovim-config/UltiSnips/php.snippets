@@ -3,7 +3,7 @@
 ################################################################################
 
 snippet this "Access property or functions in the context of a class or function" i
-$this->$0;
+$this->$0
 endsnippet
 
 snippet prop= "Access property in the context of a class and attributes some value to the property"
@@ -67,7 +67,7 @@ private function ${1:name}(): ${2:typeHint}
 endsnippet
 
 snippet prif1 "Private function with one parameter"
-private function ${1:name}(${2:typeHint} $${2:param}): ${3:typeHint}
+private function ${1:name}(${2:typeHint} $${3:param}): ${4:typeHint}
 {
 	$0
 }
@@ -78,6 +78,22 @@ private function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2
 {
 	$0
 }
+endsnippet
+
+snippet pubfi "Interface public function with no parameter" i
+public function ${1:name}(): ${2:typeHint};
+endsnippet
+
+snippet pubfi1 "Interface public function with one parameter"
+public function ${1:name}(${2:typeHint} $${3:param}): ${4:typeHint};
+endsnippet
+
+snippet pubfi2 "Interface public function with two parameters"
+public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}): ${5:typeHint};
+endsnippet
+
+snippet pubfi3 "Interface public function with three parameters"
+public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}, ${4:typeHint} $${5:param}): ${6:typeHint};
 endsnippet
 
 snippet try "Try catch block"
@@ -228,7 +244,7 @@ return $0;
 endsnippet
 
 snippet const "This is a structure to create constants"
-const ${1:CONSTANT_NAME} = "${0:constant-value}";
+public const ${1:CONSTANT_NAME} = "${0:constant-value}";
 endsnippet
 
 snippet slice "array_slice function" i
@@ -238,6 +254,30 @@ endsnippet
 ################################################################################
 # Laravel snippets                                                             #
 ################################################################################
+
+snippet get "Get router method"
+Route::get('${1:path}', '${2:action}');
+endsnippet
+
+snippet post "Post router method"
+Route::post('${1:path}', '${2:action}');
+endsnippet
+
+snippet put "Put router method"
+Route::put('${1:path}', '${2:action}');
+endsnippet
+
+snippet patch "Patch router method"
+Route::patch('${1:path}', '${2:action}');
+endsnippet
+
+snippet delete "Delete router method"
+Route::delete('${1:path}', '${2:action}');
+endsnippet
+
+snippet options "Options router method"
+Route::options('${1:path}', '${2:action}');
+endsnippet
 
 snippet index "Public function that handle GET HTTP requests"
 public function index(): JsonResponse
@@ -278,30 +318,16 @@ snippet array_first "Laravel array_first helper"
 array_first($0);
 endsnippet
 
-snippet fmake "Retrieve value from Laravel container"
-app()->make($0);
-endsnippet
-
-snippet fmakeo "Retrieve value from Laravel container an set to an object"
-$${1:object} = app()->make($0);
-endsnippet
-
 snippet make "Retrieve value from Laravel container" i
-$this->app->make($0);
+${1:$this->app}->make($0);
 endsnippet
 
 snippet makeo "Retrieve value from Laravel container an set to an object"
-$${1:object} = $this->app->make($0);
-endsnippet
-
-snippet fsingleton "Register a value into Laravel container"
-app()->singleton(${1:key}, function () {
-	return $0;
-});
+$${1:object} = ${1:$this->app}->make($0);
 endsnippet
 
 snippet singleton "Register a value into Laravel container"
-$this->app->singleton(${1:key}, function () {
+${1:$this->app}->singleton(${2:key}, function (${3:$app}) {
 	return $0;
 });
 endsnippet
@@ -433,23 +459,35 @@ snippet ddj "Debug and stop function that prints value as json"
 dd(json_encode($0));
 endsnippet
 
-snippet dump "Debug function"
+snippet dds "Debug and stop function that prints value as string"
+dd('$0');
+endsnippet
+
+snippet dp "Debug function"
 dump($0);
 endsnippet
 
-snippet dumpj "Dug function that prints value as json"
+snippet dpj "Debug function that prints value as json"
 dump(json_encode($0));
 endsnippet
 
-snippet dumps "Dug function that prints value as string"
+snippet dps "Debug function that prints value as string"
 dump('$0');
 endsnippet
 
-snippet db "Laravel DB facade"
+snippet table "Migration table object to describe columns"
+$table->$1('$0');
+endsnippet
+
+snippet foreign "Migratrion table object to describe foreign key"
+$table->foreign('${1:columnName}')->references('${2:columnName}')->on('${3:tableName}');
+endsnippet
+
+snippet db "DB Facade"
 DB::
 endsnippet
 
-snippet table "Laravel table function from DB facade" i
+snippet tablef "Laravel table function from DB facade" i
 table('${1:tableName}')
 	->$0
 endsnippet
@@ -570,4 +608,22 @@ snippet @foreach
 @foreach
 	$0
 @endforeach
+endsnippet
+
+################################################################################
+# PHPUnit snippets                                                             #
+################################################################################
+
+snippet setup "PHPUnit setup function"
+public function setUp(): void
+{
+	parent::setUp();
+}
+endsnippet
+
+snippet testf "PHPUnit test function"
+public function test${1:Case}(): ${2:typeHint}
+{
+	$0
+}
 endsnippet
