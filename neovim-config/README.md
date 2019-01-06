@@ -1,18 +1,19 @@
 # Neovim - Configs
 
-This are the configurations that I've been using on my daily work. If you 
-decide to use this Vim settings you should know some plugins has been 
-installed in this Vim config. I also use a different color scheme, so take a 
-look in the preview image and in the list down below to check what plugins has 
-been installed in this Vim configuration.
+This are the configurations that I've been using on my daily work. If you
+decide to use this Neovim settings you should know some plugins has been
+installed. I also use a different color scheme, so take a look in the preview
+image and in the list down below to check what plugins has been installed.
+
+For more detaild informations fell free to explore this repositorie!
 
 ## Preview
 
 ![alt_tag](image/vim-preview.png)
 
 ## Installation
-To install this configurations in your Vim you need to download/clone this 
-project, them acces the project directory and execute the install-config.sh 
+To install this configurations in your Vim you need to download/clone this
+project, them acces the project directory and execute the install-config.sh
 script with the command shown down bellow.
 
 ```bash
@@ -25,18 +26,35 @@ script with the command shown down bellow.
 ```
 
 ## Color scheme
-* Gruvbox. [[link]](https://github.com/morhetz/gruvbox)
+* liuchengxu/space-vim-dark [[link]](https://github.com/liuchengxu/space-vim-dark)
 
 ## Plugins
-* Auto-pairs. [[link]](https://github.com/jiangmiao/auto-pairs)
-* Ctrlp. [[link]](https://github.com/ctrlpvim/ctrlp.vim)
-* IndentLine [[link]](https://github.com/Yggdroot/indentLine)
-* Kotlin-vim. [[link]](https://github.com/udalov/kotlin-vim)
-* Nerdtree. [[link]](https://github.com/scrooloose/nerdtree)
-* Syntastic. [[link]](https://github.com/vim-syntastic/syntastic)
-* Vim-airline. [[link]](https://github.com/vim-airline/vim-airline)
-* Vim-Fugitive. [[link]](https://github.com/tpope/vim-fugitive)
-* Vim-gitgutter. [[link]](https://github.com/airblade/vim-gitgutter)
-* Vim-javascript. [[link]](https://github.com/pangloss/vim-javascript)
-* Vim-surround. [[link]](https://github.com/tpope/vim-surround)
-
+* vim-airline/vim-airline [[link]](https://github.com/vim-airline/vim-airline)
+* luochen1990/rainbow [[link]](https://github.com/luochen1990/rainbow)
+* RRethy/vim-illuminate [[link]](https://github.com/RRethy/vim-illuminate)
+* lilydjwg/colorizer [[link]](https://github.com/lilydjwg/colorizer)
+* jiangmiao/auto-pairs [[link]](https://github.com/jiangmiao/auto-pairs)
+* tpope/vim-surround [[link]](https://github.com/tpope/vim-surround)
+* indentLine [[link]](https://github.com/Yggdroot/indentLine)
+* w0rp/ale [[link]](https://github.com/w0rp/ale)
+* ctrlpvim/ctrlp.vim [[link]](https://github.com/kien/ctrlp.vim)
+* skwp/greplace.vim [[link]](https://github.com/skwp/greplace.vim)
+* mileszs/ack.vim [[link]](https://github.com/mileszs/ack.vim)
+* scrooloose/nerdtree [[link]](https://github.com/scrooloose/nerdtree)
+* Xuyuanp/nerdtree-git-plugin [[link]](https://github.com/Xuyuanp/nerdtree-git-plugin)
+* ryanoasis/vim-devicons [[link]](https://github.com/ryanoasis/vim-devicons)
+* tiagofumo/vim-nerdtree-syntax-highlight [[link]](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
+* scrooloose/nerdcommenter [[link]](https://github.com/scrooloose/nerdcommenter)
+* ludovicchabant/vim-gutentags [[link]](https://github.com/ludovicchabant/vim-gutentags)
+* tpope/vim-fugitive [[link]](https://github.com/tpope/vim-fugitive)
+* airblade/vim-gitgutter [[link]](https://github.com/airblade/vim-gitgutter)
+* pangloss/vim-javascript [[link]](https://github.com/pangloss/vim-javascript)
+* posva/vim-vue [[link]](https://github.com/posva/vim-vue)
+* ap/vim-css-color [[link]](https://github.com/ap/vim-css-color)
+* phpactor/phpactor [[link]](https://github.com/phpactor/phpactor)
+* StanAngeloff/php.vim [[link]](https://github.com/StanAngeloff/php.vim)
+* jwalton512/vim-blade [[link]](https://github.com/jwalton512/vim-blade)
+* chr4/nginx.vim [[link]](https://github.com/chr4/nginx.vim)
+* ncm2/ncm2 [[link]](https://github.com/ncm2/ncm2)
+* SirVer/ultisnips [[link]](https://github.com/SirVer/ultisnips)
+* vim-vdebug/vdebug [[link]](https://github.com/vim-vdebug/vdebug)
