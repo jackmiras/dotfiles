@@ -103,3 +103,19 @@ augroup auto_language_selection
 	autocmd Filetype java setlocal ts=4 sw=4 expandtab
 	autocmd Filetype java setlocal colorcolumn=121
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autosave settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Triggered only when there is something to save. Always saving makes build watchers crazy
+function! SaveIfUnsaved()
+    if &modified
+        :silent! w
+    endif
+endfunction
+
+au FocusLost,BufLeave * :call SaveIfUnsaved()
+
+" Read the file on focus/buffer enter
+au FocusGained,BufEnter * :silent! !
