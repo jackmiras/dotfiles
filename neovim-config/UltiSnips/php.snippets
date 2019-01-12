@@ -10,6 +10,10 @@ snippet prop= "Access property in the context of a class and attributes some val
 $this->$1 = $0;
 endsnippet
 
+snippet priprop "Define a private property in a class"
+private $${0:property};
+endsnippet
+
 snippet construct "Public function that represents the constructor of a class"
 public function __construct($1)
 {
@@ -111,13 +115,19 @@ catch (${1:Exception} $${2:exception}) {
 endsnippet
 
 snippet if "If statement with one condition"
-if ($1) {
+if ($$1) {
+	$0
+}
+endsnippet
+
+snippet ifnull "If statement is null"
+if ($$1 === null) {
 	$0
 }
 endsnippet
 
 snippet ifnot "If statement is not ${2:comparator}"
-if ($1 !== ${2:comparator}) {
+if ($$1 !== ${2:comparator}) {
 	$0
 }
 endsnippet
@@ -540,11 +550,11 @@ snippet value "Function 'value()' from Laravel DB facade retrieves a single row 
 value('${0:cloumn}');
 endsnippet
 
-snippet pluck "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i 
+snippet pluck "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i
 pluck(${1:'title'});
 endsnippet
 
-snippet pluckn "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i 
+snippet pluckn "Function 'pluck()' from Laravel DB facade retrieves a list of column values" i
 pluck(${1:'title'}, ${0:'name'});
 endsnippet
 
@@ -588,13 +598,15 @@ endsnippet
 
 snippet html
 <!DOCTYPE html>
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		$0
-	</body>
+<html lang="en">
+<head>
+	<meta charset="UTF8">
+	<title>${1:Document}</title>
+	<style>$2</style>
+</head>
+<body>
+	$3
+</body>
 </html>
 endsnippet
 
