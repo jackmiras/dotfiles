@@ -90,11 +90,30 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " Deactivating h,j,k,l keys
-noremap h <nop>
-noremap j <nop>
-noremap k <nop>
-noremap l <nop>
+" noremap h <nop>
+" noremap j <nop>
+" noremap k <nop>
+" noremap l <nop>
 
 " Deactivating esc key
 inoremap <esc> <esc> i
 nnoremap <esc> <nop>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Easy saving keys
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <leader>w <esc>:w!<cr>
+inoremap <leader>w <esc>:w!<cr>
+
+nnoremap <leader>wa <esc>:wall!<cr>
+inoremap <leader>wa <esc>:wall!<cr>
+
+nnoremap <leader>q <esc>:q!<cr>
+inoremap <leader>q <esc>:q!<cr>
+
+nnoremap <leader>qa <esc>:qa!<cr>
+inoremap <leader>qa <esc>:qa!<cr>
+
+nnoremap <leader>qwa <esc>:qwall!<cr>
+inoremap <leader>qwa <esc>:qwall!<cr>
