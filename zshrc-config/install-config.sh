@@ -15,9 +15,9 @@ else
   rm -rf "${HOME}/.oh-my-zsh/custom"
 
   # Creating symbolic link of Zsh configs into the home of computer.
-  ln -s "${HOME}/Projects/zshrc-config/zshrc" "${HOME}/.zshrc"
-  ln -s "${HOME}/Projects/zshrc-config/themes" "${HOME}/.oh-my-zsh/"
-  ln -s "${HOME}/Projects/zshrc-config/custom" "${HOME}/.oh-my-zsh/"
+  ln -s "$(pwd)/zshrc" "${HOME}/.zshrc"
+  ln -s "$(pwd)/themes" "${HOME}/.oh-my-zsh/"
+  ln -s "$(pwd)/custom" "${HOME}/.oh-my-zsh/"
 
   echo 'Installation finished with success!'
 fi
