@@ -5,10 +5,13 @@
 call plug#begin('~/.vim/plugged')
 " Theme releated plugins
 Plug 'vim-airline/vim-airline'
-Plug 'liuchengxu/space-vim-dark'
 Plug 'luochen1990/rainbow'
 Plug 'RRethy/vim-illuminate'
 Plug 'lilydjwg/colorizer'
+
+" Color schemes
+Plug 'liuchengxu/space-vim-dark'
+Plug 'srcery-colors/srcery-vim'
 
 " General coding plugins
 Plug 'jiangmiao/auto-pairs'
@@ -49,6 +52,7 @@ Plug 'chr4/nginx.vim', {'for': 'conf'}
 " Auto complete and file location plugins
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'

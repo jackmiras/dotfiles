@@ -2,7 +2,7 @@
 " Color scheme setting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme space-vim-dark
+colorscheme srcery
 let g:space_vim_dark_background = 234
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE

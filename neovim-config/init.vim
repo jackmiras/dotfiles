@@ -4,6 +4,7 @@ source $HOME/Projects/dotfiles/neovim-config/configs/general.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/colorscheme.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/remap.vimrc
 
+source $HOME/Projects/dotfiles/neovim-config/configs/plugins/srcery.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/vim-airline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/indentline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ale.vimrc
