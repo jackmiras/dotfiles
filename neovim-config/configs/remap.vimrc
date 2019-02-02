@@ -43,7 +43,7 @@ nnoremap <s-tab> <c-w><c-h>
 
 " Spliting windows
 nmap <leader>vsp :vsplit<cr>
-nmap <leader>sp :split<cr>
+nmap <leader>hsp :split<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Opening files remapping
@@ -84,16 +84,15 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
+
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" Deactivating h,j,k,l keys
-" noremap h <nop>
-" noremap j <nop>
-" noremap k <nop>
-" noremap l <nop>
+" Deactivating h and l keys
+noremap h <nop>
+noremap l <nop>
 
 " Deactivating esc key
 inoremap <esc> <esc> i
@@ -108,6 +107,12 @@ inoremap <leader>w <esc>:w!<cr>
 
 nnoremap <leader>wa <esc>:wall!<cr>
 inoremap <leader>wa <esc>:wall!<cr>
+
+nnoremap <leader>wq <esc>:wq!<cr>
+inoremap <leader>wq <esc>:wq!<cr>
+
+nnoremap <leader>wqa <esc>:wqa!<cr>
+inoremap <leader>wqa <esc>:wqa!<cr>
 
 nnoremap <leader>q <esc>:q!<cr>
 inoremap <leader>q <esc>:q!<cr>
