@@ -11,7 +11,6 @@ Plug 'lilydjwg/colorizer'
 
 " Color schemes
 Plug 'liuchengxu/space-vim-dark'
-Plug 'srcery-colors/srcery-vim'
 
 " General coding plugins
 Plug 'jiangmiao/auto-pairs'
