@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="pcsg-generated-ruleset" 
-    xmlns="http://pmd.sf.net/ruleset/1.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
-    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+<ruleset name="phpmd-rules"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
 
+  <rule ref="rulesets/cleancode.xml/BooleanArgumentFlag" />
+  <rule ref="rulesets/cleancode.xml/ElseExpression"/>
   <rule ref="rulesets/codesize.xml/CyclomaticComplexity"/>
   <rule ref="rulesets/codesize.xml/NPathComplexity"/>
-  <rule ref="rulesets/codesize.xml/ExcessiveMethodLength"/>
+  <rule ref="rulesets/codesize.xml/ExcessiveMethodLength">
+    <priority>3</priority>
+    <properties>
+        <property name="maximum" value="100"/>
+        <property name="exceptions" value="*/seeds/*" />
+    </properties>
+  </rule>
   <rule ref="rulesets/codesize.xml/ExcessiveClassLength"/>
   <rule ref="rulesets/codesize.xml/ExcessiveParameterList"/>
   <rule ref="rulesets/codesize.xml/ExcessivePublicCount"/>
-  <rule ref="rulesets/codesize.xml/TooManyFields"/>
+  <rule ref="rulesets/codesize.xml/TooManyFields">
+    <properties>
+      <property name="maxfields" value="39"/>
+    </properties>
+  </rule>
   <rule ref="rulesets/codesize.xml/TooManyMethods"/>
   <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity"/>
 
@@ -29,9 +41,25 @@
   <rule ref="rulesets/design.xml/DepthOfInheritance"/>
   <rule ref="rulesets/design.xml/CouplingBetweenObjects"/>
 
-  <rule ref="rulesets/naming.xml/ShortVariable"/>
-  <rule ref="rulesets/naming.xml/LongVariable"/>
-  <rule ref="rulesets/naming.xml/ShortMethodName"/>
+  <rule ref="rulesets/naming.xml/ShortVariable">
+      <priority>3</priority>
+      <properties>
+          <property name="minimum" value="3"/>
+          <property name="exceptions" value="id,me" />
+      </properties>
+  </rule>
+  <rule ref="rulesets/naming.xml/LongVariable">
+    <properties>
+        <property name="maximum" value="25"/>
+    </properties>
+  </rule>
+  <rule ref="rulesets/naming.xml/ShortMethodName">
+      <priority>3</priority>
+      <properties>
+          <property name="minimum" value="3"/>
+          <property name="exceptions" value="up,me" />
+      </properties>
+  </rule>
   <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass"/>
   <rule ref="rulesets/naming.xml/ConstantNamingConventions"/>
   <rule ref="rulesets/naming.xml/BooleanGetMethodName"/>
@@ -39,5 +67,5 @@
   <rule ref="rulesets/unusedcode.xml/UnusedPrivateField"/>
   <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable"/>
   <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod"/>
-  <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter"/>
+  <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter" />
 </ruleset>

@@ -8,9 +8,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'luochen1990/rainbow'
 Plug 'RRethy/vim-illuminate'
 Plug 'lilydjwg/colorizer'
+Plug 'luochen1990/rainbow'
 
 " Color schemes
 Plug 'liuchengxu/space-vim-dark'
+Plug 'liuchengxu/space-vim-theme'
+" Plug 'morhetz/gruvbox'
 
 " General coding plugins
 Plug 'jiangmiao/auto-pairs'
@@ -30,7 +33,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Git releated plugins
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " JavaScript plugins
@@ -44,27 +46,20 @@ Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'jwalton512/vim-blade', {'for': 'blade'}
+Plug 'vim-scripts/phpfolding.vim', {'for': 'php'}
 
 " NGINX Plugin
 Plug 'chr4/nginx.vim', {'for': 'conf'}
 
-" Auto complete and file location plugins
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-match-highlight'
-Plug 'ncm2/ncm2-tern',  {'for': 'javascript', 'do': 'npm install'}
-Plug 'ncm2/ncm2-cssomni', {'for': 'css'}
-Plug 'ncm2/ncm2-html-subscope', {'for': 'html'}
-Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
+" Kotlin plugins
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 
-" Snippet plugins
-Plug 'ncm2/ncm2-ultisnips'
+" Autocomplete plugin
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'kristijanhusak/deoplete-phpactor'
+
+" Auto complete and file location plugins
 Plug 'SirVer/ultisnips'
 
-" Debug plugins
-Plug 'vim-vdebug/vdebug'
 call plug#end()

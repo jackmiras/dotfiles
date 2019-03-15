@@ -52,7 +52,7 @@ set ignorecase " case insensitive searching
 set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch " highlight search results
 set incsearch " set incremental search, like modern browsers
-set nolazyredraw " don't redraw while executing macros
+set lazyredraw " don't redraw while executing macros
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Errors settings
@@ -75,6 +75,12 @@ set foldlevelstart=99 " fold start level
 set foldnestmax=10 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
+
+au FileType sh let g:sh_fold_enabled=5
+au FileType sh let g:is_bash=1
+
+au FileType php let g:php_fold_enabled=5
+au FileType php let g:is_php=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab settings
@@ -102,6 +108,8 @@ augroup auto_language_selection
 	autocmd Filetype sql setlocal ts=2 sw=2 expandtab
 	autocmd Filetype java setlocal ts=4 sw=4 expandtab
 	autocmd Filetype java setlocal colorcolumn=121
+	autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab
+	autocmd Filetype kotlin setlocal colorcolumn=121
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

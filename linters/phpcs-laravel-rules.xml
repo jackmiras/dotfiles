@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="phpcs-rules">
+<ruleset name="phpcs-laravel-rules">
 
   <!-- PSR1 Rules -->
   <rule ref="PSR1.Classes.ClassDeclaration">
@@ -20,24 +20,67 @@
   <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
   <rule ref="PSR2.Namespaces.UseDeclaration"/>
 
+  <!-- Generic Rules -->
+  <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+  <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+  <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+  <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+  <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+  <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+  <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+  <rule ref="Generic.Commenting.Todo"/>
+  <rule ref="Generic.Commenting.Fixme"/>
+  <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+  <rule ref="Generic.Files.LineLength">
+  <properties>
+    <property name="lineLimit" value="110"/>
+    <property name="absoluteLineLimit" value="120"/>
+  </properties>
+  </rule>
+  <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+  <rule ref="Generic.Formatting.SpaceAfterCast"/>
+  <rule ref="Generic.Functions.CallTimePassByReference"/>
+  <rule ref="Generic.NamingConventions.ConstructorName"/>
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+  <rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
+  <rule ref="Generic.PHP.DeprecatedFunctions"/>
+  <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+  <rule ref="Generic.PHP.ForbiddenFunctions"/>
+  <rule ref="Generic.PHP.LowerCaseConstant"/>
+  <rule ref="Generic.PHP.NoSilencedErrors"/>
+  <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+  <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+  <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+
+  <!-- MySource Rules -->
+  <rule ref="MySource.PHP.EvalObjectFactory"/>
+  <rule ref="MySource.PHP.GetRequestData"/>
+
+  <!-- PEAR Rules -->
+  <rule ref="PEAR.ControlStructures.MultiLineCondition"/>
+  <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+  <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+  <rule ref="PEAR.WhiteSpace.ScopeIndent"/>
+  <rule ref="PEAR.Functions.FunctionDeclaration"/>
+
   <!-- Slevomat Rules -->
   <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
-  <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly">
-    <exclude name="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly.ReferencedGeneralException">
-      <exclude-pattern>*/Exceptions/Handler\.php</exclude-pattern>
-    </exclude>
-  </rule>
+  <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
   <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
   <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
   <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
-  <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
+  <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit">
+    <properties>
+      <property name="ignoreStandaloneIfInScope" value="true"/>
+    </properties>
+  </rule>
+  <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
   <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
   <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
   <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
   <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
   <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
   <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
-  <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
   <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
   <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
   <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
@@ -46,7 +89,12 @@
   <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
   <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
   <rule ref="SlevomatCodingStandard.Commenting.EmptyComment" />
-  <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration"> 
+  <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly">
+    <exclude name="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly.ReferencedGeneralException">
+      <exclude-pattern>*/Exceptions/Handler\.php</exclude-pattern>
+    </exclude>
+  </rule>
+  <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
     <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingPropertyTypeHint">
       <severity>0</severity>
     </exclude>

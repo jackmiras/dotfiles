@@ -11,3 +11,6 @@ cnoreabbrev Ack  Ack!
 
 " Quick search
 nmap <leader>f :Ack<space>
+
+nmap <leader>gs :Gsearch<space>
+nmap <leader>gr :Greplace<cr>

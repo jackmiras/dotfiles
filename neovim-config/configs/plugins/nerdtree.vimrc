@@ -2,6 +2,8 @@
 " NERDTree settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:NERDTreeWinSize=60
+
 let NERDTreeShowHidden=1
 let NERDTreeNodeDelimiter="\u263a" " smiley face
 let g:NERDTreeIndicatorMapCustom={

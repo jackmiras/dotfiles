@@ -22,82 +22,82 @@ public function __construct($1)
 endsnippet
 
 snippet pubf "Public function with no parameters" i
-public function ${1:name}(): ${2:typeHint}
+public function ${1:name}(): ${2:void}
 {
 	$0
 }
 endsnippet
 
 snippet pubf1 "Public function with one parameter"
-public function ${1:name}(${2:typeHint} $${3:param}): ${4:typeHint}
+public function ${1:name}(${2:typeHint} $${3:param}): ${4:void}
 {
 	$0
 }
 endsnippet
 
 snippet pubf2 "Public function with two parameter"
-public function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:typeHint}
+public function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:void}
 {
 	$0
 }
 endsnippet
 
 snippet pubsf "Public static function with no parameters" i
-public static function ${1:name}(): ${2:typeHint}
+public static function ${1:name}(): ${2:void}
 {
 	$0
 }
 endsnippet
 
 snippet pubsf1 "Public static function with one parameter"
-public static function ${1:name}(${2:typeHint} $${3:param}): ${3:typeHint}
+public static function ${1:name}(${2:typeHint} $${3:param}): ${4: void}
 {
 	$0
 }
 endsnippet
 
 snippet pubsf2 "Public static function with two parameter"
-public static function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${4:typeHint}
+public static function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:void}
 {
 	$0
 }
 endsnippet
 
 snippet prif "Private function with no parameters"
-private function ${1:name}(): ${2:typeHint}
+private function ${1:name}(): ${2:void}
 {
 	$0
 }
 endsnippet
 
 snippet prif1 "Private function with one parameter"
-private function ${1:name}(${2:typeHint} $${3:param}): ${4:typeHint}
+private function ${1:name}(${2:typeHint} $${3:param}): ${4:void}
 {
 	$0
 }
 endsnippet
 
 snippet prif2 "Private function with two parameters"
-private function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:typeHint}
+private function ${1:name}(${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}): ${6:void}
 {
 	$0
 }
 endsnippet
 
 snippet pubfi "Interface public function with no parameter" i
-public function ${1:name}(): ${2:typeHint};
+public function ${1:name}(): ${2:void};
 endsnippet
 
 snippet pubfi1 "Interface public function with one parameter"
-public function ${1:name}(${2:typeHint} $${3:param}): ${4:typeHint};
+public function ${1:name}(${2:typeHint} $${3:param}): ${4:void};
 endsnippet
 
 snippet pubfi2 "Interface public function with two parameters"
-public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}): ${5:typeHint};
+public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}): ${5:void};
 endsnippet
 
 snippet pubfi3 "Interface public function with three parameters"
-public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}, ${4:typeHint} $${5:param}): ${6:typeHint};
+public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}, ${4:typeHint} $${5:param}): ${6:void};
 endsnippet
 
 snippet try "Try catch block"
@@ -254,7 +254,7 @@ return $0;
 endsnippet
 
 snippet const "This is a structure to create constants"
-public const ${1:CONSTANT_NAME} = "${0:constant-value}";
+public const ${1:CONSTANT_NAME} = '${0:constant-value}';
 endsnippet
 
 snippet slice "array_slice function" i
@@ -264,6 +264,14 @@ endsnippet
 ################################################################################
 # Laravel snippets                                                             #
 ################################################################################
+
+snippet response "Response object from Laravel" i
+$response->$0;
+endsnippet
+
+snippet request "Request object from Laravel" i
+$request->$0;
+endsnippet
 
 snippet get "Get router method"
 Route::get('${1:path}', '${2:action}');
@@ -290,35 +298,35 @@ Route::options('${1:path}', '${2:action}');
 endsnippet
 
 snippet index "Public function that handle GET HTTP requests"
-public function index(): JsonResponse
+public function index(): Response
 {
 	$0
 }
 endsnippet
 
 snippet show "Public function that handle GET HTTP request"
-public function show(Request $request, Response $response): JsonResponse
+public function show(Request $request): Response
 {
 	$0
 }
 endsnippet
 
 snippet store "Public function that should handle POST HTTP request"
-public function store(Request $request, Response $response): JsonResponse
+public function store(Request $request): Response
 {
 	$0
 }
 endsnippet
 
 snippet update "Public function that should handle PUT and PATCH HTTP requests"
-public function update(Request $request, Response $response): JsonResponse
+public function update(Request $request): Response
 {
 	$0
 }
 endsnippet
 
 snippet destroy "Public function that should handle DELETE HTTP request"
-public function destroy(Request $request, Response $response): JsonResponse
+public function destroy(Request $request): JsonResponse
 {
 	$0
 }
@@ -348,6 +356,17 @@ snippet class "A standard class"
 namespace ${1:Path\To\This\Class};$2
 
 class ${3:ClassName}
+{
+	$0
+}
+endsnippet
+
+snippet interface "A standard interface"
+<?php
+
+namespace ${1:Path\To\This\Interface};$2
+
+interface ${3:InterfaceName}
 {
 	$0
 }
@@ -485,7 +504,7 @@ snippet dps "Debug function that prints value as string"
 dump('$0');
 endsnippet
 
-snippet table "Migration table object to describe columns"
+snippet $table "Migration table object to describe columns"
 $table->$1('$0');
 endsnippet
 
@@ -497,8 +516,13 @@ snippet db "DB Facade"
 DB::
 endsnippet
 
-snippet tablef "Laravel table function from DB facade" i
+snippet table "Laravel table function from DB facade" i
 table('${1:tableName}')
+	->$0
+endsnippet
+
+snippet from "Laravel from function from DB facade" i
+from('${1:tableName}')
 	->$0
 endsnippet
 
@@ -518,7 +542,7 @@ selectRaw('${1:query}', ${2:params})
 endsnippet
 
 snippet join "Eloquent join function" i
-join('$1', '$2', '$3', '$4')
+join('${1:table_name}', '${2:table_name.column}', '${3:clause}', '${4:other_table_name.column}')
 ->$0
 endsnippet
 
@@ -592,6 +616,12 @@ snippet get "Laravel get function from DB facade" i
 get()
 endsnippet
 
+snippet transaction "Laravel Query Builder - Database transaction" i
+DB::transaction(function () use ($${1:model}): void {
+	${0: # code...}
+}${2:, 5});
+endsnippet
+
 ################################################################################
 # Blade snippets                                                               #
 ################################################################################
@@ -634,7 +664,7 @@ public function setUp(): void
 endsnippet
 
 snippet testf "PHPUnit test function"
-public function test${1:Case}(): ${2:typeHint}
+public function test${1:Case}(): ${2:void}
 {
 	$0
 }

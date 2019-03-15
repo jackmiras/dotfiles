@@ -7,7 +7,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="muse"
 ZSH_THEME="awesomepanda"
 
 # Set list of themes to load
@@ -94,20 +93,23 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+# SSH - Servers
+alias siv-test="ssh -i '$HOME/Projects/Aws/siv/siv-test.pem' ubuntu@ec2-34-199-133-8.compute-1.amazonaws.com"
+alias siv-web-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ubuntu@ec2-3-87-113-96.compute-1.amazonaws.com"
+alias siv-api-gateway="ssh -i '$HOME/Projects/AWS/siv/siv-production.pem' ec2-user@ec2-18-206-88-104.compute-1.amazonaws.com"
+alias siv-api-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ubuntu@ec2-18-205-35-42.compute-1.amazonaws.com"
+alias siv-sentry-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ec2-user@ec2-54-165-59-81.compute-1.amazonaws.com"
+alias siv-elasticsearch-production="ssh -i '$HOME/Projects/Aws/siv/siv-elk-production.pem' ubuntu@ec2-35-170-169-210.compute-1.amazonaws.com"
+
+alias scs-test="ssh -i '$HOME/Projects/Aws/scs/scs-test.pem' ubuntu@ec2-18-214-27-219.compute-1.amazonaws.com"
+
+# PHP aliases
+alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit"
 alias artisan="php artisan"
+
+# General aliases
+alias watcher="ag -l | entr -rc"
 alias cat=ccat
-
-# Automatically Running PHPUnit.
-function phpunit-watcher {
-    run="clear && printf '\e[3J' && vendor/bin/phpunit"
-    [[ -n $@ ]] && args=$@ || args="tests"
-
-    eval "$run $args"
-    watchman-make \
-        -p 'src/**/*.php' 'tests/**/*.php' \
-        --make=$run \
-        -t "$args" 
-}
 
 # Exporting Composer path.
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
