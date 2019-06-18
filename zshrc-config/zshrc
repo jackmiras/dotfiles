@@ -93,18 +93,23 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+
 # SSH - Servers
 alias siv-test="ssh -i '$HOME/Projects/Aws/siv/siv-test.pem' ubuntu@ec2-34-199-133-8.compute-1.amazonaws.com"
-alias siv-web-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ubuntu@ec2-3-87-113-96.compute-1.amazonaws.com"
-alias siv-api-gateway="ssh -i '$HOME/Projects/AWS/siv/siv-production.pem' ec2-user@ec2-18-206-88-104.compute-1.amazonaws.com"
+alias siv-web-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ubuntu@ec2-34-192-9-97.compute-1.amazonaws.com"
+alias siv-api-gateway="ssh -i '$HOME/Projects/AWS/siv/siv-production.pem' ubuntu@ec2-18-206-88-104.compute-1.amazonaws.com"
 alias siv-api-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ubuntu@ec2-18-205-35-42.compute-1.amazonaws.com"
-alias siv-sentry-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ec2-user@ec2-54-165-59-81.compute-1.amazonaws.com"
+alias siv-sentry-production="ssh -i '$HOME/Projects/Aws/siv/siv-production.pem' ubuntu@ec2-54-165-59-81.compute-1.amazonaws.com"
 alias siv-elasticsearch-production="ssh -i '$HOME/Projects/Aws/siv/siv-elk-production.pem' ubuntu@ec2-35-170-169-210.compute-1.amazonaws.com"
 
+alias tim-api-production="ssh -i '$HOME/Projects/Aws/tim/tim-apps-production.pem' ubuntu@ec2-52-90-234-235.compute-1.amazonaws.com"
+alias tim-smart-test="ssh -i '$HOME/Projects/Aws/tim-smart/tim-test-environment.pem' ubuntu@ec2-35-171-58-199.compute-1.amazonaws.com"
+
 alias scs-test="ssh -i '$HOME/Projects/Aws/scs/scs-test.pem' ubuntu@ec2-18-214-27-219.compute-1.amazonaws.com"
+alias scs-web-production="ssh -i '$HOME/Projects/Aws/scs/scs-web-production.pem' ubuntu@ec2-18-232-194-35.compute-1.amazonaws.com"
 
 # PHP aliases
-alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit"
+alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit --printer='Codedungeon\\PHPUnitPrettyResultPrinter\\Printer'"
 alias artisan="php artisan"
 
 # General aliases
@@ -117,9 +122,6 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 # Exporting Laravel path.
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-# Exporting MySQL 5.7 path.
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-
 # Exporting NVM path.
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -127,6 +129,17 @@ export NVM_DIR="$HOME/.nvm"
 # Exporting sbin path.
 export PATH="/usr/local/sbin:$PATH"
 
+export PATH="~/.local/bin:$PATH"
+
+# Exporting bin path.
+export PATH="/usr/local/bin:$PATH"
+
+# Export Android HOME.
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
 [[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
+
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
