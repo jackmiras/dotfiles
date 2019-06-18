@@ -79,8 +79,7 @@ set foldlevel=1
 au FileType sh let g:sh_fold_enabled=5
 au FileType sh let g:is_bash=1
 
-au FileType php let g:php_fold_enabled=5
-au FileType php let g:is_php=1
+syntax enable
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab settings

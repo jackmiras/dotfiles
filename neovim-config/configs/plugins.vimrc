@@ -12,8 +12,6 @@ Plug 'luochen1990/rainbow'
 
 " Color schemes
 Plug 'liuchengxu/space-vim-dark'
-Plug 'liuchengxu/space-vim-theme'
-" Plug 'morhetz/gruvbox'
 
 " General coding plugins
 Plug 'jiangmiao/auto-pairs'
@@ -34,6 +32,7 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " Git releated plugins
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
@@ -46,7 +45,7 @@ Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'jwalton512/vim-blade', {'for': 'blade'}
-Plug 'vim-scripts/phpfolding.vim', {'for': 'php'}
+Plug 'swekaj/php-foldexpr.vim', {'for': 'php'}
 
 " NGINX Plugin
 Plug 'chr4/nginx.vim', {'for': 'conf'}

@@ -15,6 +15,7 @@ else
   ln -s "$(pwd)/indent" "$HOME/.config/nvim"
   ln -s "$(pwd)/UltiSnips" "$HOME/.config/nvim"
   ln -s "$(pwd)/init.vim" "$HOME/.config/nvim"
+  ln -s "$(pwd)/colors" "$HOME/.config/nvim"
 
   # Creating symbolic links to Vim.
   mkdir -p "$HOME/.vim"
@@ -22,6 +23,7 @@ else
   ln -s "$(pwd)/plugged" "$HOME/.vim"
   ln -s "$(pwd)/indent" "$HOME/.vim"
   ln -s "$(pwd)/UltiSnips" "$HOME/.vim"
+  ln -s "$(pwd)/colors" "$HOME/.vim"
   ln -s "$(pwd)/init.vim" "$HOME/.vimrc"
 
 	echo 'Installation finished with success!'

@@ -6,12 +6,8 @@ snippet this "Access property or functions in the context of a class or function
 $this->$0
 endsnippet
 
-snippet prop= "Access property in the context of a class and attributes some value to the property"
+snippet this= "Access property in the context of a class and attributes some value to the property"
 $this->$1 = $0;
-endsnippet
-
-snippet priprop "Define a private property in a class"
-private $${0:property};
 endsnippet
 
 snippet construct "Public function that represents the constructor of a class"
@@ -249,6 +245,10 @@ snippet note "This is a reminder"
 //NOTE: ${1:desc} [`!v strftime("%c")`]
 endsnippet
 
+snippet remove "This is a remove note"
+//REMOVE: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
 snippet ret "Return statement"
 return $0;
 endsnippet
@@ -265,12 +265,10 @@ endsnippet
 # Laravel snippets                                                             #
 ################################################################################
 
-snippet response "Response object from Laravel" i
-$response->$0;
-endsnippet
-
-snippet request "Request object from Laravel" i
-$request->$0;
+snippet prefix "Route prefix method"
+Route::prefix('${1:prefix}')->group(function (): void {
+	${0:# code...}
+});
 endsnippet
 
 snippet get "Get router method"
@@ -326,10 +324,30 @@ public function update(Request $request): Response
 endsnippet
 
 snippet destroy "Public function that should handle DELETE HTTP request"
-public function destroy(Request $request): JsonResponse
+public function destroy(Request $request): Response
 {
 	$0
 }
+endsnippet
+
+snippet trans "" i
+trans('${0:Resource lang id...}')
+endsnippet
+
+snippet response "Response object from Laravel" i
+$response->$0;
+endsnippet
+
+snippet request "Request object from Laravel" i
+$request->$0;
+endsnippet
+
+snippet resp "Response for a controller action"
+return response(${1:$body}, ${2:status});
+endsnippet
+
+snippet respj "Response with a json for a controller action"
+return response()->json(${1:$body}, ${2:status});
 endsnippet
 
 snippet array_first "Laravel array_first helper"
@@ -353,7 +371,7 @@ endsnippet
 snippet class "A standard class"
 <?php
 
-namespace ${1:Path\To\This\Class};$2
+namespace App;$2
 
 class ${3:ClassName}
 {
@@ -372,112 +390,37 @@ interface ${3:InterfaceName}
 }
 endsnippet
 
-snippet controller "A controller class"
+snippet trait "A standard trait"
 <?php
 
-namespace ${1:App}\Http\Controllers$2;
+namespace ${1:App\Trait};$2
 
-use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Routing\Controller;$3
-
-class ${4:ClassName} extends Controller
+trait ${3:TraitName}
 {
 	$0
 }
 endsnippet
 
-snippet middleware "A middleware class"
-<?php
-
-namespace ${1:App}\Http\Middleware;
-
-use Closure;
-use Illuminate\Http\Request;$2
-
-class ${3:ClassName}
-{
-	public function handle(Request $request, Closure $next)
-	{
-		$0
-		return $next($request);
-	}
-}
-endsnippet
-
-snippet provider "A service provider class"
-<?php
-
-namespace ${1:App}\Providers;
-
-use Illuminate\Support\ServiceProvider;$2
-
-class ${3:ClassName}ServiceProvider extends ServiceProvider
-{
-
-	public function register()
-	{
-		$0
-	}
-}
-endsnippet
-
-snippet model "A model class"
-<?php
-
-namespace ${1:App\Domain\Models};
-
-use Illuminate\Database\Eloquent\Model;
-
-class ${2:ClassName} extends Model
-{
-	protected $table = '$0';
-
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [];
-
-	/**
-	 * The attributes that should be hidden for arrays.
-	 *
-	 * @var array
-	 */
-	protected $hidden = [];
-
-	/**
-	 * The attributes that aren't mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $guarded = [];
-}
-endsnippet
-
-snippet resp "Response for a controller action"
-return response(${1:$body}, ${2:status});
-endsnippet
-
-snippet respj "Response with a json for a controller action"
-return response()->json(${1:$body}, ${2:status});
-endsnippet
-
-snippet fctc "Factory function that create any amount of objects"
+snippet fcreate "Factory function that create any amount of objects"
 $${1:object} = factory(${2:Model}::class, ${3:amount})->create(${4:attributes});
 endsnippet
 
-snippet fctc1 "Factory function that create one object"
-$${1:object} = factory(${2:Model}::class)->create(${3:attributes});
-endsnippet
-
-snippet fctm "Factory function that make any amount of objects"
+snippet fmake "Factory function that make any amount of objects"
 $${1:object} = factory(${2:Model}::class, ${3:amount})->make(${4:attributes});
 endsnippet
 
-snippet fctm1 "Factory function that make one object"
-$${1:object} = factory(${2:Model}::class)->make(${3:attributes});
+snippet mutator "Defining A Mutator"
+public function set${1:PropertyName}Attribute(${2:typeHint} $${3:value}): void
+{
+	$0
+}
+endsnippet
+
+snippet accessor "Defining A Accessor"
+public function get${1:PropertyName}Attribute(string $value): string
+{
+	return $0;
+}
 endsnippet
 
 snippet dd "Debug and stop function"
@@ -622,6 +565,57 @@ DB::transaction(function () use ($${1:model}): void {
 }${2:, 5});
 endsnippet
 
+snippet fillable "Eloquent fillable array"
+protected $fillable = [
+	${0:# code...}
+];
+endsnippet
+
+snippet with "Eloquent with array"
+protected $with = [
+	${0:# code...}
+];
+endsnippet
+
+snippet hidden "Eloquent hidden array"
+protected $hidden = [
+	${0:# code...}
+];
+endsnippet
+
+snippet casts "Eloquent casts array"
+protected $casts = [
+	${0:# code...}
+];
+endsnippet
+
+snippet appends "Eloquent appends array"
+protected $appends = [
+	${0:# code...}
+];
+endsnippet
+
+snippet scope "Eloquen scope function"
+public function scope${1:Name}(Builder $query): ${2:Builder}
+{
+	return ${0:$query->};
+}
+endsnippet
+
+snippet scope1 "Eloquen scope function with one param"
+public function scope${1:Name}(Builder $query, ${2:TypeHint} $${3:param}): ${4:Builder}
+{
+	return ${0:$query->};
+}
+endsnippet
+
+snippet scope2 "Eloquen scope function with two params"
+public function scope${1:Name}(Builder $query, ${2:TypeHint} $${3:param2}, ${4:TypeHint} $${5:param2}): ${6:Builder}
+{
+	return ${0:$query->};
+}
+endsnippet
+
 ################################################################################
 # Blade snippets                                                               #
 ################################################################################
@@ -660,6 +654,20 @@ snippet setup "PHPUnit setup function"
 public function setUp(): void
 {
 	parent::setUp();
+}
+endsnippet
+
+snippet setUpBeforeClass "PHPUnit setUpBeforeClass function"
+public static function setUpBeforeClass(): void
+{
+	parent::setUpBeforeClass();
+}
+endsnippet
+
+snippet tearDown "PHPUnit tearDown function"
+public function tearDown(): void
+{
+	parent::tearDown();
 }
 endsnippet
 
