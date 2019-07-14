@@ -13,6 +13,7 @@ else
   ln -s "$(pwd)/tmux.conf" "${HOME}/.tmux.conf"
   ln -s "$(pwd)/themes" "${HOME}/.tmux/themes"
   ln -s "$(pwd)/plugins" "${HOME}/.tmux/plugins"
+  ln -s "$(pwd)/resurrect" "${HOME}/.tmux/resurrect"
 
   echo 'Installation finished with success!'
 fi

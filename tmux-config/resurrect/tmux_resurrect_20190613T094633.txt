@@ -1,0 +1,59 @@
+pane	17	1	:zsh	1	:*	0	:/Users/jacksonflorentino	1	zsh	:
+pane	dotfiles	1	:neovim-config	1	:*	0	:/Users/jacksonflorentino/Projects/dotfiles/neovim-config	1	nvim	:nvim
+pane	dotfiles	2	:tmux-config	0	:-	0	:/Users/jacksonflorentino/Projects/dotfiles/tmux-config	1	nvim	:nvim tmux.conf
+pane	dotfiles	3	:zshrc-config	0	:	0	:/Users/jacksonflorentino	1	nvim	:nvim .zshrc
+pane	dotfiles	4	:[tmux]	0	:	0	:/Users/jacksonflorentino/Projects/dotfiles/neovim-config/UltiSnips	1	zsh	:
+pane	kotlin	1	:nvim	1	:*	0	:/Users/jacksonflorentino/Projects/agrointeli-api-kotlin	1	nvim	:nvim
+pane	scaling-laravel	1	:[nvim] vessel	1	:*	0	:/Users/jacksonflorentino/Projects/scaling-laravel	1	nvim	:nvim
+pane	scaling-laravel	2	:zsh	0	:#-	0	:/Users/jacksonflorentino/Projects/scaling-laravel	0	zsh	:
+pane	scaling-laravel	2	:zsh	0	:#-	1	:/Users/jacksonflorentino/Projects/scaling-laravel	1	zsh	:
+pane	scs-api	1	:[nvim] scs-api	1	:*	0	:/Users/jacksonflorentino/Projects/scs-api/api	1	nvim	:nvim
+pane	scs-api	2	:[ssh] scs-api	0	:-	0	:/Users/jacksonflorentino/Projects/scs-api/api	0	zsh	:
+pane	scs-api	2	:[ssh] scs-api	0	:-	1	:/Users/jacksonflorentino/Documents/scs-api	1	zsh	:
+pane	scs-api	3	:zsh	0	:	0	:/Users/jacksonflorentino/Projects/scs-api	1	zsh	:
+pane	scs-apps-deploy	1	:[nvim] scs-app-deploy	1	:*	0	:/Users/jacksonflorentino/Projects/scs-apps-deploy	1	nvim	:nvim
+pane	scs-apps-deploy	2	:zsh	0	:-	0	:/Users/jacksonflorentino/Projects/scs-apps-deploy	1	zsh	:
+pane	scs-apps-deploy	3	:zsh	0	:	0	:/Users/jacksonflorentino	1	zsh	:
+pane	scs-servers	1	:[ssh] scs-api-produciton	1	:*	0	:/Users/jacksonflorentino/.Trash/Dropbox/Aws/scs	1	zsh	:
+pane	scs-servers	2	:[ssh] scs-web-production	0	:#-	0	:/Users/jacksonflorentino	0	zsh	:
+pane	scs-servers	2	:[ssh] scs-web-production	0	:#-	1	:/Users/jacksonflorentino	1	zsh	:
+pane	scs-vue	1	:zsh	1	:*	0	:/Users/jacksonflorentino/Projects/scs-vue	0	nvim	:nvim
+pane	scs-vue	1	:zsh	1	:*	1	:/Users/jacksonflorentino/Projects/scs-vue	1	zsh	:
+pane	siv-api-gateway	1	:nvim	1	:*	0	:/Users/jacksonflorentino/Projects/siv-api-gateway	1	nvim	:nvim
+pane	siv-servers	1	:[ssh] siv-test	1	:*	0	:/Users/jacksonflorentino/Dropbox/Aws/tradeup-group	0	zsh	:
+pane	siv-servers	1	:[ssh] siv-test	1	:*	1	:/Users/jacksonflorentino/Dropbox/Aws/tradeup-group	0	zsh	:
+pane	siv-servers	1	:[ssh] siv-test	1	:*	2	:/Users/jacksonflorentino/Dropbox/Aws/tradeup-group	1	zsh	:
+pane	study	1	:nvim	0	:#-	0	:/Users/jacksonflorentino/Projects/scaling-laravel	1	nvim	:nvim
+pane	study	2	:zsh	1	:*	0	:/Users/jacksonflorentino/Projects/scaling-laravel	1	zsh	:
+pane	tim-api	1	:zsh	1	:*	0	:/Users/jacksonflorentino/Projects/tim-api	1	nvim	:nvim
+pane	tim-api	2	:nvim	0	:-	0	:/Users/jacksonflorentino/Projects/tim-api	1	zsh	:
+pane	trade-app-one	1	:[nvim] trade-app-one-backend	1	:*	0	:/Users/jacksonflorentino/Projects/trade-app-one-backend	1	nvim	:nvim
+pane	vessel	1	:[nvim] vessel	1	:*	0	:/Users/jacksonflorentino/Projects/vessel	1	nvim	:nvim
+pane	vessel	2	:zsh	0	:-	0	:/Users/jacksonflorentino/Projects/vessel	1	zsh	:
+window	17	1	1	:*	6498,179x27,0,0,38
+window	dotfiles	1	1	:*	cade,275x28,0,0,1
+window	dotfiles	2	0	:-	cadf,275x28,0,0,2
+window	dotfiles	3	0	:	cae0,275x28,0,0,3
+window	dotfiles	4	0	:	cae1,275x28,0,0,4
+window	kotlin	1	1	:*	cae2,275x28,0,0,5
+window	scaling-laravel	1	1	:*	cae3,275x28,0,0,6
+window	scaling-laravel	2	0	:#-	3dc2,275x28,0,0{137x28,0,0,7,137x28,138,0,8}
+window	scs-api	1	1	:*	cae6,275x28,0,0,9
+window	scs-api	2	0	:-	55f1,275x28,0,0{137x28,0,0,10,137x28,138,0,11}
+window	scs-api	3	0	:	65a1,275x28,0,0,12
+window	scs-apps-deploy	1	1	:*	65a2,275x28,0,0,13
+window	scs-apps-deploy	2	0	:-	65a3,275x28,0,0,14
+window	scs-apps-deploy	3	0	:	65a4,275x28,0,0,15
+window	scs-servers	1	1	:*	65a5,275x28,0,0,16
+window	scs-servers	2	0	:#-	55f8,275x28,0,0{137x28,0,0,17,137x28,138,0,18}
+window	scs-vue	1	1	:*	95f5,275x28,0,0{137x28,0,0,19,137x28,138,0,20}
+window	siv-api-gateway	1	1	:*	e5a0,275x28,0,0,21
+window	siv-servers	1	1	:*	84bc,275x28,0,0{137x28,0,0,22,137x28,138,0[137x15,138,0,23,137x12,138,16,24]}
+window	study	1	0	:#-	e5a4,275x28,0,0,25
+window	study	2	1	:*	e5a5,275x28,0,0,26
+window	tim-api	1	1	:*	e5a7,275x28,0,0,28
+window	tim-api	2	0	:-	e5a6,275x28,0,0,27
+window	trade-app-one	1	1	:*	65a0,275x28,0,0,30
+window	vessel	1	1	:*	65a1,275x28,0,0,31
+window	vessel	2	0	:-	65a2,275x28,0,0,32
+state	tim-api	scs-api
