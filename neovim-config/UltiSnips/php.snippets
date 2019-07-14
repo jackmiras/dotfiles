@@ -393,7 +393,7 @@ endsnippet
 snippet trait "A standard trait"
 <?php
 
-namespace ${1:App\Trait};$2
+namespace ${1:App\TraitPath};$2
 
 trait ${3:TraitName}
 {
@@ -557,6 +557,11 @@ endsnippet
 
 snippet get "Laravel get function from DB facade" i
 get()
+endsnippet
+
+snippet sqlWithBindings "Get SQL with bindings from Laravel query builder"
+$sqlWithBindings = str_replace_array('?', $query->getBindings(), $query->toSql());
+dd('SQL with bindings: ', $sqlWithBindings);
 endsnippet
 
 snippet transaction "Laravel Query Builder - Database transaction" i
