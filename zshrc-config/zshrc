@@ -61,7 +61,6 @@ ZSH_THEME="awesomepanda"
 plugins=(
   git
   git-flow
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
