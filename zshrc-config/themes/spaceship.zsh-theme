@@ -1,1 +1,0 @@
-/Users/jackmiras/Projects/zshrc-config/themes/spaceship-prompt/spaceship.zsh-theme

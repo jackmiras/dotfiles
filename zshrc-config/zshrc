@@ -58,10 +58,7 @@ ZSH_THEME="awesomepanda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  git-flow
-)
+plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,3 +125,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
 [[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
