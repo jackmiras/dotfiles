@@ -109,6 +109,14 @@ augroup auto_language_selection
 	autocmd Filetype java setlocal colorcolumn=121
 	autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab
 	autocmd Filetype kotlin setlocal colorcolumn=121
+	autocmd Filetype groovy setlocal ts=4 sw=4 expandtab
+	autocmd Filetype groovy setlocal colorcolumn=121
+	autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
+	autocmd Filetype yaml setlocal colorcolumn=80
+	autocmd Filetype yml setlocal ts=2 sw=2 expandtab
+	autocmd Filetype yml setlocal colorcolumn=80
+	au BufNewFile,BufRead Jenkinsfile setf groovy
+	au BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

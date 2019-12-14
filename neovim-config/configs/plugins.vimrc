@@ -55,10 +55,14 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 
 " Autocomplete plugin
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
 Plug 'kristijanhusak/deoplete-phpactor'
 
 " Auto complete and file location plugins
 Plug 'SirVer/ultisnips'
+
+" Container related plugins
+Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
+Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
 
 call plug#end()
