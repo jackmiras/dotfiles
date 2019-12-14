@@ -98,6 +98,13 @@ alias artisan="php artisan"
 alias watcher="ag -l | entr -rc"
 alias cat=ccat
 
+# Exporting language
+export LC_NUMERIC=en_US
+export LC_TIME=en_US
+export LC_COLLATE=en_US
+export LC_MONETARY=en_US
+export LC_MESSAGES=en_US
+
 # Exporting Composer path.
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
