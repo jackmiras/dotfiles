@@ -129,6 +129,10 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# Loading asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
 [[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
