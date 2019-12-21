@@ -36,19 +36,16 @@ Plug 'tpope/vim-fugitive'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
-Plug 'posva/vim-vue', {'for': 'vue'}
 
-" CSS plugins
+" Front-end plugins
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
+Plug 'posva/vim-vue', {'for': 'vue'}
 
 " PHP plugins
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'jwalton512/vim-blade', {'for': 'blade'}
 Plug 'swekaj/php-foldexpr.vim', {'for': 'php'}
-
-" NGINX Plugin
-Plug 'chr4/nginx.vim', {'for': 'conf'}
 
 " Kotlin plugins
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
@@ -58,14 +55,12 @@ Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 
 " Autocomplete plugin
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
 Plug 'kristijanhusak/deoplete-phpactor'
-
-" Auto complete and file location plugins
 Plug 'SirVer/ultisnips'
 
 " Container related plugins
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
 Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
+Plug 'chr4/nginx.vim', {'for': 'conf'}
 
 call plug#end()
