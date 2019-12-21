@@ -53,6 +53,9 @@ Plug 'chr4/nginx.vim', {'for': 'conf'}
 " Kotlin plugins
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 
+" Go plugins
+Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
+
 " Autocomplete plugin
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
