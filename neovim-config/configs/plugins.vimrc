@@ -19,7 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
 
-" Fuzzy search plugins
+" Fuzzy file search plugins
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skwp/greplace.vim'
 Plug 'mileszs/ack.vim', {'on': 'Ack!'}
@@ -33,6 +33,11 @@ Plug 'ludovicchabant/vim-gutentags'
 " Git releated plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+" Autocomplete plugin
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'SirVer/ultisnips'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
@@ -52,11 +57,6 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 
 " Go plugins
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
-
-" Autocomplete plugin
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'SirVer/ultisnips'
 
 " Container related plugins
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
