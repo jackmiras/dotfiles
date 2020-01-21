@@ -129,6 +129,9 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# Export GOPATH
+export GOPATH=$(go env GOPATH)
+
 # Loading asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
