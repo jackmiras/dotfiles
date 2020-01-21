@@ -67,7 +67,7 @@ set-window-option -g clock-mode-colour $base0C
 tm_session_name="#[$base00,bg=$base0E,fg=$base01] #S "
 set -g status-left "$tm_session_name"
 
-tm_players="#[bg=$base0D,fg=$base01] ♫ #(sh ~/Projects/dotfiles/bin/players.sh)"
+tm_players="#[bg=$base0D,fg=$base01] ♫ #(~/Projects/dotfiles/bin/players.sh)"
 tm_date="#[bg=$base09,fg=$base01]%H:%M:%S"
 tm_battery="#[fg=$base01,bg=$base09] #(~/Projects/dotfiles/bin/battery-indicator.sh)"
 tm_host="#[fg=$base01,bg=$base0E] #h "
