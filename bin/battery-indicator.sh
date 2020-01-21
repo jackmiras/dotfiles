@@ -3,9 +3,20 @@
 
 HEART='♥ '
 
-if [[ `uname` == 'Linux' ]]; then
-  current_charge=$(cat /proc/acpi/battery/BAT1/state | grep 'remaining capacity' | awk '{print $3}')
-  total_charge=$(cat /proc/acpi/battery/BAT1/info | grep 'last full capacity' | awk '{print $4}')
+if [[ $(uname) == 'Linux' ]]; then
+  current_charge=$(acpi | grep 'Discharging' | awk '{print $3}')
+  if [[ -z "${current_charge}" ]]; then
+    current_charge=100
+  else
+    current_charge=`expr "$current_chage" : '^\(.[1-9]*\)'`
+  fi
+
+  total_charge=$(acpi | grep 'Full' | awk '{print $4}')
+  if [[ -z "${total_charge}" ]]; then
+    total_charge=100
+  else
+    total_charge=${total_charge::-1}
+  fi
 else
   battery_info=`ioreg -rc AppleSmartBattery`
   current_charge=$(echo $battery_info | grep -o '"CurrentCapacity" = [0-9]\+' | awk '{print $3}')
