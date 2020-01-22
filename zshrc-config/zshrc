@@ -115,26 +115,27 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# Exporting sbin path.
-export PATH="/usr/local/sbin:$PATH"
-
-export PATH="~/.local/bin:$PATH"
-
 # Exporting bin path.
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Export Android HOME.
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+# Export rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Export GOPATH
-export GOPATH=$(go env GOPATH)
+export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
 
 # Loading asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# Export linuxbrew to PATH
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
