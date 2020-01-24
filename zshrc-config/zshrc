@@ -72,8 +72,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
-else
-  export EDITOR='vim'
 fi
 
 # Preferred terminal for local and remote sessions
@@ -91,8 +89,8 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # For a full list of active aliases, run `alias`.
 
 # PHP aliases
-alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit --printer='Codedungeon\\PHPUnitPrettyResultPrinter\\Printer'"
 alias artisan="php artisan"
+alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit --printer='Codedungeon\\PHPUnitPrettyResultPrinter\\Printer'"
 
 # General aliases
 alias watcher="ag -l | entr -rc"
@@ -105,24 +103,24 @@ export LC_COLLATE=en_US
 export LC_MONETARY=en_US
 export LC_MESSAGES=en_US
 
-# Exporting Composer path.
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-
-# Exporting Laravel path.
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-# Exporting NVM path.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Exporting bin path.
+# Exporting stuff to PATH.
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# Exporting NVM path.
+export NVM_DIR="$HOME/.nvm"
+# Loading nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Export Android HOME.
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Export rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -134,10 +132,6 @@ export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-# Export linuxbrew to PATH
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
 [[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
