@@ -103,3 +103,6 @@ $RECYCLE.BIN/
 *.lnk
 
 *tmux-resurrect
+
+*tags.lock
+*tags.temp
