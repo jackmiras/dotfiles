@@ -132,6 +132,10 @@ export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+# Kubernetes configs
+export KUBECONFIG="$HOME/.kube/eks-dev-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
 [[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
