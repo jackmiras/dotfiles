@@ -4,6 +4,7 @@
 
 let g:ale_linters={
 	\ 'yml': ['yamllint'],
+	\ 'python': ['pylint'],
 	\ 'yaml': ['yamllint'],
 	\ 'javascript': ['eslint'],
 	\ 'php': ['phpcs', 'phpmd', 'phpstan']
@@ -13,6 +14,7 @@ let g:ale_fixers={
 	\ 'php': ['phpcbf'],
 	\ 'yml': ['prettier'],
 	\ 'yaml': ['prettier'],
+	\ 'python': ['autopep8', 'yapf'],
 	\ 'javascript': ['prettier'],
 	\ '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
@@ -55,3 +57,12 @@ let g:ale_javascript_prettier_standard_executable='./node_modules/prettier/bin-p
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:ale_yaml_yamllint_executable='/usr/local/bin/yamllint'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" A.L.E Python - Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ale_python_pylint_change_directory = 1
+let g:ale_python_pylint_executable = '/home/jackmiras/.local/bin/pylint'
+let g:ale_python_pylint_options = './pylintrc'
+let g:ale_python_pylint_use_global = 0
