@@ -62,5 +62,6 @@ Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
 Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
 Plug 'chr4/nginx.vim', {'for': 'conf'}
+Plug 'hashivim/vim-terraform'
 
 call plug#end()

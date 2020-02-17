@@ -97,7 +97,7 @@ augroup auto_language_selection
 	autocmd Filetype html setlocal ts=2 sw=2 expandtab
 	autocmd Filetype blade setlocal ts=2 sw=2 expandtab
 	autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-	autocmd Filetype python setlocal ts=2 sw=2 expandtab
+	autocmd Filetype python setlocal ts=4 sw=4 expandtab
 	autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 	autocmd Filetype vue setlocal ts=2 sw=2 expandtab
 	autocmd FileType json setlocal ts=2 sw=2 expandtab

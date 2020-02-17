@@ -21,3 +21,4 @@ source $HOME/Projects/dotfiles/neovim-config/configs/plugins/php-foldexpr.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/deoplete.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ultisnips.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/rainbow.vimrc
+source $HOME/Projects/dotfiles/neovim-config/configs/plugins/terraform.vimrc
