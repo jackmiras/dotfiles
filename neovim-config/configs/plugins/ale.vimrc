@@ -63,6 +63,6 @@ let g:ale_yaml_yamllint_executable='/usr/local/bin/yamllint'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:ale_python_pylint_change_directory = 1
-let g:ale_python_pylint_executable = '/home/jackmiras/.local/bin/pylint'
+let g:ale_python_pylint_executable = '~/.local/bin/pylint'
 let g:ale_python_pylint_options = './pylintrc'
 let g:ale_python_pylint_use_global = 0
