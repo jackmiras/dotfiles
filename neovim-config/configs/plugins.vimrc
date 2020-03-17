@@ -37,10 +37,12 @@ Plug 'tpope/vim-fugitive'
 " Autocomplete plugin
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'SirVer/ultisnips'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " Front-end plugins
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
