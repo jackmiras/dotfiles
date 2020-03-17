@@ -96,6 +96,10 @@ alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit --printer='Codedungeo
 alias watcher="ag -l | entr -rc"
 alias cat=ccat
 
+# Loading asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 # Exporting language
 export LC_NUMERIC=en_US
 export LC_TIME=en_US
@@ -119,6 +123,9 @@ export NVM_DIR="$HOME/.nvm"
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Export JAVA_HOME
+export JAVA_HOME=$(asdf where java)
+
 # Export Android HOME.
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
@@ -127,10 +134,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Export GOPATH
 export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
-
-# Loading asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 
 # Kubernetes configs
 export KUBECONFIG="$HOME/.kube/eks-dev-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
