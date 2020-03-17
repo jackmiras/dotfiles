@@ -93,28 +93,23 @@ set shiftround " Round indent to a multiple of 'shiftwidth'
 
 augroup auto_language_selection
 	autocmd!
-	autocmd Filetype xml setlocal ts=2 sw=2 expandtab
-	autocmd Filetype html setlocal ts=2 sw=2 expandtab
-	autocmd Filetype blade setlocal ts=2 sw=2 expandtab
-	autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-	autocmd Filetype python setlocal ts=4 sw=4 expandtab
-	autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
-	autocmd Filetype vue setlocal ts=2 sw=2 expandtab
-	autocmd FileType json setlocal ts=2 sw=2 expandtab
-	autocmd Filetype scss setlocal ts=2 sw=2 expandtab
-	autocmd Filetype php setlocal ts=4 sw=4 expandtab
-	autocmd Filetype sh setlocal ts=2 sw=2 expandtab
-	autocmd Filetype sql setlocal ts=2 sw=2 expandtab
-	autocmd Filetype java setlocal ts=4 sw=4 expandtab
-	autocmd Filetype java setlocal colorcolumn=121
-	autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab
-	autocmd Filetype kotlin setlocal colorcolumn=121
-	autocmd Filetype groovy setlocal ts=4 sw=4 expandtab
-	autocmd Filetype groovy setlocal colorcolumn=121
-	autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
-	autocmd Filetype yaml setlocal colorcolumn=80
-	autocmd Filetype yml setlocal ts=2 sw=2 expandtab
-	autocmd Filetype yml setlocal colorcolumn=80
+	autocmd Filetype xml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype html setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype blade setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype ruby setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype python setlocal ts=4 sw=4 expandtab colorcolumn=80 textwidth=79
+	autocmd Filetype javascript setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype vue setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd FileType json setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype scss setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype php setlocal ts=4 sw=4 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype sh setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype sql setlocal ts=2 sw=2 expandtab colorcolumn=80 textwidth=80
+	autocmd Filetype java setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
+	autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
+	autocmd Filetype groovy setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
+	autocmd Filetype yaml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+	autocmd Filetype yml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
 	au BufNewFile,BufRead Jenkinsfile setf groovy
 	au BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 augroup END
