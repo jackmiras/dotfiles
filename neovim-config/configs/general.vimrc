@@ -97,7 +97,7 @@ augroup auto_language_selection
 	autocmd Filetype html setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
 	autocmd Filetype blade setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
 	autocmd Filetype ruby setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype python setlocal ts=4 sw=4 expandtab colorcolumn=80 textwidth=79
+	autocmd Filetype python setlocal ts=4 sw=4 expandtab colorcolumn=80 textwidth=79 completeopt-=preview
 	autocmd Filetype javascript setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
 	autocmd Filetype vue setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
 	autocmd FileType json setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
