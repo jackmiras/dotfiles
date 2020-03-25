@@ -49,6 +49,8 @@ let g:ale_php_phpcbf_standard='PSR1,PSR2'
 " A.L.E JavaScript - Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:ale_javascript_eslint_options='./.eslintrc.js'
+let g:ale_javascript_prettier_options='./.prettierrc.js'
 let g:ale_javascript_eslint_executable='./node_modules/eslint/bin/eslint.js'
 let g:ale_javascript_prettier_standard_executable='./node_modules/prettier/bin-prettier.js'
 
@@ -62,7 +64,7 @@ let g:ale_yaml_yamllint_executable='/usr/local/bin/yamllint'
 " A.L.E Python - Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:ale_python_pylint_change_directory = 1
-let g:ale_python_pylint_executable = '~/.local/bin/pylint'
-let g:ale_python_pylint_options = './pylintrc'
 let g:ale_python_pylint_use_global = 0
+let g:ale_python_pylint_change_directory = 1
+let g:ale_python_pylint_options = './pylintrc'
+let g:ale_python_pylint_executable = '~/.local/bin/pylint'
