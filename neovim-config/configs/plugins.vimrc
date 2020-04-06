@@ -42,7 +42,7 @@ Plug 'SirVer/ultisnips'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 
 " Front-end plugins
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
