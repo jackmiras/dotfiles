@@ -1,4 +1,4 @@
-![Travis (.org)](https://img.shields.io/travis/jackmiras/dotfiles)
+![Travis (.org)](https://img.shields.io/travis/jackmira/jackmiras/dotfiles)
 
 To see in details what do I have in my dotfiles see the following links:
 - [Tmux](https://github.com/jackmiras/dotfiles/blob/master/tmux-config/README.md)
