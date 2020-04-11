@@ -22,6 +22,18 @@ function install_ctags() {
   sudo apt-get install -y ctags
 }
 
+# function install_docker() {
+#   # Install Docker
+#   # Install Docker-compose
+# }
+
+function install_tflint() {
+  readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
+  curl -L "$(curl -Ls "${URL}" | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip
+  unzip tflint.zip && rm tflint.zip
+  mv tflint "$HOME/.local/bin/"
+}
+
 function install_neovim() {
   source "${HOME}/.asdf/asdf.sh"
   sudo apt-get install -y neovim
@@ -116,6 +128,8 @@ function main() {
   install_ccat
   install_tmux
   install_ctags
+  install_docker
+  install_tflint
   install_neovim
   install_kubectl
   git_global_configs
