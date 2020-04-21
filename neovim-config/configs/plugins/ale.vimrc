@@ -7,6 +7,7 @@ let g:ale_linters={
 	\ 'python': ['pylint'],
 	\ 'yaml': ['yamllint'],
 	\ 'javascript': ['eslint'],
+	\ 'terraform': ['fmt', 'tflint'],
 	\ 'php': ['phpcs', 'phpmd', 'phpstan']
 \}
 
@@ -64,7 +65,15 @@ let g:ale_yaml_yamllint_executable='/usr/local/bin/yamllint'
 " A.L.E Python - Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:ale_python_pylint_use_global = 0
-let g:ale_python_pylint_change_directory = 1
-let g:ale_python_pylint_options = './pylintrc'
-let g:ale_python_pylint_executable = '~/.local/bin/pylint'
+let g:ale_python_pylint_use_global=0
+let g:ale_python_pylint_change_directory=1
+let g:ale_python_pylint_options='./pylintrc'
+let g:ale_python_pylint_executable='~/.local/bin/pylint'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terraform - Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_terraform_fmt_options=''
+let g:ale_terraform_fmt_executable='terraform'
+let g:ale_terraform_tflint_options='--module -f json'
+let g:ale_terraform_tflint_executable="/home/jackmiras/.local/bin/tflint"
