@@ -16,7 +16,7 @@ let g:jedi#show_call_signatures = "1"
 
 let g:jedi#goto_command = "<leader>o"
 let g:jedi#goto_assignments_command = "<leader>g"
-" let g:jedi#goto_stubs_command = "" "<leader>s
+let g:jedi#goto_stubs_command = "" "<leader>s
 let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
