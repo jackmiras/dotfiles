@@ -1,27 +1,31 @@
 ################################################################################
-# Pure PHP snippets                                                            #
+# Pure Python snippets                                                         #
 ################################################################################
 
 # Funcions - snippets #
 
 snippet def "Function with no parameters" i
 def ${1:name}():
-	$0
+	${0: # code...}
 endsnippet
 
 snippet def1 "Function with one parameter"
 def ${1:name}(${2:param}):
-	$0
+	${0: # code...}
 endsnippet
 
 snippet def2 "Function with two parameter"
-def ${1:name}(${3:param1}, ${5:param2}):
-	$0
+def ${1:name}(${2:param1}, ${3:param2}):
+	${0: # code...}
 endsnippet
 
-# Funcions - snippets #
+# Class - snippets #
 
 snippet class "A standard class"
-class ${3:ClassName}
-	$0
+class ${1:ClassName}(${2:ClassInheritance}):
+	${0: # code...}
+endsnippet
+
+snippet from "Import class from module"
+from app.${1:path.to.file} import ${2:ClassName}
 endsnippet
