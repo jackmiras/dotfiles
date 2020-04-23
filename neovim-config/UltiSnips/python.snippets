@@ -19,6 +19,13 @@ def ${1:name}(${2:param1}, ${3:param2}):
 	${0: # code...}
 endsnippet
 
+snippet try "try statement"
+try:
+	${1: # code...}
+except:
+	${0: # code...}
+endsnippet
+
 # Class - snippets #
 
 snippet class "A standard class"
@@ -27,5 +34,5 @@ class ${1:ClassName}(${2:ClassInheritance}):
 endsnippet
 
 snippet from "Import class from module"
-from app.${1:path.to.file} import ${2:ClassName}
+from ${1:path.to.file} import ${2:ClassName}
 endsnippet
