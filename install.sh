@@ -22,10 +22,10 @@ function install_ctags() {
   sudo apt-get install -y ctags
 }
 
-# function install_docker() {
-#   # Install Docker
-#   # Install Docker-compose
-# }
+function install_docker() {
+  echo "Install Docker"
+  echo "Install Docker-compose"
+}
 
 function install_tflint() {
   readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
@@ -117,22 +117,28 @@ function main() {
 
   install_asdf
   install_php
-  # install_java
+  install_java
   install_ruby
   install_golang
   install_nodejs
   install_python
-  # install_haskell
+  install_haskell
 
   install_zsh
   install_ccat
   install_tmux
   install_ctags
   install_docker
-  install_tflint
   install_neovim
+  install_tflint
   install_kubectl
   git_global_configs
+
+  #TODO: This is a todo list [Thu Apr 23 12:22:48 2020]
+  # - Figure a way to install Sequeler
+  # - Properly implement 'install_kite' function
+  # - Properly implement 'install_docker' function
+  # - Figure a way of install all snap packages that I have on my Ubuntu machine
 
   # This have to be the last function call
   install_dotfiles
