@@ -56,6 +56,7 @@ function install_os_dependencies() {
       curl \
       re2c \
       wget \
+      xsel \
       bison \
       unzip \
       libtool \
