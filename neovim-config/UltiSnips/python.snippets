@@ -4,7 +4,7 @@
 
 # Funcions - snippets #
 
-snippet def "Function with no parameters" i
+snippet def "Function with no parameter" i
 def ${1:name}():
 	${0: # code...}
 endsnippet
@@ -14,7 +14,7 @@ def ${1:name}(${2:param}):
 	${0: # code...}
 endsnippet
 
-snippet def2 "Function with two parameter"
+snippet def2 "Function with two parameters"
 def ${1:name}(${2:param1}, ${3:param2}):
 	${0: # code...}
 endsnippet
@@ -30,9 +30,19 @@ endsnippet
 
 snippet class "A standard class"
 class ${1:ClassName}(${2:ClassInheritance}):
-	${0: # code...}
+	${0: #code...}
 endsnippet
 
 snippet from "Import class from module"
 from ${1:path.to.file} import ${2:ClassName}
+endsnippet
+
+################################################################################
+# FastAPI snippets                                                             #
+################################################################################
+
+snippet get "Get router method"
+@app.get("${1:path}")
+async def ${2:action}(${3:param}: ${4:type}):
+	${0:# code...}
 endsnippet

@@ -4,9 +4,9 @@
 
 let g:ale_linters={
 	\ 'yml': ['yamllint'],
-	\ 'python': ['pylint'],
 	\ 'yaml': ['yamllint'],
 	\ 'javascript': ['eslint'],
+	\ 'python': ['bandit', 'flake8'],
 	\ 'terraform': ['fmt', 'tflint'],
 	\ 'php': ['phpcs', 'phpmd', 'phpstan']
 \}
@@ -15,8 +15,8 @@ let g:ale_fixers={
 	\ 'php': ['phpcbf'],
 	\ 'yml': ['prettier'],
 	\ 'yaml': ['prettier'],
-	\ 'python': ['autopep8', 'yapf'],
 	\ 'javascript': ['prettier'],
+	\ 'python': ['black', 'isort'],
 	\ '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 
@@ -65,10 +65,27 @@ let g:ale_yaml_yamllint_executable='/usr/local/bin/yamllint'
 " A.L.E Python - Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:ale_python_pylint_use_global=0
-let g:ale_python_pylint_change_directory=1
-let g:ale_python_pylint_options='./pylintrc'
-let g:ale_python_pylint_executable='~/.local/bin/pylint'
+let g:ale_python_bandit_options=''
+let g:ale_python_bandit_use_config=1
+let g:ale_python_bandit_use_global=0
+let g:ale_python_bandit_auto_pipenv=0
+let g:ale_python_bandit_executable=$HOME.'/.local/bin/bandit'
+
+let g:ale_python_black_options=''
+let g:ale_python_black_use_global=0
+let g:ale_python_black_auto_pipenv=0
+let g:ale_python_black_change_directory=1
+let g:ale_python_black_executable=$HOME.'/.local/bin/black'
+
+let g:ale_python_flake8_options=''
+let g:ale_python_flake8_use_global=0
+let g:ale_python_flake8_auto_pipenv=0
+let g:ale_python_flake8_change_directory=1
+let g:ale_python_flake8_executable=$HOME.'/.local/bin/flake8'
+
+let g:ale_python_isort_options=''
+let g:ale_python_isort_use_global=0
+let g:ale_python_isort_executable=$HOME.'/.local/bin/isort'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform - Settings
