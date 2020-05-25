@@ -62,6 +62,7 @@ function install_java() {
   echo "#######################################################################"
 
   if [[ ! $(command -v java) > /dev/null ]]; then
+    sudo mkdir -p /tmp/asdf-java.cache/
     asdf install java adopt-openjdk-12+33
   fi
 }

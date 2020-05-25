@@ -127,34 +127,55 @@ function install_dotfiles_ohmyzsh() {
   rm -rf ohmyzsh.sh
 }
 
+function install_snaps() {
+  sudo apt-get update -y
+  sudo apt-get install -y snapd
+  sudo snap install gimp
+  sudo snap install drawio
+  sudo snap install postman
+  sudo snap install spotify
+  sudo snap install code --classic
+  sudo snap install slack --classic
+  sudo snap install sublime-text --classic
+}
+
+function install_sequeler() {
+  sudo add-apt-repository ppa:alexlarsson/flatpak
+  sudo apt update && sudo apt install flatpak
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  flatpak install flathub com.github.alecaddd.sequeler
+}
+
 function main() {
   homebrew
   clean_os
   update_os
   install_os_dependencies
 
-  install_asdf
-  install_php
-  install_java
-  install_ruby
-  install_golang
-  install_nodejs
-  install_python
-  install_haskell
+  # install_asdf
+  # install_php
+  # install_java
+  # install_ruby
+  # install_golang
+  # install_nodejs
+  # install_python
+  # install_haskell
 
-  install_zsh
-  install_ccat
-  install_tmux
-  install_ctags
-  install_docker
-  install_neovim
-  install_kubectl
-  install_linters
+  # install_zsh
+  # install_ccat
+  # install_tmux
+  # install_ctags
+  # install_docker
+  # install_neovim
+  # install_kubectl
+  # install_linters
   git_global_configs
+
+  # install_snaps
+  install_sequeler
 
   # TODO: This is a todo list [Thu Apr 23 12:22:48 2020]
   # - Properly implement 'install_docker' function
-  # - Install Sequeler
   # - Figure a way of install all snap packages that I have on my Ubuntu machine
 
   # This have to be the last function call
