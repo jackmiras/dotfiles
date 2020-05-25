@@ -37,6 +37,28 @@ snippet from "Import class from module"
 from ${1:path.to.file} import ${2:ClassName}
 endsnippet
 
+# Comments - snippets #
+
+snippet todo "This is a TODO reminder"
+#TODO: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet fixme "This is a FIXME reminder"
+#FIXME: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet duplicated "This is a DUPLICATED reminder"
+#DUPLICATED: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet note "This is a reminder"
+#NOTE: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
+snippet remove "This is a remove note"
+#REMOVE: ${1:desc} [`!v strftime("%c")`]
+endsnippet
+
 ################################################################################
 # FastAPI snippets                                                             #
 ################################################################################
