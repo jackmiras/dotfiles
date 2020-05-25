@@ -27,13 +27,6 @@ function install_docker() {
   echo "Install Docker-compose"
 }
 
-function install_tflint() {
-  readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
-  curl -L "$(curl -Ls "${URL}" | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip
-  unzip tflint.zip && rm tflint.zip
-  mv tflint "$HOME/.local/bin/"
-}
-
 function install_neovim() {
   source "${HOME}/.asdf/asdf.sh"
   sudo apt-get install -y neovim
@@ -51,7 +44,32 @@ function install_kubectl() {
 }
 
 function install_linters() {
+  # Installing python linters
+  mkdir -p "${HOME}/.local/bin/"
+  readonly PYTHON_VERSION=$(python3 --version | awk '{print $2}')
+  readonly PYTHON_BIN="${HOME}/.asdf/installs/python/${PYTHON_VERSION}/bin"
+
+  pip3 install black
+  ln -s "${PYTHON_BIN}/black" "${HOME}/.local/bin"
+
+  pip3 install isort
+  ln -s "${PYTHON_BIN}/isort" "${HOME}/.local/bin"
+
+  pip3 install bandit
+  ln -s "${PYTHON_BIN}/bandit" "${HOME}/.local/bin"
+
+  pip3 install flake8
+  ln -s "${PYTHON_BIN}/flake8" "${HOME}/.local/bin"
+
+  # Installing Terraform linters
+  readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
+  curl -L "$(curl -Ls "${URL}" | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip
+  unzip tflint.zip && rm tflint.zip && mv tflint "${HOME}/.local/bin/"
+
+  # Installing shellscript linters
   sudo apt-get install -y shellcheck
+
+  # Installing yaml linter
   sudo apt-get install -y yamllint
 }
 
@@ -130,14 +148,13 @@ function main() {
   install_ctags
   install_docker
   install_neovim
-  install_tflint
   install_kubectl
+  install_linters
   git_global_configs
 
-  #TODO: This is a todo list [Thu Apr 23 12:22:48 2020]
-  # - Figure a way to install Sequeler
-  # - Properly implement 'install_kite' function
+  # TODO: This is a todo list [Thu Apr 23 12:22:48 2020]
   # - Properly implement 'install_docker' function
+  # - Install Sequeler
   # - Figure a way of install all snap packages that I have on my Ubuntu machine
 
   # This have to be the last function call
