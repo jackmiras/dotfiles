@@ -69,7 +69,7 @@ ZSH_THEME="awesomepanda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(tmux git git-flow zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -152,7 +152,3 @@ export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
 # Kubernetes configs
 export KUBECONFIG="$HOME/.kube/eks-dev-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jacksonflorentino/.sdkman"
-[[ -s "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jacksonflorentino/.sdkman/bin/sdkman-init.sh"
