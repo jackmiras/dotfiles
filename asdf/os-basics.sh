@@ -12,6 +12,8 @@ function clean_os() {
   echo "#######################################################################"
 
   if [[ "$(uname -s)" == "Linux" ]]; then
+    export DEBIAN_FRONTEND=noninteractive
+
     sudo apt-get remove \
       gedit \
       onboard \
@@ -62,6 +64,7 @@ function install_os_dependencies() {
       libtool \
       autoconf \
       automake \
+      libpq-dev \
       libbz2-dev \
       libffi-dev \
       libpng-dev \
@@ -77,7 +80,8 @@ function install_os_dependencies() {
       libsqlite3-dev \
       build-essential \
       libreadline-dev \
-      libcurl4-openssl-dev
+      libcurl4-openssl-dev \
+      software-properties-common
   elif [[ "$(uname -s)" == "Darwin" ]]; then
     xcode-select --install
   fi
