@@ -35,13 +35,13 @@ function asdf_tool_versions() {
   {
     echo "pip 2.7"
     echo "pip3 3.8"
-    echo "php 7.4.4"
+    echo "php 7.4.7"
     echo "ruby 2.7.0"
     echo "yarn 1.22.4"
-    echo "golang 1.14.1"
-    echo "haskell 8.8.3"
-    echo "nodejs 12.16.1"
-    echo "python 3.8.2 2.7.17"
+    echo "golang 1.14.4"
+    echo "haskell 8.10.1"
+    echo "nodejs 12.18.1"
+    echo "python 3.8.3 2.7.17"
     echo "java adopt-openjdk-12+33"
   } >> "${HOME}/.tool-versions"
 }
@@ -105,7 +105,7 @@ function install_python3() {
   echo "#######################################################################"
 
   if [[ ! $(command -v python3) > /dev/null ]]; then
-    asdf install python 3.8.2
+    asdf install python 3.8.3
   fi
 }
 
@@ -123,7 +123,7 @@ function install_python() {
   install_python2
   install_python3
 
-  asdf global python 2.7.17 3.8.2
+  asdf global python 2.7.17 3.8.3
 
   pip install --upgrade pip
   pip3 install --upgrade pip
