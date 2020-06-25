@@ -6,3 +6,6 @@ services:
 before_install:
   - docker build -t ubuntu:eoan .
   - docker run ubuntu:eoan
+
+git:
+  submodules: false
