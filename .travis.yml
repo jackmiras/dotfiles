@@ -4,8 +4,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t ubuntu:eoan .
-  - docker run ubuntu:eoan
+  - docker build -t ubuntu:focal .
+  - docker run ubuntu:focal
 
 git:
   submodules: false

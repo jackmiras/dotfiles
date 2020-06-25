@@ -1,4 +1,4 @@
-FROM ubuntu:eoan
+FROM ubuntu:focal
 
 USER root
 WORKDIR /app
