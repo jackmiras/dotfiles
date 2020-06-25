@@ -2,6 +2,7 @@ FROM ubuntu:focal
 
 USER root
 WORKDIR /app
+ENV USER root
 
 RUN apt-get update && apt-get install -y vim
 
