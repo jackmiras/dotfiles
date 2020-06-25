@@ -7,8 +7,10 @@ function install_asdf() {
   echo "# Installing asdf                                                     #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v asdf) > /dev/null ]]; then
-
+  if [[ -d  "${HOME}/.asdf" ]]; then
+    source "${HOME}/.asdf/asdf.sh"
+    source "${HOME}/.asdf/completions/asdf.bash"
+  else
     git clone https://github.com/asdf-vm/asdf.git "${HOME}/.asdf"
     cd "${HOME}/.asdf" && git checkout "$(git describe --abbrev=0 --tags)"
 
@@ -22,7 +24,6 @@ function install_asdf() {
 
 function asdf_plugins() {
     asdf plugin add php
-    asdf plugin add java
     asdf plugin add ruby
     asdf plugin add yarn
     asdf plugin add golang
@@ -42,7 +43,6 @@ function asdf_tool_versions() {
     echo "haskell 8.10.1"
     echo "nodejs 12.18.1"
     echo "python 3.8.3 2.7.17"
-    echo "java adopt-openjdk-12+33"
   } >> "${HOME}/.tool-versions"
 }
 
@@ -51,20 +51,7 @@ function install_php() {
   echo "# Installing PHP                                                      #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v php) > /dev/null ]]; then
-    asdf install php 7.4.4
-  fi
-}
-
-function install_java() {
-  echo "#######################################################################"
-  echo "# Installing Java                                                     #"
-  echo "#######################################################################"
-
-  if [[ ! $(command -v java) > /dev/null ]]; then
-    sudo mkdir -p /tmp/asdf-java.cache/
-    asdf install java adopt-openjdk-12+33
-  fi
+  asdf install php 7.4.7
 }
 
 function install_ruby() {
@@ -72,9 +59,7 @@ function install_ruby() {
   echo "# Installing Ruby                                                     #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v ruby) > /dev/null ]]; then
-    asdf install ruby 2.7.0
-  fi
+  asdf install ruby 2.7.0
 }
 
 function install_golang() {
@@ -82,9 +67,7 @@ function install_golang() {
   echo "# Installing Go                                                       #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v go) > /dev/null ]]; then
-    asdf install golang 1.14.1
-  fi
+  asdf install golang 1.14.4
 }
 
 function install_nodejs() {
@@ -92,11 +75,9 @@ function install_nodejs() {
   echo "# Installing NodeJs                                                   #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v node) > /dev/null ]]; then
-    bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-    asdf install nodejs 12.16.1
-    asdf install yarn 1.22.4
-  fi
+  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+  asdf install nodejs 12.18.1
+  asdf install yarn 1.22.4
 }
 
 function install_python3() {
@@ -104,9 +85,7 @@ function install_python3() {
   echo "# Installing Python3                                                  #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v python3) > /dev/null ]]; then
-    asdf install python 3.8.3
-  fi
+  asdf install python 3.8.3
 }
 
 function install_python2() {
@@ -114,9 +93,7 @@ function install_python2() {
   echo "# Installing Python2                                                  #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v python2) > /dev/null ]]; then
-    asdf install python 2.7.17
-  fi
+  asdf install python 2.7.17
 }
 
 function install_python() {
@@ -125,8 +102,8 @@ function install_python() {
 
   asdf global python 2.7.17 3.8.3
 
-  pip install --upgrade pip
-  pip3 install --upgrade pip
+  "${HOME}/.asdf/shims/pip" install --upgrade pip
+  "${HOME}/.asdf/shims/pip3" install --upgrade pip
 
   rm -rf "${HOME}/.asdf/shims/python"
   ln -s "${HOME}/.asdf/shims/python2" "${HOME}/.asdf/shims/python"
@@ -137,7 +114,5 @@ function install_haskell() {
   echo "# Installing Haskell                                                  #"
   echo "#######################################################################"
 
-  if [[ ! $(command -v ghc) > /dev/null ]]; then
-    asdf install haskell 8.8.3
-  fi
+  asdf install haskell 8.10.1
 }

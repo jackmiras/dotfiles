@@ -23,8 +23,21 @@ function install_ctags() {
 }
 
 function install_docker() {
-  echo "Install Docker"
-  echo "Install Docker-compose"
+  sudo apt-get remove runc || true # Continue if package is not present
+  sudo apt-get remove docker || true # Continue if package is not present
+  sudo apt-get remove docker.io || true # Continue if package is not present
+  sudo apt-get remove containerd || true # Continue if package is not present
+  sudo apt-get remove docker-engine || true # Continue if package is not present
+
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo apt-key fingerprint 0EBFCD88
+
+  sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+  sudo apt-get update
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+  sudo usermod -aG docker "${USER}"
 }
 
 function install_neovim() {
@@ -40,7 +53,13 @@ function install_neovim() {
 function install_kubectl() {
   readonly KUBECTL_URL="https://storage.googleapis.com/kubernetes-release/release"
   curl -LO "${KUBECTL_URL}/$(curl -s ${KUBECTL_URL}/stable.txt)/bin/linux/amd64/kubectl"
-  sudo chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+  sudo chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+}
+
+function install_aws_cli() {
+  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  unzip awscliv2.zip
+  sudo ./aws/install
 }
 
 function install_linters() {
@@ -130,24 +149,29 @@ function install_dotfiles_ohmyzsh() {
 function install_snaps() {
   sudo apt-get update -y
   sudo apt-get install -y snapd
+
+  sudo snap install vlc
   sudo snap install gimp
+  sudo snap install htop
   sudo snap install drawio
+  sudo snap install discord
   sudo snap install postman
   sudo snap install spotify
+  sudo snap install postbird
+  sudo snap install keepassxc
   sudo snap install code --classic
   sudo snap install slack --classic
+  sudo snap install telegram-desktop
   sudo snap install sublime-text --classic
 }
 
 function main() {
-  homebrew
   clean_os
   update_os
   install_os_dependencies
 
   install_asdf
   install_php
-  install_java
   install_ruby
   install_golang
   install_nodejs
@@ -161,14 +185,11 @@ function main() {
   install_docker
   install_neovim
   install_kubectl
+  install_aws_cli
   install_linters
   git_global_configs
 
-  # install_snaps
-
-  # TODO: This is a todo list [Thu Apr 23 12:22:48 2020]
-  # - Properly implement 'install_docker' function
-  # - Figure a way of install all snap packages that I have on my Ubuntu machine
+  install_snaps
 
   # This have to be the last function call
   install_dotfiles

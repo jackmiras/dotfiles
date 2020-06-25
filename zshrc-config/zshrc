@@ -150,5 +150,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
 
 # Kubernetes configs
-export KUBECONFIG="$HOME/.kube/eks-dev-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
+export KUBECONFIG="$HOME/.kube/eks-development-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi

@@ -2,9 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-function homebrew() {
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-}
 
 function clean_os() {
   echo "#######################################################################"
@@ -14,7 +11,7 @@ function clean_os() {
   if [[ "$(uname -s)" == "Linux" ]]; then
     export DEBIAN_FRONTEND=noninteractive
 
-    sudo apt-get remove \
+    sudo apt-get remove -y \
       gedit \
       onboard \
       rhythmbox \
@@ -72,6 +69,7 @@ function install_os_dependencies() {
       libzip-dev \
       pkg-config \
       zlib1g-dev \
+      gnupg-agent \
       libonig-dev \
       libxslt-dev \
       libyaml-dev \
@@ -79,7 +77,9 @@ function install_os_dependencies() {
       libncurses-dev \
       libsqlite3-dev \
       build-essential \
+      ca-certificates \
       libreadline-dev \
+      apt-transport-https \
       libcurl4-openssl-dev \
       software-properties-common
   elif [[ "$(uname -s)" == "Darwin" ]]; then
