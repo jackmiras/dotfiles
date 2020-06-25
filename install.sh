@@ -12,6 +12,7 @@ function install_zsh() {
 function install_ccat() {
   source "${HOME}/.asdf/asdf.sh"
   go get -u github.com/jingweno/ccat
+  asdf reshim
 }
 
 function install_tmux() {

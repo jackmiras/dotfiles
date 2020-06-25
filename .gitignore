@@ -102,8 +102,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-*tmux-resurrect
 
 *tags.lock
 *tags.temp
-tmux-config/resurrect/*
+tmux-config/plugins/*
