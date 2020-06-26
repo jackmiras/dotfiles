@@ -160,6 +160,7 @@ function install_snaps() {
   sudo snap install spotify
   sudo snap install postbird
   sudo snap install keepassxc
+  sudo snap install simplenote
   sudo snap install code --classic
   sudo snap install slack --classic
   sudo snap install telegram-desktop
