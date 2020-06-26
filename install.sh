@@ -5,6 +5,10 @@ IFS=$'\n\t'
 source "./asdf/os-basics.sh"
 source "./asdf/asdf-install.sh"
 
+function isntall_ag() {
+  apt-get install silversearcher-ag
+}
+
 function install_zsh() {
   sudo apt-get install -y zsh
 }
@@ -180,6 +184,7 @@ function main() {
   install_python
   install_haskell
 
+  install_ag
   install_zsh
   install_ccat
   install_tmux
