@@ -70,6 +70,8 @@ function install_os_dependencies() {
       pkg-config \
       zlib1g-dev \
       gnupg-agent \
+      libgmp3-dev \
+      libjpeg-dev \
       libonig-dev \
       libxslt-dev \
       libyaml-dev \

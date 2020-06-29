@@ -5,8 +5,8 @@ IFS=$'\n\t'
 source "./asdf/os-basics.sh"
 source "./asdf/asdf-install.sh"
 
-function isntall_ag() {
-  apt-get install silversearcher-ag
+function install_ag() {
+  sudo apt-get install silversearcher-ag
 }
 
 function install_zsh() {
@@ -28,6 +28,8 @@ function install_ctags() {
 }
 
 function install_docker() {
+  readonly UBUNTU_RELEASE="focal"
+
   sudo apt-get remove runc || true # Continue if package is not present
   sudo apt-get remove docker || true # Continue if package is not present
   sudo apt-get remove docker.io || true # Continue if package is not present
@@ -37,7 +39,7 @@ function install_docker() {
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   sudo apt-key fingerprint 0EBFCD88
 
-  sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu ${UBUNTU_RELEASE} stable"
 
   sudo apt-get update
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io
@@ -63,8 +65,8 @@ function install_kubectl() {
 
 function install_aws_cli() {
   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-  unzip awscliv2.zip
-  sudo ./aws/install
+  unzip awscliv2.zip && sudo ./aws/install --update
+  rm -rf awscliv2.zip && rm -rf aws
 }
 
 function install_linters() {
@@ -74,15 +76,19 @@ function install_linters() {
   readonly PYTHON_BIN="${HOME}/.asdf/installs/python/${PYTHON_VERSION}/bin"
 
   pip3 install black
+  unlink "${HOME}/.local/bin/black"
   ln -s "${PYTHON_BIN}/black" "${HOME}/.local/bin"
 
   pip3 install isort
+  unlink "${HOME}/.local/bin/isort"
   ln -s "${PYTHON_BIN}/isort" "${HOME}/.local/bin"
 
   pip3 install bandit
+  unlink "${HOME}/.local/bin/bandit"
   ln -s "${PYTHON_BIN}/bandit" "${HOME}/.local/bin"
 
   pip3 install flake8
+  unlink "${HOME}/.local/bin/flake8"
   ln -s "${PYTHON_BIN}/flake8" "${HOME}/.local/bin"
 
   # Installing Terraform linters
@@ -152,6 +158,10 @@ function install_dotfiles_ohmyzsh() {
 }
 
 function install_snaps() {
+  if [[ $(cat /etc/os-release | head -n 1 | awk -F= '{print $2}' | tr -d '"') == "Linux Mint" ]];then
+    sudo rm /etc/apt/preferences.d/nosnap.pref
+  fi
+
   sudo apt-get update -y
   sudo apt-get install -y snapd
 
