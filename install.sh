@@ -76,20 +76,16 @@ function install_linters() {
   readonly PYTHON_BIN="${HOME}/.asdf/installs/python/${PYTHON_VERSION}/bin"
 
   pip3 install black
-  unlink "${HOME}/.local/bin/black"
-  ln -s "${PYTHON_BIN}/black" "${HOME}/.local/bin"
+  ln -s "${PYTHON_BIN}/black" "${HOME}/.local/bin" || true # Continue if symlink exists
 
   pip3 install isort
-  unlink "${HOME}/.local/bin/isort"
-  ln -s "${PYTHON_BIN}/isort" "${HOME}/.local/bin"
+  ln -s "${PYTHON_BIN}/isort" "${HOME}/.local/bin" || true # Continue if symlink exists
 
   pip3 install bandit
-  unlink "${HOME}/.local/bin/bandit"
-  ln -s "${PYTHON_BIN}/bandit" "${HOME}/.local/bin"
+  ln -s "${PYTHON_BIN}/bandit" "${HOME}/.local/bin" || true # Continue if symlink exists
 
   pip3 install flake8
-  unlink "${HOME}/.local/bin/flake8"
-  ln -s "${PYTHON_BIN}/flake8" "${HOME}/.local/bin"
+  ln -s "${PYTHON_BIN}/flake8" "${HOME}/.local/bin" || true # Continue if symlink exists
 
   # Installing Terraform linters
   readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
@@ -158,10 +154,6 @@ function install_dotfiles_ohmyzsh() {
 }
 
 function install_snaps() {
-  if [[ $(cat /etc/os-release | head -n 1 | awk -F= '{print $2}' | tr -d '"') == "Linux Mint" ]];then
-    sudo rm /etc/apt/preferences.d/nosnap.pref
-  fi
-
   sudo apt-get update -y
   sudo apt-get install -y snapd
 

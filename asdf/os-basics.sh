@@ -22,6 +22,10 @@ function clean_os() {
       thunderbird* \
       gnome-mahjongg
   fi
+
+  if [[ $(cat /etc/os-release | head -n 1 | awk -F= '{print $2}' | tr -d '"') == "Linux Mint" ]];then
+    sudo rm /etc/apt/preferences.d/nosnap.pref
+  fi
 }
 
 function update_os() {
