@@ -106,3 +106,4 @@ $RECYCLE.BIN/
 *tags.lock
 *tags.temp
 tmux-config/plugins/*
+!tmux-config/plugins/.gitkeep
