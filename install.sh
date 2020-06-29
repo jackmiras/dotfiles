@@ -166,6 +166,7 @@ function install_snaps() {
   sudo snap install keepassxc
   sudo snap install simplenote
   sudo snap install code --classic
+  sudo snap install helm --classic
   sudo snap install slack --classic
   sudo snap install telegram-desktop
   sudo snap install sublime-text --classic
