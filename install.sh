@@ -29,6 +29,7 @@ function install_ctags() {
 
 function install_docker() {
   readonly UBUNTU_RELEASE="focal"
+  readonly DOCKER_COMPOSE_RELEASE="1.27.4"
 
   sudo apt-get remove runc || true # Continue if package is not present
   sudo apt-get remove docker || true # Continue if package is not present
@@ -45,6 +46,9 @@ function install_docker() {
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
   sudo usermod -aG docker "${USER}"
+
+  sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
 }
 
 function install_neovim() {
