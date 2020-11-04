@@ -185,6 +185,7 @@ function main() {
 
   install_asdf
   install_php
+  install_java
   install_ruby
   install_golang
   install_nodejs

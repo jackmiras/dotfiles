@@ -24,6 +24,7 @@ function install_asdf() {
 
 function asdf_plugins() {
     asdf plugin add php
+    asdf plugin add java
     asdf plugin add ruby
     asdf plugin add yarn
     asdf plugin add golang
@@ -52,6 +53,14 @@ function install_php() {
   echo "#######################################################################"
 
   asdf install php 7.4.7
+}
+
+function install_java() {
+  echo "#######################################################################"
+  echo "# Installing Java                                                     #"
+  echo "#######################################################################"
+
+  asdf install java openjdk-12.0.2
 }
 
 function install_ruby() {
