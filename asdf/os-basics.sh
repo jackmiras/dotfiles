@@ -65,6 +65,7 @@ function install_os_dependencies() {
       libtool \
       autoconf \
       automake \
+      libgd-dev \
       libpq-dev \
       libbz2-dev \
       libffi-dev \
