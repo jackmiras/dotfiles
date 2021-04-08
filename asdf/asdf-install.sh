@@ -42,7 +42,7 @@ function asdf_tool_versions() {
     echo "yarn 1.22.4"
     echo "golang 1.14.4"
     echo "haskell 8.10.1"
-    echo "nodejs 12.18.1"
+    echo "nodejs 14.16.0"
     echo "python 3.8.3 2.7.17"
   } >> "${HOME}/.tool-versions"
 }
@@ -53,6 +53,13 @@ function install_php() {
   echo "#######################################################################"
 
   asdf install php 7.4.7
+  # Install PHP
+  # Install PHP extentions
+  # Install Composer
+  # Install phpcs
+  # Install phpcs-fixer
+  # Install phpmd
+  # Install phpstan
 }
 
 function install_java() {
@@ -61,6 +68,7 @@ function install_java() {
   echo "#######################################################################"
 
   asdf install java openjdk-12.0.2
+  asdf global java openjdk-12.0.2
 }
 
 function install_ruby() {
@@ -85,8 +93,8 @@ function install_nodejs() {
   echo "#######################################################################"
 
   bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-  asdf install nodejs 12.18.1
-  asdf install yarn 1.22.4
+  asdf install nodejs 14.16.0
+  asdf install yarn 1.22.5
 }
 
 function install_python3() {
