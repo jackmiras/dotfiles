@@ -19,6 +19,10 @@ function install_ccat() {
   asdf reshim
 }
 
+function install_entr() {
+  sudo apt-get install -y entr
+}
+
 function install_tmux() {
   sudo apt-get install -y tmux
 }
@@ -29,7 +33,8 @@ function install_ctags() {
 
 function install_docker() {
   readonly UBUNTU_RELEASE="focal"
-  readonly DOCKER_COMPOSE_RELEASE="1.27.4"
+  readonly DOCKER_COMPOSE_RELEASE="1.29.0"
+  readonly DOCKER_MACHINE_VERSION="0.16.0"
 
   sudo apt-get remove runc || true # Continue if package is not present
   sudo apt-get remove docker || true # Continue if package is not present
@@ -49,6 +54,11 @@ function install_docker() {
 
   sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
+
+  readonly BASE="https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}" &&
+  curl -L "${BASE}/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine &&
+  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+  chmod +x /usr/local/bin/docker-machine
 }
 
 function install_neovim() {
@@ -56,7 +66,6 @@ function install_neovim() {
   sudo apt-get install -y neovim
 
   gem install neovim
-  pip install pynvim
   pip3 install pynvim
   yarn global add neovim
 }
@@ -195,12 +204,13 @@ function main() {
   install_ag
   install_zsh
   install_ccat
+  install_entr
   install_tmux
   install_ctags
   install_docker
   install_neovim
-  install_kubectl
   install_aws_cli
+  install_kubectl
   install_linters
   git_global_configs
 
