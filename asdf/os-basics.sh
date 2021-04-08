@@ -35,7 +35,7 @@ function update_os() {
 
   if [[ "$(uname -s)" == "Linux" ]]; then
     sudo apt-get update -y \
-      && sudo apt-get update -y \
+      && sudo apt-get upgrade -y \
       && sudo apt-get autoremove -y \
       && sudo apt-get autoclean -y
   elif [[ "$(uname -s)" == "Linux" ]]; then
