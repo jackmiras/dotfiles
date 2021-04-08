@@ -39,7 +39,7 @@ function asdf_tool_versions() {
     echo "pip3 3.8"
     echo "php 7.4.7"
     echo "ruby 2.7.0"
-    echo "yarn 1.22.4"
+    echo "yarn 1.22.5"
     echo "golang 1.14.4"
     echo "haskell 8.10.1"
     echo "nodejs 14.16.0"
