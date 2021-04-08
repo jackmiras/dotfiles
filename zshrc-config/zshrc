@@ -102,6 +102,9 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Utilities
+vpn() { "${HOME}/Projects/dotfiles/utilities/vpn.sh" $1 }
+
 # PHP aliases
 alias artisan="php artisan"
 alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit --printer='Codedungeon\\PHPUnitPrettyResultPrinter\\Printer'"
@@ -109,6 +112,9 @@ alias phpunit-watcher="ag -l | entr -rc vendor/bin/phpunit --printer='Codedungeo
 # General aliases
 alias watcher="ag -l | entr -rc"
 alias cat=ccat
+
+# AWS aliases
+alias ec2-instances-name="aws ec2 describe-instances | grep -A1 '\"Key\": \"Name\",' | grep -i 'Value' | cut -d ':' -f2"
 
 # Loading asdf
 . $HOME/.asdf/asdf.sh
@@ -149,6 +155,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Export GOPATH
 export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
 
+# Docker configs
+export DOCKER_BUILDKIT=1
+
 # Kubernetes configs
 export KUBECONFIG="$HOME/.kube/eks-development-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
