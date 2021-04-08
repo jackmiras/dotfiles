@@ -4,7 +4,9 @@
 
 let g:deoplete#custom#option = {}
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#custom#option.php = ['phpactor', 'ultisnips', 'buffer']
+call deoplete#custom#option('num_processes', 4)
+call deoplete#custom#option('smart_case', v:true)
+call deoplete#custom#option('sources', {'php' : ['omni', 'phpactor', 'ultisnips', 'buffer']})
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript settings
@@ -21,6 +23,7 @@ let g:deoplete#custom#option#ternjs#case_insensitive = 0
 let g:deoplete#custom#option#ternjs#include_keywords = 1
 let g:deoplete#custom#option#ternjs#expand_word_forward = 1
 let g:deoplete#custom#option#ternjs#omit_object_prototype = 1
+let g:deoplete#custom#option#ternjs#filetypes = ['jsx', 'javascript.jsx', 'vue']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python settings

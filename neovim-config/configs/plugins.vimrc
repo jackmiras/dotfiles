@@ -20,11 +20,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
 
 " Fuzzy file search plugins
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'skwp/greplace.vim'
 Plug 'mileszs/ack.vim', {'on': 'Ack!'}
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdcommenter'
@@ -36,22 +36,25 @@ Plug 'tpope/vim-fugitive'
 
 " Autocomplete plugin
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'kristijanhusak/deoplete-phpactor'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'SirVer/ultisnips'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
+Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'yarn global add tern' }
 
 " Front-end plugins
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
 Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'alvan/vim-closetag'
 
 " PHP plugins
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
-Plug 'jwalton512/vim-blade', {'for': 'blade'}
+Plug 'jwalton512/vim-blade', {'for': 'php'}
 Plug 'swekaj/php-foldexpr.vim', {'for': 'php'}
 
 " Python plugins

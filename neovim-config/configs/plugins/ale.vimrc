@@ -43,6 +43,8 @@ let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
 let g:ale_php_phpstan_configuration='./phpstan.neon'
 let g:ale_php_phpstan_level=7
 
+let g:ale_php_psalm_executable='./vendor/bin/psalm'
+
 let g:ale_php_phpcbf_executable='./vendor/bin/phpcbf'
 let g:ale_php_phpcbf_standard='PSR1,PSR2'
 

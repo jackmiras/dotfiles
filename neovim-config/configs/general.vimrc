@@ -15,9 +15,9 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 augroup auto_sourcing
-	autocmd!
-	autocmd BufWritePost ~/.config/nvim/init.vim source %
-	autocmd BufWritePost ~/.vimrc source %
+    autocmd!
+    autocmd BufWritePost ~/.config/nvim/init.vim source %
+    autocmd BufWritePost ~/.vimrc source %
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -32,6 +32,7 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
 set autowriteall "Automatically write the file when switching buffers
 
 " Toggle invisible characters
+set encoding=utf-8
 set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
@@ -98,26 +99,24 @@ set shiftwidth=4 " Number of spaces to use for indent and unindent
 set shiftround " Round indent to a multiple of 'shiftwidth'
 
 augroup auto_language_selection
-	autocmd!
-	autocmd Filetype xml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype html setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype blade setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype ruby setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype python setlocal ts=4 sw=4 expandtab colorcolumn=80 textwidth=79 completeopt-=preview
-	autocmd Filetype javascript setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype vue setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd FileType json setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype scss setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype php setlocal ts=4 sw=4 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype sh setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype sql setlocal ts=2 sw=2 expandtab colorcolumn=80 textwidth=80
-	autocmd Filetype java setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
-	autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
-	autocmd Filetype groovy setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
-	autocmd Filetype yaml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	autocmd Filetype yml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
-	au BufNewFile,BufRead Jenkinsfile setf groovy
-	au BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+    autocmd!
+    autocmd Filetype xml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype html setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype ruby setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype python setlocal ts=4 sw=4 expandtab colorcolumn=80 textwidth=79 completeopt-=preview
+    autocmd Filetype javascript setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype vue setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd FileType json setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype scss setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype php setlocal ts=4 sw=4 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
+    autocmd Filetype sh setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
+    autocmd Filetype sql setlocal ts=2 sw=2 expandtab colorcolumn=80 textwidth=80
+    autocmd Filetype java setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
+    autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
+    autocmd Filetype groovy setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
+    autocmd Filetype yaml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
+    autocmd Filetype yml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
+    au BufNewFile,BufRead Jenkinsfile setf groovy
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
