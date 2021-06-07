@@ -1,0 +1,77 @@
+snippet var "Declare a variable" i
+variable "${1:name}" {
+  description = "${2:description}"
+  type        = ${3:string, number, bool, list, map...}
+  default     = "${0:default_value}"
+}
+endsnippet
+
+snippet var_s "Declare a string variable" i
+variable "${1:name}" {
+  description = "${2:description}"
+  type        = string
+  default     = "${0:default_value}"
+}
+endsnippet
+
+snippet var_n "Declare a number variable" i
+variable "${1:name}" {
+  description = "${2:description}"
+  type        = number
+  default     = ${0:default_value}
+}
+endsnippet
+
+snippet var_b "Declare a boolean variable" i
+variable "${1:name}" {
+  description = "${2:description}"
+  type        = bool
+  default     = ${0:default_value}
+}
+endsnippet
+
+snippet var_l "Declare a list variable" i
+variable "${1:name}" {
+  description = "${2:description}"
+  type        = list(${3:type})
+  default     = ["${0:default_value}"]
+}
+endsnippet
+
+snippet var_m "Declare a map variable" i
+variable "${1:name}" {
+  description = "${2:description}"
+  type        = map
+  default     = ${0:default_value}
+}
+endsnippet
+
+snippet module "Declare a module block" i
+module "${1:module_name}" {
+    ${0:# code...}
+}
+endsnippet
+
+snippet var_e "Declare a empty variable" i
+variable "${1:name}" {}
+endsnippet
+
+snippet todo "This is a TODO reminder"
+#TODO: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet fixme "This is a FIXME reminder"
+#FIXME: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet duplicated "This is a DUPLICATED reminder"
+#DUPLICATED: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet note "This is a reminder"
+#NOTE: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet remove "This is a remove note"
+#REMOVE: [`!v strftime("%c")`] ${1:desc}
+endsnippet
