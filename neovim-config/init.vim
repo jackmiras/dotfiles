@@ -20,6 +20,7 @@ source $HOME/Projects/dotfiles/neovim-config/configs/plugins/indentline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/jedi.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ale.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/leaderf.vimrc
+source $HOME/Projects/dotfiles/neovim-config/configs/plugins/markdown-preview.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/greplace.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ack.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/nerdtree.vimrc
