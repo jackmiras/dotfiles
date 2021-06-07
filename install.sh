@@ -6,32 +6,60 @@ source "./asdf/os-basics.sh"
 source "./asdf/asdf-install.sh"
 
 function install_ag() {
+  echo "#######################################################################"
+  echo "# Installing The Silver Searcher                                      #"
+  echo "#######################################################################"
+
   sudo apt-get install silversearcher-ag
 }
 
 function install_zsh() {
+  echo "#######################################################################"
+  echo "# Installing ZSH                                                      #"
+  echo "#######################################################################"
+
   sudo apt-get install -y zsh
 }
 
 function install_ccat() {
+  echo "#######################################################################"
+  echo "# Installing ccat                                                     #"
+  echo "#######################################################################"
+
   source "${HOME}/.asdf/asdf.sh"
   go get -u github.com/jingweno/ccat
   asdf reshim
 }
 
 function install_entr() {
+  echo "#######################################################################"
+  echo "# Installing entr                                                     #"
+  echo "#######################################################################"
+
   sudo apt-get install -y entr
 }
 
 function install_tmux() {
+  echo "#######################################################################"
+  echo "# Installing tmux                                                     #"
+  echo "#######################################################################"
+
   sudo apt-get install -y tmux
 }
 
 function install_ctags() {
+  echo "#######################################################################"
+  echo "# Installing ctags                                                    #"
+  echo "#######################################################################"
+
   sudo apt-get install -y ctags
 }
 
 function install_docker() {
+  echo "#######################################################################"
+  echo "# Installing Docker                                                   #"
+  echo "#######################################################################"
+
   readonly UBUNTU_RELEASE="focal"
   readonly DOCKER_COMPOSE_RELEASE="1.29.0"
   readonly DOCKER_MACHINE_VERSION="0.16.0"
@@ -52,8 +80,19 @@ function install_docker() {
 
   sudo usermod -aG docker "${USER}"
 
-  sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  echo "#######################################################################"
+  echo "# Installing docker-compose                                           #"
+  echo "#######################################################################"
+
+  sudo curl \
+    -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" \
+    -o /usr/local/bin/docker-compose
+
   sudo chmod +x /usr/local/bin/docker-compose
+
+  echo "#######################################################################"
+  echo "# Installing docker-machine                                           #"
+  echo "#######################################################################"
 
   readonly BASE="https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}" &&
   curl -L "${BASE}/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine &&
@@ -62,6 +101,10 @@ function install_docker() {
 }
 
 function install_neovim() {
+  echo "#######################################################################"
+  echo "# Installing neovim                                                   #"
+  echo "#######################################################################"
+
   source "${HOME}/.asdf/asdf.sh"
   sudo apt-get install -y neovim
 
@@ -71,19 +114,30 @@ function install_neovim() {
 }
 
 function install_kubectl() {
+  echo "#######################################################################"
+  echo "# Installing kubctl                                                   #"
+  echo "#######################################################################"
+
   readonly KUBECTL_URL="https://storage.googleapis.com/kubernetes-release/release"
   curl -LO "${KUBECTL_URL}/$(curl -s ${KUBECTL_URL}/stable.txt)/bin/linux/amd64/kubectl"
   sudo chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 }
 
 function install_aws_cli() {
+  echo "#######################################################################"
+  echo "# Installing AWS CLI                                                  #"
+  echo "#######################################################################"
+
   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
   unzip awscliv2.zip && sudo ./aws/install --update
   rm -rf awscliv2.zip && rm -rf aws
 }
 
 function install_linters() {
-  # Installing python linters
+  echo "#######################################################################"
+  echo "# Installing Python linters                                           #"
+  echo "#######################################################################"
+
   mkdir -p "${HOME}/.local/bin/"
   readonly PYTHON_VERSION=$(python3 --version | awk '{print $2}')
   readonly PYTHON_BIN="${HOME}/.asdf/installs/python/${PYTHON_VERSION}/bin"
@@ -100,23 +154,40 @@ function install_linters() {
   pip3 install flake8
   ln -s "${PYTHON_BIN}/flake8" "${HOME}/.local/bin" || true # Continue if symlink exists
 
-  # Installing Terraform linters
+  echo "#######################################################################"
+  echo "# Installing Terraform linters                                        #"
+  echo "#######################################################################"
+
   readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
   curl -L "$(curl -Ls "${URL}" | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip
   unzip tflint.zip && rm tflint.zip && mv tflint "${HOME}/.local/bin/"
 
-  # Installing shellscript linters
+  echo "#######################################################################"
+  echo "# Installing Shellscript linters                                      #"
+  echo "#######################################################################"
+
   sudo apt-get install -y shellcheck
 
-  # Installing yaml linter
+  echo "#######################################################################"
+  echo "# Installing YAML linters                                             #"
+  echo "#######################################################################"
+
   sudo apt-get install -y yamllint
 }
 
 function git_global_configs() {
+  echo "#######################################################################"
+  echo "# Configure Git globals                                               #"
+  echo "#######################################################################"
+
   git config --global page.branch false
 }
 
 function install_dotfiles() {
+  echo "#######################################################################"
+  echo "# Installing dotfiles                                                 #"
+  echo "#######################################################################"
+
   mkdir "${HOME}/Projects" && cd "${HOME}/Projects"
   git clone https://github.com/jackmiras/dotfiles.git && cd dotfiles
 
@@ -126,26 +197,38 @@ function install_dotfiles() {
 }
 
 function install_dotfiles_tmux() {
+  echo "#######################################################################"
+  echo "# Install dotfiels tmux                                               #"
+  echo "#######################################################################"
+
   bash -c "${HOME}/Projects/dotfiles/tmux-config/install-config.sh"
 }
 
 function install_dotfile_neovim() {
+  echo "#######################################################################"
+  echo "# Install dotfiels neovim                                             #"
+  echo "#######################################################################"
+
   cd "${HOME}/Projects/dotfiles/neovim-config"
   ./install-config.sh
 
   mv init.vim init-backup.vim
   echo "source $HOME/Projects/dotfiles/neovim-config/configs/plugins.vimrc" >> init.vim
 
-  mkdir plugged && nvim -c "PlugInstall" -c "q" -c "q"
+  mkdir plugged && nvim -c "PlugInstall" -c "q" -c "q" -c "q"
   rm -rf init.vim && mv init-backup.vim init.vim
 }
 
 function install_dotfiles_ohmyzsh() {
+  echo "#######################################################################"
+  echo "# Install dotfiels ohmyzsh                                            #"
+  echo "#######################################################################"
+
   readonly base_url="https://raw.githubusercontent.com"
   curl -fsSL ${base_url}/ohmyzsh/ohmyzsh/master/tools/install.sh -o ohmyzsh.sh
 
   # Make oh-my-zsh change default shell to ZSH
-  sed -i "s/read opt/readonly opt=y/g" ohmyzsh.sh
+  sed -i "s/read -r opt/readonly opt=Y/g" ohmyzsh.sh
 
   # Making oh-my-zsh keep .zshrc file
   readonly ZSHRC_CONFIG_DIR="cd \"\${HOME}\/Projects\/dotfiles\/zshrc\-config\""
@@ -167,6 +250,10 @@ function install_dotfiles_ohmyzsh() {
 }
 
 function install_snaps() {
+  echo "#######################################################################"
+  echo "# Install snaps                                                       #"
+  echo "#######################################################################"
+
   sudo apt-get update -y
   sudo apt-get install -y snapd
 
