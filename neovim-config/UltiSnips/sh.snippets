@@ -1,4 +1,4 @@
-snippet bang "Shebang"
+snippet /bin/bash "Shebang"
 #!/bin/bash
 #
 # ${1:Description}
@@ -32,12 +32,28 @@ else
 fi
 endsnippet
 
-snippet function "function declaration"
+snippet fun "function declaration"
 function ${1:name}() {
 	$0
 }
 endsnippet
 
 snippet todo "This is a TODO reminder"
-#TODO: ${1:desc} [`!v strftime("%c")`]
+#TODO: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet fixme "This is a FIXME reminder"
+#FIXME: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet duplicated "This is a DUPLICATED reminder"
+#DUPLICATED: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet note "This is a reminder"
+#NOTE: [`!v strftime("%c")`] ${1:desc}
+endsnippet
+
+snippet remove "This is a remove note"
+#REMOVE: [`!v strftime("%c")`] ${1:desc}
 endsnippet
