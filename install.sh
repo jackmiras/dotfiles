@@ -215,16 +215,7 @@ function install_dotfile_neovim() {
   mv init.vim init-backup.vim
   echo "source $HOME/Projects/dotfiles/neovim-config/configs/plugins.vimrc" >> init.vim
 
-  echo "#######################################################################"
-  echo "# Install dotfiels neovim - PlugInstall                               #"
-  echo "#######################################################################"
-
-  mkdir plugged && nvim -c "PlugInstall" -c "q" -c "q" -c "q"
-
-  echo "#######################################################################"
-  echo "# Install dotfiels neovim - Backup init.vim                           #"
-  echo "#######################################################################"
-
+  mkdir plugged && nvim --headless -c "PlugInstall" -c "qall"
   rm -rf init.vim && mv init-backup.vim init.vim
 }
 
