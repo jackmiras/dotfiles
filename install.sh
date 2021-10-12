@@ -61,7 +61,7 @@ function install_docker() {
   echo "#######################################################################"
 
   readonly UBUNTU_RELEASE="focal"
-  readonly DOCKER_COMPOSE_RELEASE="1.29.0"
+  readonly DOCKER_COMPOSE_RELEASE="1.29.2"
   readonly DOCKER_MACHINE_VERSION="0.16.0"
 
   sudo apt-get remove runc || true # Continue if package is not present
