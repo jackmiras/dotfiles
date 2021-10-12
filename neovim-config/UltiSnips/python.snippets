@@ -4,33 +4,48 @@
 
 # Funcions - snippets #
 
+snippet init "__ini__() override with no parameter" i
+def __init__(self):
+	${0:# code...}
+endsnippet
+
+snippet init1 "__ini__() override with one parameter" i
+def __init__(self, ${1: param}):
+	${0:# code...}
+endsnippet
+
+snippet init2 "__ini__() override with two parameter" i
+def __init__(self, ${1: param1}, ${2: param2}):
+	${0:# code...}
+endsnippet
+
 snippet def "Function with no parameter" i
 def ${1:name}():
-	${0: # code...}
+	${0:# code...}
 endsnippet
 
 snippet def1 "Function with one parameter"
 def ${1:name}(${2:param}):
-	${0: # code...}
+	${0:# code...}
 endsnippet
 
 snippet def2 "Function with two parameters"
 def ${1:name}(${2:param1}, ${3:param2}):
-	${0: # code...}
+	${0:# code...}
 endsnippet
 
 snippet try "try statement"
 try:
-	${1: # code...}
+	${1:# code...}
 except:
-	${0: # code...}
+	${0:# code...}
 endsnippet
 
 # Class - snippets #
 
 snippet class "A standard class"
 class ${1:ClassName}(${2:ClassInheritance}):
-	${0: #code...}
+	${0:# code...}
 endsnippet
 
 snippet from "Import class from module"
