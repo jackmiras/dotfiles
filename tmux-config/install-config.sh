@@ -8,6 +8,6 @@ fi
 
 ln -s "${HOME}/Projects/dotfiles/tmux-config/themes" "${HOME}/.tmux/themes"
 ln -s "${HOME}/Projects/dotfiles/tmux-config/tmux.conf" "${HOME}/.tmux.conf"
-ln -s "${HOME}/Projects/dotfiles/tmux-config/plugins" "${HOME}/.tmux/plugins"
+ln -s "${HOME}/Projects/dotfiles/tmux-config/plugins" "${HOME}/.tmux"
 
 echo 'Installation finished with success!'
