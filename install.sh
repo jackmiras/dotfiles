@@ -55,6 +55,23 @@ function install_ctags() {
   sudo apt-get install -y ctags
 }
 
+function install_mycli() {
+  echo "#######################################################################"
+  echo "# Installing mycli                                                    #"
+  echo "#######################################################################"
+
+  pip3 install mycli
+}
+
+function install_pgcli() {
+  echo "#######################################################################"
+  echo "# Installing pgcli                                                     #"
+  echo "#######################################################################"
+
+  pip3 install pgcli
+  sudo ln -n "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin
+}
+
 function install_docker() {
   echo "#######################################################################"
   echo "# Installing Docker                                                   #"
@@ -173,6 +190,14 @@ function install_linters() {
   echo "#######################################################################"
 
   sudo apt-get install -y yamllint
+}
+
+function install_azure_cli(){
+  echo "#######################################################################"
+  echo "# Installing Azure CLI                                                #"
+  echo "#######################################################################"
+
+  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 }
 
 function git_global_configs() {
@@ -294,11 +319,14 @@ function main() {
   install_entr
   install_tmux
   install_ctags
+  install_mycli
+  install_pgcli
   install_docker
   install_neovim
   install_aws_cli
   install_kubectl
   install_linters
+  install_azure_cli
   git_global_configs
 
   install_snaps
