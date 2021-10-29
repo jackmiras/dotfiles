@@ -75,4 +75,7 @@ Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
 Plug 'chr4/nginx.vim', {'for': 'conf'}
 Plug 'hashivim/vim-terraform'
 
+" Tracking time plugins
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
