@@ -12,6 +12,7 @@ Plug 'luochen1990/rainbow'
 
 " Color schemes
 Plug 'liuchengxu/space-vim-dark'
+Plug 'lifepillar/vim-solarized8'
 
 " General coding plugins
 Plug 'jiangmiao/auto-pairs'

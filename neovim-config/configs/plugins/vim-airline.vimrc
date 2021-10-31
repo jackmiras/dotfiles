@@ -10,4 +10,17 @@ let g:airline#extensions#tabline#left_alt_sep='|'
 let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:airline#extensions#tabline#show_splits=0
 let g:airline#extensions#tabline#show_tab_type=0
-let g:airline_theme='violet'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline theme - space-vim-dark
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" let g:airline_theme='violet'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline theme - Solarized
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline_theme='solarized'
+g:airline_solarized_bg='light'
+" g:airline_solarized_bg='dark'

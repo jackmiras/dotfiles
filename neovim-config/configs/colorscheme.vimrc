@@ -1,9 +1,17 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color scheme setting
+" Color scheme - space-vim-dark
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme space-vim-dark
-let g:space_vim_dark_background = 234
+" colorscheme space-vim-dark
+" let g:space_vim_dark_background = 234
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color scheme - Solarized
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set background=dark
+set background=light
+colorscheme solarized8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vertical line delimiter setting
