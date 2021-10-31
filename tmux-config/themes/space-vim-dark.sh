@@ -17,20 +17,20 @@
 
 base00=default   # #000000
 base01=colour237 # #3A3A3A
-base02=colour19  # #383838
-base03=colour8   # #585858
-base04=colour15  # #B8B8B8
-base05=colour7   # #D8D8D8
-base06=colour21  # #E8E8E8
-base07=colour15  # #F8F8F8
-base08=colour01  # #AB4642
+base02=colour19  # #0000AF
+base03=colour8   # #002B36
+base04=colour15  # #FDF6E3
+base05=colour7   # #EEE8D5
+base06=colour21  # #0000FF
+base07=colour15  # #FDF6E3
+base08=colour01  # #DC322F
 base09=colour208 # #FF8700
-base0A=colour3   # #F7CA88
-base0B=colour2   # #A1B56C
-base0C=colour77  # #86C1B9
-base0D=colour35  # #7CAFC2
+base0A=colour3   # #B58900
+base0B=colour2   # #859900
+base0C=colour77  # #5FD75F
+base0D=colour35  # #00AF5F
 base0E=colour97  # #875FAF
-base0F=colour17  # #A16946
+base0F=colour17  # #00005F
 
 set -g status-left-length 32
 set -g status-right-length 150
@@ -47,7 +47,7 @@ set -g window-status-format " #I #W"
 # active window title colors
 set-window-option -g window-status-current-style fg=$base01
 set-window-option -g window-status-current-style bg=$base0C
-# set-window-option -g window-status-current-format " #[bold]#W "
+set-window-option -g window-status-current-format " #[bold]#W "
 
 # pane border colors
 set-window-option -g pane-border-style fg=$base03
