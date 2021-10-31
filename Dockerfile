@@ -12,6 +12,7 @@ RUN sed -i "s/sudo //g" install.sh
 RUN sed -i "s/sudo //g" ./asdf/os-basics.sh
 RUN sed -i "s/sudo //g" ./asdf/asdf-install.sh
 RUN sed -i "s/  install_snaps/  # install_snaps/g" ./install.sh
+RUN sed -i "s/  sh -c \".\/ohmyzsh.sh\"/  # sh -c \".\/ohmyzsh.sh\"/g" install.sh
 RUN sed -i "s/  touch \/tmp\/asdf\-java.cache\/sapmachine.json//g" ./asdf/asdf-install.sh
 
 ENTRYPOINT ["./install.sh"]
