@@ -69,7 +69,7 @@ function install_pgcli() {
   echo "#######################################################################"
 
   pip3 install pgcli
-  sudo ln -n "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin
 }
 
 function install_docker() {
