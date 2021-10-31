@@ -36,14 +36,15 @@ function asdf_plugins() {
 function asdf_tool_versions() {
   {
     echo "pip 2.7"
-    echo "pip3 3.8"
-    echo "php 7.4.7"
-    echo "ruby 2.7.0"
+    echo "pip3 3.10"
+    echo "php 8.0.12"
+    echo "ruby 3.0.2"
     echo "yarn 1.22.5"
-    echo "golang 1.14.4"
-    echo "haskell 8.10.1"
-    echo "nodejs 14.16.0"
-    echo "python 3.8.3 2.7.17"
+    echo "golang 1.17.2"
+    echo "haskell 9.0.1"
+    echo "nodejs 16.13.0"
+    echo "java openjdk-17"
+    echo "python 3.10.0 2.7.17"
   } >> "${HOME}/.tool-versions"
 }
 
@@ -52,23 +53,7 @@ function install_php() {
   echo "# Installing PHP                                                      #"
   echo "#######################################################################"
 
-  asdf install php 7.4.7
-  # Install PHP
-  # Install PHP extentions
-  # Install Composer
-  # Install phpcs
-  # Install phpcs-fixer
-  # Install phpmd
-  # Install phpstan
-}
-
-function install_java() {
-  echo "#######################################################################"
-  echo "# Installing Java                                                     #"
-  echo "#######################################################################"
-
-  asdf install java openjdk-12.0.2
-  asdf global java openjdk-12.0.2
+  asdf install php 8.0.12
 }
 
 function install_ruby() {
@@ -76,7 +61,7 @@ function install_ruby() {
   echo "# Installing Ruby                                                     #"
   echo "#######################################################################"
 
-  asdf install ruby 2.7.0
+  asdf install ruby 3.0.2
 }
 
 function install_golang() {
@@ -84,7 +69,7 @@ function install_golang() {
   echo "# Installing Go                                                       #"
   echo "#######################################################################"
 
-  asdf install golang 1.14.4
+  asdf install golang 1.17.2
 }
 
 function install_nodejs() {
@@ -93,8 +78,18 @@ function install_nodejs() {
   echo "#######################################################################"
 
   bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-  asdf install nodejs 14.16.0
+  asdf install nodejs 16.13.0
   asdf install yarn 1.22.5
+}
+
+function install_java() {
+  echo "#######################################################################"
+  echo "# Installing Java                                                     #"
+  echo "#######################################################################"
+
+  asdf install java openjdk-17
+  asdf global java openjdk-17
+
 }
 
 function install_python3() {
@@ -102,7 +97,7 @@ function install_python3() {
   echo "# Installing Python3                                                  #"
   echo "#######################################################################"
 
-  asdf install python 3.8.3
+  asdf install python 3.10.0
 }
 
 function install_python2() {
@@ -117,7 +112,7 @@ function install_python() {
   install_python2
   install_python3
 
-  asdf global python 2.7.17 3.8.3
+  asdf global python 2.7.17 3.10.0
 
   "${HOME}/.asdf/shims/pip" install --upgrade pip
   "${HOME}/.asdf/shims/pip3" install --upgrade pip
@@ -131,5 +126,5 @@ function install_haskell() {
   echo "# Installing Haskell                                                  #"
   echo "#######################################################################"
 
-  asdf install haskell 8.10.1
+  asdf install haskell 9.0.1
 }
