@@ -15,12 +15,12 @@ let g:airline#extensions#tabline#show_tab_type=0
 " Airline theme - space-vim-dark
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" let g:airline_theme='violet'
+let g:airline_theme='violet'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline theme - Solarized
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:airline_theme='solarized'
-g:airline_solarized_bg='light'
+" let g:airline_theme='solarized'
+" g:airline_solarized_bg='light'
 " g:airline_solarized_bg='dark'
