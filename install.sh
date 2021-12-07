@@ -57,7 +57,7 @@ function install_ctags() {
 
 function install_mycli() {
   echo "#######################################################################"
-  echo "# Installing mycli                                                    #"
+  echo "# Installing mycli - MySQL CLI                                        #"
   echo "#######################################################################"
 
   pip3 install mycli
