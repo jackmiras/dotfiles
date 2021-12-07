@@ -63,6 +63,7 @@ function install_os_dependencies() {
       bison \
       unzip \
       libtool \
+      sqlite3 \
       autoconf \
       automake \
       libgd-dev \
