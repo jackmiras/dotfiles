@@ -72,6 +72,15 @@ function install_pgcli() {
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin
 }
 
+function install_litecli() {
+  echo "#######################################################################"
+  echo "# Installing litecli - SQLite CLI                                     #"
+  echo "#######################################################################"
+
+  pip3 install litecli
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/litecli" /usr/bin
+}
+
 function install_docker() {
   echo "#######################################################################"
   echo "# Installing Docker                                                   #"
@@ -321,6 +330,7 @@ function main() {
   install_ctags
   install_mycli
   install_pgcli
+  install_litecli
   install_docker
   install_neovim
   install_aws_cli
