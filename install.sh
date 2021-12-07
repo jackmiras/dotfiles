@@ -65,7 +65,7 @@ function install_mycli() {
 
 function install_pgcli() {
   echo "#######################################################################"
-  echo "# Installing pgcli                                                     #"
+  echo "# Installing pgcli - Postgre CLI                                      #"
   echo "#######################################################################"
 
   pip3 install pgcli
