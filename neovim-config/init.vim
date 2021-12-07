@@ -18,6 +18,7 @@ source $HOME/Projects/dotfiles/neovim-config/configs/remap.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/vim-airline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/indentline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/jedi.vimrc
+source $HOME/Projects/dotfiles/neovim-config/configs/plugins/languagetool.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ale.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/leaderf.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/markdown-preview.vimrc

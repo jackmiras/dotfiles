@@ -70,6 +70,9 @@ Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 " Markdown plugins
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+" Grammar plugins
+Plug 'dpelle/vim-LanguageTool', {'for': ['markdown', 'md']}
+
 " Container related plugins
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
 Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
