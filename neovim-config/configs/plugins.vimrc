@@ -74,7 +74,7 @@ Plug 'dpelle/vim-LanguageTool', {'for': ['markdown', 'md']}
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
 Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
 Plug 'chr4/nginx.vim', {'for': 'conf'}
-Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform', {'for': 'tf'}
 
 " Tracking time plugins
 Plug 'wakatime/vim-wakatime'
