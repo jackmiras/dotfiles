@@ -126,6 +126,16 @@ function install_docker() {
   chmod +x /usr/local/bin/docker-machine
 }
 
+function install_terraform() {
+  echo "#######################################################################"
+  echo "# Installing Terraform                                                #"
+  echo "#######################################################################"
+
+  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+  sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+  sudo apt install terraform
+}
+
 function install_neovim() {
   echo "#######################################################################"
   echo "# Installing neovim                                                   #"
