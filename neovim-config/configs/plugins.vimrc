@@ -61,9 +61,6 @@ Plug 'swekaj/php-foldexpr.vim', {'for': 'php'}
 " Python plugins
 Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'pip3 install jedi'}
 
-" Kotlin plugins
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
-
 " Go plugins
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 
