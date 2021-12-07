@@ -68,7 +68,7 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 
 " Markdown plugins
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', {'for': ['markdown', 'md'], 'do': 'cd app && yarn install'}
 
 " Grammar plugins
 Plug 'dpelle/vim-LanguageTool', {'for': ['markdown', 'md']}
