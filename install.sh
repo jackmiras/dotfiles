@@ -256,7 +256,7 @@ function install_dotfiles() {
 
 function install_dotfiles_tmux() {
   echo "#######################################################################"
-  echo "# Install dotfiels tmux                                               #"
+  echo "# Install dotfiles tmux                                               #"
   echo "#######################################################################"
 
   bash -c "${HOME}/Projects/dotfiles/tmux-config/install-config.sh"
@@ -264,7 +264,7 @@ function install_dotfiles_tmux() {
 
 function install_dotfile_neovim() {
   echo "#######################################################################"
-  echo "# Install dotfiels neovim                                             #"
+  echo "# Install dotfiles neovim                                             #"
   echo "#######################################################################"
 
   cd "${HOME}/Projects/dotfiles/neovim-config"
@@ -279,7 +279,7 @@ function install_dotfile_neovim() {
 
 function install_dotfiles_ohmyzsh() {
   echo "#######################################################################"
-  echo "# Install dotfiels ohmyzsh                                            #"
+  echo "# Install dotfiles ohmyzsh                                            #"
   echo "#######################################################################"
 
   readonly base_url="https://raw.githubusercontent.com"
