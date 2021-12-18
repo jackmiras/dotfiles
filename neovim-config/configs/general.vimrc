@@ -112,10 +112,10 @@ augroup auto_language_selection
     autocmd Filetype sh setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80
     autocmd Filetype sql setlocal ts=2 sw=2 expandtab colorcolumn=80 textwidth=80
     autocmd Filetype java setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
-    autocmd Filetype kotlin setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
     autocmd Filetype groovy setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
     autocmd Filetype yaml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
     autocmd Filetype yml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
+    au BufNewFile,BufRead *.neon setf yaml
     au BufNewFile,BufRead Jenkinsfile setf groovy
 augroup END
 
