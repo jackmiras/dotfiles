@@ -3,6 +3,7 @@ FROM ubuntu:focal
 USER root
 WORKDIR /app
 ENV USER root
+ENV ASDF_DIR /root/.asdf
 
 RUN apt-get update && apt-get install -y vim
 
