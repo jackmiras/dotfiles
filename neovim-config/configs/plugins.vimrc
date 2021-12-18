@@ -8,7 +8,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'luochen1990/rainbow'
 Plug 'RRethy/vim-illuminate'
 Plug 'lilydjwg/colorizer'
-Plug 'luochen1990/rainbow'
 
 " Color schemes
 Plug 'liuchengxu/space-vim-dark'
