@@ -81,6 +81,15 @@ function install_litecli() {
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/litecli" /usr/bin
 }
 
+function install_sqlfluff() {
+  echo "#######################################################################"
+  echo "# Installing litecli - SQLite CLI                                     #"
+  echo "#######################################################################"
+
+  pip3 install sqlfluff
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/sqlfluff" /usr/bin
+}
+
 function install_docker() {
   echo "#######################################################################"
   echo "# Installing Docker                                                   #"
@@ -355,6 +364,7 @@ function main() {
   install_mycli
   install_pgcli
   install_litecli
+  install_sqlfluff
   install_docker
   install_terraform
   install_neovim
