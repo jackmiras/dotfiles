@@ -48,7 +48,7 @@ Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'yarn global add te
 
 " Front-end plugins
 Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
-Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'posva/vim-vue', {'for': ['javascript', 'js', 'html', 'vue', 'css', 'scss']}
 Plug 'alvan/vim-closetag'
 
 " PHP plugins
