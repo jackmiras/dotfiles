@@ -64,6 +64,9 @@ Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'pip3 install jedi'}
 " Go plugins
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 
+" Elixir plugins
+Plug 'elixir-editors/vim-elixir', {'for': ['ex', 'exs', 'eex', 'heex', 'leex', 'sface']}
+
 " Markdown plugins
 Plug 'iamcco/markdown-preview.nvim', {'for': ['markdown', 'md'], 'do': 'cd app && yarn install'}
 
