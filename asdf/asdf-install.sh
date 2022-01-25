@@ -77,7 +77,6 @@ function install_nodejs() {
   echo "# Installing NodeJs                                                   #"
   echo "#######################################################################"
 
-  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
   asdf install nodejs 16.13.0
   asdf install yarn 1.22.5
 }
