@@ -69,7 +69,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux git git-flow zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(asdf tmux git git-flow zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,8 +117,12 @@ alias cat=ccat
 alias ec2-instances-name="aws ec2 describe-instances | grep -A1 '\"Key\": \"Name\",' | grep -i 'Value' | cut -d ':' -f2"
 
 # Loading asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+if [[ "$(uname -s)" == "Linux" ]]; then
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
 
 # Exporting language
 export LC_NUMERIC=en_US
@@ -153,13 +157,13 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Export GOPATH
-export GOPATH="$HOME/.asdf/installs/golang/1.13.16/packages"
+export GOPATH="$(asdf where golang)/packages"
 
 # Docker configs
 export DOCKER_BUILDKIT=1
 
 # Kubernetes configs
-export KUBECONFIG="$HOME/.kube/eks-development-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster"
+export KUBECONFIG="$HOME/.kube/eks-development-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster:$HOME/.kube/aks-clusters"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
