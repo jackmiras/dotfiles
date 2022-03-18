@@ -37,14 +37,14 @@ function asdf_tool_versions() {
   {
     echo "pip 2.7"
     echo "pip3 3.10"
-    echo "php 8.0.12"
+    echo "php 8.1.2"
     echo "ruby 3.0.2"
     echo "yarn 1.22.5"
     echo "golang 1.17.2"
     echo "haskell 9.0.1"
     echo "nodejs 16.13.0"
     echo "java openjdk-17"
-    echo "python 3.10.0 2.7.17"
+    echo "python 3.10.2 2.7.18"
   } >> "${HOME}/.tool-versions"
 }
 
@@ -53,7 +53,7 @@ function install_php() {
   echo "# Installing PHP                                                      #"
   echo "#######################################################################"
 
-  asdf install php 8.0.12
+  asdf install php 8.1.2
 }
 
 function install_ruby() {
@@ -88,7 +88,6 @@ function install_java() {
 
   asdf install java openjdk-17
   asdf global java openjdk-17
-
 }
 
 function install_python3() {
@@ -104,7 +103,7 @@ function install_python2() {
   echo "# Installing Python2                                                  #"
   echo "#######################################################################"
 
-  asdf install python 2.7.17
+  asdf install python 2.7.18
 }
 
 function install_python() {
