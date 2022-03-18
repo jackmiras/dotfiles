@@ -613,7 +613,7 @@ get()
 endsnippet
 
 snippet sqlWithBindings "Get SQL with bindings from Laravel query builder"
-$sqlWithBindings = str_replace_array('?', $query->getBindings(), $query->toSql());
+$sqlWithBindings = Str::replaceArray('?', $query->getBindings(), $query->toSql());
 dd('SQL with bindings: ', $sqlWithBindings);
 endsnippet
 
