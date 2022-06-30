@@ -122,7 +122,8 @@ if [[ "$(uname -s)" == "Linux" ]]; then
   . $HOME/.asdf/asdf.sh
   . $HOME/.asdf/completions/asdf.bash
 elif [[ "$(uname -s)" == "Darwin" ]]; then
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  . /usr/local/opt/asdf/libexec/asdf.sh
+  . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 fi
 
 # Exporting language
