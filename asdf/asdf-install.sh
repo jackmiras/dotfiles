@@ -26,7 +26,6 @@ function asdf_plugins() {
     asdf plugin add php
     asdf plugin add java
     asdf plugin add ruby
-    asdf plugin add yarn
     asdf plugin add golang
     asdf plugin add nodejs
     asdf plugin add python
@@ -39,7 +38,6 @@ function asdf_tool_versions() {
     echo "pip3 3.10"
     echo "php 8.1.2"
     echo "ruby 3.0.2"
-    echo "yarn 1.22.5"
     echo "golang 1.17.2"
     echo "haskell 9.0.1"
     echo "nodejs 16.13.0"
@@ -78,7 +76,6 @@ function install_nodejs() {
   echo "#######################################################################"
 
   asdf install nodejs 16.13.0
-  asdf install yarn 1.22.5
 }
 
 function install_java() {
