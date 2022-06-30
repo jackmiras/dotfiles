@@ -165,7 +165,6 @@ export GOPATH="$(asdf where golang)/packages"
 export DOCKER_BUILDKIT=1
 
 # Kubernetes configs
-export KUBECONFIG="$HOME/.kube/eks-development-cluster:$HOME/.kube/eks-staging-cluster:$HOME/.kube/eks-production-cluster:$HOME/.kube/aks-clusters"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
