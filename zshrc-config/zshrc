@@ -72,6 +72,7 @@ ENABLE_CORRECTION="true"
 plugins=(tmux git git-flow zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.bash_profile
 
 # User configuration
 
