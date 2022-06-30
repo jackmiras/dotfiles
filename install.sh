@@ -248,6 +248,7 @@ function git_global_configs() {
   echo "#######################################################################"
 
   git config --global page.branch false
+  git config --global alias.glog "log --all --decorate --oneline --graph"
 }
 
 function install_dotfiles() {
