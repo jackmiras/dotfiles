@@ -4,57 +4,57 @@
 
 call plug#begin('~/.vim/plugged')
 " Theme releated plugins
+Plug 'lilydjwg/colorizer'
+Plug 'RRethy/vim-illuminate'
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'luochen1990/rainbow', {'for': ['php', 'javascript', 'css', 'scss', 'python', 'go', 'elixir']}
-Plug 'RRethy/vim-illuminate'
-Plug 'lilydjwg/colorizer'
-Plug 'ryanoasis/vim-devicons'
 
 " Color schemes
-Plug 'liuchengxu/space-vim-dark'
 Plug 'lifepillar/vim-solarized8'
+Plug 'liuchengxu/space-vim-dark'
 
 " General coding plugins
-Plug 'jiangmiao/auto-pairs'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
-Plug 'w0rp/ale'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Fuzzy file search plugins
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'skwp/greplace.vim'
-Plug 'mileszs/ack.vim', {'on': 'Ack!'}
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mileszs/ack.vim', {'on': 'Ack!'}
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " File tree plugins
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Git releated plugins
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Autocomplete plugin
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'SirVer/ultisnips'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " JavaScript plugins
 Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'yarn global add tern' }
 
 " Front-end plugins
-Plug 'alvan/vim-closetag', {'for': ['javascript', 'php', 'html', 'vue']}
 Plug 'mattn/emmet-vim', {'for': ['html', 'vue', 'blade.php']}
+Plug 'alvan/vim-closetag', {'for': ['javascript', 'php', 'html', 'vue']}
 
 " PHP plugins
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'jwalton512/vim-blade', {'for': 'php'}
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 
 " Python plugins
 Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'pip3 install jedi'}
