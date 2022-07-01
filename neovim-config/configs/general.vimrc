@@ -56,7 +56,7 @@ set t_CO=256
 " Searching settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ignorecase " case insensitive searching
-set smartcase " case-sensitive if expresson contains a capital letter
+set smartcase " case-sensitive if expression contains a capital letter
 set hlsearch " highlight search results
 set incsearch " set incremental search, like modern browsers
 set lazyredraw " don't redraw while executing macros
@@ -77,11 +77,12 @@ set nojoinspaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Folding settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldmethod=syntax " fold based on indent
+set foldmethod=expr " fold based on expression
 set foldlevelstart=99 " fold start level
 set foldnestmax=10 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
+set foldexpr=nvim_treesitter#foldexpr()
 
 au FileType sh let g:sh_fold_enabled=5
 au FileType sh let g:is_bash=1

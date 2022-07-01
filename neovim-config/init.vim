@@ -12,6 +12,7 @@
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins.vimrc
 
 source $HOME/Projects/dotfiles/neovim-config/configs/general.vimrc
+source $HOME/Projects/dotfiles/neovim-config/configs/treesitter.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/colorscheme.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/remap.vimrc
 

@@ -18,6 +18,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Fuzzy file search plugins
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
@@ -43,20 +44,15 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'SirVer/ultisnips'
 
 " JavaScript plugins
-Plug 'pangloss/vim-javascript', {'for': ['javascript', 'json']}
 Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'yarn global add tern' }
 
 " Front-end plugins
-Plug 'ap/vim-css-color', {'for': ['html', 'php', 'css', 'scss']}
-Plug 'posva/vim-vue', {'for': ['javascript', 'js', 'html', 'vue', 'css', 'scss']}
 Plug 'alvan/vim-closetag', {'for': ['javascript', 'php', 'html', 'vue']}
 Plug 'mattn/emmet-vim', {'for': ['html', 'vue', 'blade.php']}
 
 " PHP plugins
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'jwalton512/vim-blade', {'for': 'php'}
-Plug 'swekaj/php-foldexpr.vim', {'for': 'php'}
 
 " Python plugins
 Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'pip3 install jedi'}
@@ -64,18 +60,10 @@ Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'pip3 install jedi'}
 " Go plugins
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries' }
 
-" Elixir plugins
-Plug 'elixir-editors/vim-elixir', {'for': ['ex', 'exs', 'eex', 'heex', 'leex', 'sface']}
-
 " Markdown plugins
 Plug 'iamcco/markdown-preview.nvim', {'for': ['markdown', 'md'], 'do': 'cd app && yarn install'}
 
-" Grammar plugins
-Plug 'dpelle/vim-LanguageTool', {'for': ['markdown', 'md']}
-
 " Container related plugins
-Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'Dockerfile.dev', 'Dockerfile.old', 'Dockerfile.base', 'Dockerfile-dev', 'Dockerfile-old', 'Dockerfile-base']}
-Plug 'mrk21/yaml-vim', {'for': ['yaml', 'yml']}
 Plug 'chr4/nginx.vim', {'for': 'conf'}
 Plug 'hashivim/vim-terraform', {'for': 'tf'}
 

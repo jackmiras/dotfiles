@@ -283,7 +283,18 @@ function install_dotfile_neovim() {
   mv init.vim init-backup.vim
   echo "source $HOME/Projects/dotfiles/neovim-config/configs/plugins.vimrc" >> init.vim
 
-  mkdir plugged && nvim --headless -c "PlugInstall" -c "qall"
+  mkdir plugged
+  nvim --headless -c "PlugInstall" -c "qall"
+  nvim --headless -c "TSInstall go" -c "qall"
+  nvim --headless -c "TSInstall css" -c "qall"
+  nvim --headless -c "TSInstall php" -c "qall"
+  nvim --headless -c "TSInstall vue" -c "qall"
+  nvim --headless -c "TSInstall yaml" -c "qall"
+  nvim --headless -c "TSInstall elixir" -c "qall"
+  nvim --headless -c "TSInstall python" -c "qall"
+  nvim --headless -c "TSInstall markdown" -c "qall"
+  nvim --headless -c "TSInstall dockerfile" -c "qall"
+  nvim --headless -c "TSInstall javascript" -c "qall"
   rm -rf init.vim && mv init-backup.vim init.vim
 }
 
