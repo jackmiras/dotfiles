@@ -76,6 +76,7 @@ function install_nodejs() {
   echo "#######################################################################"
 
   asdf install nodejs 16.13.0
+  npm install --global yarn
 }
 
 function install_java() {
@@ -107,7 +108,7 @@ function install_python() {
   install_python2
   install_python3
 
-  asdf global python 2.7.17 3.10.0
+  asdf global python 2.7.18 3.10.0
 
   "${HOME}/.asdf/shims/pip" install --upgrade pip
   "${HOME}/.asdf/shims/pip3" install --upgrade pip
