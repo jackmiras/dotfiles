@@ -8,6 +8,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'luochen1990/rainbow', {'for': ['php', 'javascript', 'css', 'scss', 'python', 'go', 'elixir']}
 Plug 'RRethy/vim-illuminate'
 Plug 'lilydjwg/colorizer'
+Plug 'ryanoasis/vim-devicons'
 
 " Color schemes
 Plug 'liuchengxu/space-vim-dark'
@@ -19,17 +20,18 @@ Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'scrooloose/nerdcommenter'
 
 " Fuzzy file search plugins
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'skwp/greplace.vim'
 Plug 'mileszs/ack.vim', {'on': 'Ack!'}
+Plug 'ludovicchabant/vim-gutentags'
+
+" File tree plugins
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
-Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'scrooloose/nerdcommenter'
-Plug 'ludovicchabant/vim-gutentags'
 
 " Git releated plugins
 Plug 'airblade/vim-gitgutter'
