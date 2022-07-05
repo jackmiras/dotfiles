@@ -71,23 +71,23 @@ let g:ale_python_bandit_options=''
 let g:ale_python_bandit_use_config=1
 let g:ale_python_bandit_use_global=0
 let g:ale_python_bandit_auto_pipenv=0
-let g:ale_python_bandit_executable=$HOME.'/.local/bin/bandit'
+let g:ale_python_bandit_executable=$HOME.'/.asdf/shims/bandit'
 
 let g:ale_python_black_options=''
 let g:ale_python_black_use_global=0
 let g:ale_python_black_auto_pipenv=0
 let g:ale_python_black_change_directory=1
-let g:ale_python_black_executable=$HOME.'/.local/bin/black'
+let g:ale_python_black_executable=$HOME.'/.asdf/shims/black'
 
 let g:ale_python_flake8_options=''
 let g:ale_python_flake8_use_global=0
 let g:ale_python_flake8_auto_pipenv=0
 let g:ale_python_flake8_change_directory=1
-let g:ale_python_flake8_executable=$HOME.'/.local/bin/flake8'
+let g:ale_python_flake8_executable=$HOME.'/.asdf/shims/flake8'
 
 let g:ale_python_isort_options=''
 let g:ale_python_isort_use_global=0
-let g:ale_python_isort_executable=$HOME.'/.local/bin/isort'
+let g:ale_python_isort_executable=$HOME.'/.asdf/shims/isort'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform - Settings
