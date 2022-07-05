@@ -122,8 +122,8 @@ if [[ "$(uname -s)" == "Linux" ]]; then
   . $HOME/.asdf/asdf.sh
   . $HOME/.asdf/completions/asdf.bash
 elif [[ "$(uname -s)" == "Darwin" ]]; then
-  . /usr/local/opt/asdf/libexec/asdf.sh
-  . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+    . "$(brew --prefix asdf)/libexec/asdf.sh"
+    . "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
 fi
 
 # Exporting language
@@ -163,6 +163,15 @@ export GOPATH="$(asdf where golang)/packages"
 
 # Docker configs
 export DOCKER_BUILDKIT=1
+
+# Automatically applying --platform flag to build
+docker() {
+ if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
+    /usr/local/bin/docker "$1" --platform linux/amd64 "${@:2}"
+  else
+    /usr/local/bin/docker "$@"
+  fi
+}
 
 # Kubernetes configs
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
