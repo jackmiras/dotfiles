@@ -110,3 +110,6 @@ neovim-config/ohmyzsh.sh
 
 # Ignore vpn dir
 vpn
+
+### Tmux ###
+tmux-config/plugins/*
