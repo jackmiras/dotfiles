@@ -4,6 +4,7 @@
 
 rm -rf "${HOME}/.zshrc"
 ln -s "${HOME}/Projects/dotfiles/zshrc-config/zshrc" "${HOME}/.zshrc"
+ln -s "${HOME}/Projects/dotfiles/zshrc-config/starship.toml" "${HOME}/.config/"
 
 readonly BASE_URL="https://github.com/zsh-users"
 git clone "${BASE_URL}/zsh-autosuggestions.git" "${HOME}/.oh-my-zsh/plugins/zsh-autosuggestions"
