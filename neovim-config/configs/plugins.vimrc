@@ -69,7 +69,4 @@ Plug 'iamcco/markdown-preview.nvim', {'for': ['markdown', 'md'], 'do': 'cd app &
 Plug 'chr4/nginx.vim', {'for': 'conf'}
 Plug 'hashivim/vim-terraform', {'for': 'tf'}
 
-" Tracking time plugins
-Plug 'wakatime/vim-wakatime'
-
 call plug#end()
