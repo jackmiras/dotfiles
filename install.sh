@@ -27,7 +27,7 @@ function install_ccat() {
   echo "#######################################################################"
 
   source "${HOME}/.asdf/asdf.sh"
-  go install github.com/jingweno/ccat
+  go install github.com/jingweno/ccat@latest
   asdf reshim
 }
 
