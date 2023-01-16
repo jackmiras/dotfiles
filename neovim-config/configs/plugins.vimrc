@@ -4,14 +4,10 @@
 
 call plug#begin('~/.vim/plugged')
 " Theme releated plugins
-Plug 'lilydjwg/colorizer'
-Plug 'RRethy/vim-illuminate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
-Plug 'luochen1990/rainbow', {'for': ['php', 'javascript', 'css', 'scss', 'python', 'go', 'elixir']}
 
 " Color schemes
-Plug 'lifepillar/vim-solarized8'
 Plug 'liuchengxu/space-vim-dark'
 
 " General coding plugins
