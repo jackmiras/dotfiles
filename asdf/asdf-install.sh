@@ -38,7 +38,7 @@ function asdf_tool_versions() {
     echo "pip3 3.10"
     echo "php 8.1.2"
     echo "ruby 3.0.2"
-    echo "golang 1.17.2"
+    echo "golang 1.19.5"
     echo "haskell 9.0.1"
     echo "nodejs 18.13.0"
     echo "java openjdk-17"
@@ -67,7 +67,7 @@ function install_golang() {
   echo "# Installing Go                                                       #"
   echo "#######################################################################"
 
-  asdf install golang 1.17.2
+  asdf install golang 1.19.5
 }
 
 function install_nodejs() {
