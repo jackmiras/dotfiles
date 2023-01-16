@@ -27,7 +27,7 @@ function install_ccat() {
   echo "#######################################################################"
 
   source "${HOME}/.asdf/asdf.sh"
-  go get -u github.com/jingweno/ccat
+  go install github.com/jingweno/ccat
   asdf reshim
 }
 
@@ -283,7 +283,7 @@ function install_dotfile_neovim() {
   mv init.vim init-backup.vim
   echo "source $HOME/Projects/dotfiles/neovim-config/configs/plugins.vimrc" >> init.vim
 
-  mkdir plugged
+  mkdir -p plugged
   nvim --headless -c "PlugInstall" -c "qall"
   nvim --headless -c "TSInstall go" -c "qall"
   nvim --headless -c "TSInstall css" -c "qall"
