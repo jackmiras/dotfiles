@@ -40,7 +40,7 @@ function asdf_tool_versions() {
     echo "ruby 3.0.2"
     echo "golang 1.17.2"
     echo "haskell 9.0.1"
-    echo "nodejs 16.13.0"
+    echo "nodejs 18.13.0"
     echo "java openjdk-17"
     echo "python 3.10.2 2.7.18"
   } >> "${HOME}/.tool-versions"
@@ -75,7 +75,7 @@ function install_nodejs() {
   echo "# Installing NodeJs                                                   #"
   echo "#######################################################################"
 
-  asdf install nodejs 16.13.0
+  asdf install nodejs 18.13.0
   npm install --global yarn
 }
 
