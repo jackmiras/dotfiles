@@ -21,14 +21,6 @@ function install_zsh() {
   sudo apt-get install -y zsh
 }
 
-function install_starship() {
-  echo "#######################################################################"
-  echo "# Installing Starship                                                 #"
-  echo "#######################################################################"
-
-  curl -sS https://starship.rs/install.sh | sh
-}
-
 function install_ccat() {
   echo "#######################################################################"
   echo "# Installing ccat                                                     #"
@@ -384,7 +376,6 @@ function main() {
 
   install_ag
   install_zsh
-  install_starship
   install_ccat
   install_entr
   install_tmux
