@@ -270,7 +270,7 @@ function install_dotfiles() {
   git clone https://github.com/jackmiras/dotfiles.git && cd dotfiles
 
   install_dotfiles_tmux
-  install_dotfile_neovim
+  install_dotfiles_neovim
   install_dotfiles_ohmyzsh
 }
 
@@ -282,7 +282,7 @@ function install_dotfiles_tmux() {
   bash -c "${HOME}/Projects/dotfiles/tmux-config/install-config.sh"
 }
 
-function install_dotfile_neovim() {
+function install_dotfiles_neovim() {
   echo "#######################################################################"
   echo "# Install dotfiles neovim                                             #"
   echo "#######################################################################"
