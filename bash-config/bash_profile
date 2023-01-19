@@ -1,0 +1,123 @@
+# ██████╗  █████╗ ███████╗██╗  ██╗    ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
+# ██╔══██╗██╔══██╗██╔════╝██║  ██║    ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
+# ██████╔╝███████║███████╗███████║    ██████╔╝██████╔╝██║   ██║█████╗  ██║██║     █████╗
+# ██╔══██╗██╔══██║╚════██║██╔══██║    ██╔═══╝ ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝
+# ██████╔╝██║  ██║███████║██║  ██║    ██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
+# ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
+
+################################################################################
+# General exports
+################################################################################
+
+export STARSHIP_LOG='error' # Show only starship errors
+
+export EDITOR='nvim' # Editor for local and remote sessions
+
+export PROJECTS="${HOME}/Projects" # Path to the Projects directory
+
+export BASH_SILENCE_DEPRECATION_WARNING=1 # Suppress OSX Bash deprecation message
+
+
+################################################################################
+# Locale exports
+################################################################################
+
+export LANG=en_US.UTF-8
+export LC_TIME=en_US
+export LC_COLLATE=en_US
+export LC_NUMERIC=en_US
+export LC_MESSAGES=en_US
+export LC_MONETARY=en_US
+
+################################################################################
+# Path exports
+################################################################################
+
+export PATH="/usr/local/bin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/.composer/vendor/bin:${PATH}"
+export PATH="/home/linuxbrew/.linuxbrew/bin:${PATH}"
+export PATH="${PATH}:${HOME}/.config/composer/vendor/bin"
+export PATH="${PATH}:${ANDROID_HOME}/tools:$ANDROID_HOME/platform-tools"
+export PATH="${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}"
+
+################################################################################
+# Bash history
+################################################################################
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+export HISTTIMEFORMAT=$(echo -e ${bold}"[%d/%m/%y %T] ${normal}") # Display date and time for bash history
+
+export HISTIGNORE="ls:ll:la:cd:pwd:bg:fg:history" # Bash history results to ignore
+
+################################################################################
+# Apps starting
+################################################################################
+
+ # Automatically opening Tmux
+if [ "${TMUX}" = "" ]; then tmux; fi
+
+# Loading asdf
+if [[ "$(uname -s)" == "Linux" ]]; then
+  . "${HOME}/.asdf/asdf.sh"
+  . "${HOME}/.asdf/completions/asdf.bash"
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
+  . "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
+fi
+
+################################################################################
+# SDK exports
+################################################################################
+
+export JAVA_HOME=$(asdf where java)
+
+export GOPATH="$(asdf where golang)/packages"
+
+export ANDROID_HOME="${HOME}/Library/Android/sdk"
+
+################################################################################
+# Configs sourcing
+################################################################################
+
+source "${HOME}/.airlab_profile" # Airlab configs
+
+################################################################################
+# Aliases
+################################################################################
+
+source "${PROJECTS}/dotfiles/bash-config/aliases/aws.bash"
+source "${PROJECTS}/dotfiles/bash-config/aliases/general.bash"
+source "${PROJECTS}/dotfiles/bash-config/aliases/git.bash"
+source "${PROJECTS}/dotfiles/bash-config/aliases/php.bash"
+source "${PROJECTS}/dotfiles/bash-config/aliases/unix.bash"
+
+################################################################################
+# Infrastructure
+################################################################################
+
+# Docker configs
+export DOCKER_BUILDKIT=1
+
+# Automatically applying --platform flag to build
+docker() {
+ if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
+    /usr/local/bin/docker "$1" --platform linux/amd64 "${@:2}"
+  else
+    /usr/local/bin/docker "$@"
+  fi
+}
+
+# Kubernetes autocomplete
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion bash); fi
+
+# Terraform autocomplete
+complete -C /usr/local/bin/terraform terraform
+
+################################################################################
+# Last line executions
+################################################################################
+
+eval "$(starship init bash)"

@@ -13,14 +13,6 @@ function install_ag() {
   sudo apt-get install silversearcher-ag
 }
 
-function install_zsh() {
-  echo "#######################################################################"
-  echo "# Installing ZSH                                                      #"
-  echo "#######################################################################"
-
-  sudo apt-get install -y zsh
-}
-
 function install_ccat() {
   echo "#######################################################################"
   echo "# Installing ccat                                                     #"
@@ -271,7 +263,7 @@ function install_dotfiles() {
 
   install_dotfiles_tmux
   install_dotfiles_neovim
-  install_dotfiles_ohmyzsh
+  # install_dotfiles_bash
 }
 
 function install_dotfiles_tmux() {
@@ -315,34 +307,12 @@ function install_dotfiles_neovim() {
   rm -rf init.vim && mv init-backup.vim init.vim
 }
 
-function install_dotfiles_ohmyzsh() {
+function install_dotfiles_bash() {
   echo "#######################################################################"
-  echo "# Install dotfiles ohmyzsh                                            #"
+  echo "# Install dotfiles bash                                               #"
   echo "#######################################################################"
 
-  readonly base_url="https://raw.githubusercontent.com"
-  curl -fsSL ${base_url}/ohmyzsh/ohmyzsh/master/tools/install.sh -o ohmyzsh.sh
-
-  # Make oh-my-zsh change default shell to ZSH
-  sed -i "s/read -r opt/readonly opt=Y/g" ohmyzsh.sh
-
-  # Making oh-my-zsh keep .zshrc file
-  readonly ZSHRC_CONFIG_DIR="cd \"\${HOME}\/Projects\/dotfiles\/zshrc\-config\""
-  readonly INSTALL_CONFIG_SH=".\/install-config.sh"
-  readonly HOME_DIR="cd \"\${HOME}\""
-  readonly EXEC_ZSH="exec zsh -l"
-
-  readonly REPLACEMENT="${ZSHRC_CONFIG_DIR}\\
-  ${INSTALL_CONFIG_SH}\\
-  ${HOME_DIR}\\
-  ${EXEC_ZSH}"
-
-  sed -i "s/exec zsh -l/${REPLACEMENT}/g" ohmyzsh.sh
-
-  # Intalling oh-my-zsh
-  sudo chmod +x ohmyzsh.sh
-  sh -c "./ohmyzsh.sh"
-  rm -rf ohmyzsh.sh
+  bash -c "${HOME}/Projects/dotfiles/bash-config/install-config.sh"
 }
 
 function install_snaps() {
@@ -361,6 +331,7 @@ function install_snaps() {
   sudo snap install postman
   sudo snap install spotify
   sudo snap install postbird
+  sudo snap install starship
   sudo snap install keepassxc
   sudo snap install simplenote
   sudo snap install code --classic
@@ -385,7 +356,6 @@ function main() {
   install_haskell
 
   install_ag
-  install_zsh
   install_ccat
   install_entr
   install_tmux
