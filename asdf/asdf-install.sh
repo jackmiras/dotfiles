@@ -35,14 +35,14 @@ function asdf_plugins() {
 function asdf_tool_versions() {
   {
     echo "pip 2.7"
-    echo "pip3 3.10"
+    echo "pip3 3.11"
     echo "php 8.1.2"
     echo "ruby 3.0.2"
     echo "golang 1.19.5"
     echo "haskell 9.0.1"
     echo "nodejs 18.13.0"
     echo "java openjdk-17"
-    echo "python 3.10.2 2.7.18"
+    echo "python 3.11.3 2.7.18"
   } >> "${HOME}/.tool-versions"
 }
 
@@ -93,7 +93,7 @@ function install_python3() {
   echo "# Installing Python3                                                  #"
   echo "#######################################################################"
 
-  asdf install python 3.10.0
+  asdf install python 3.11.3
 }
 
 function install_python2() {
@@ -108,7 +108,7 @@ function install_python() {
   install_python2
   install_python3
 
-  asdf global python 2.7.18 3.10.0
+  asdf global python 2.7.18 3.11.3
 
   "${HOME}/.asdf/shims/pip" install --upgrade pip
   "${HOME}/.asdf/shims/pip3" install --upgrade pip
