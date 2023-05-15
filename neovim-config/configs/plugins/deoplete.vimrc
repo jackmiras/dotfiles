@@ -34,3 +34,13 @@ let g:deoplete#custom#option#jedi#show_docstring = 1
 let g:deoplete#custom#option#jedi#enable_typeinfo = 1
 let g:deoplete#custom#option#jedi#statement_length = 100
 let g:deoplete#custom#option#jedi#ignore_private_members = 0
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bash settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Disable rule SC2034 to .env and .env.example files
+autocmd BufEnter PKGBUILD,.env,.env.example
+    \   let b:ale_sh_shellcheck_exclusions = 'SC2034'
