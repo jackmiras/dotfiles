@@ -60,13 +60,8 @@ export HISTIGNORE="ls:ll:la:cd:pwd:bg:fg:history" # Bash history results to igno
 if [ "${TMUX}" = "" ]; then tmux; fi
 
 # Loading asdf
-if [[ "$(uname -s)" == "Linux" ]]; then
-  . "${HOME}/.asdf/asdf.sh"
-  . "${HOME}/.asdf/completions/asdf.bash"
-elif [[ "$(uname -s)" == "Darwin" ]]; then
-  . "$(brew --prefix asdf)/libexec/asdf.sh"
-  . "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
-fi
+. "${HOME}/.asdf/asdf.sh"
+. "${HOME}/.asdf/completions/asdf.bash"
 
 ################################################################################
 # SDK exports
@@ -82,7 +77,6 @@ export ANDROID_HOME="${HOME}/Library/Android/sdk"
 # Configs sourcing
 ################################################################################
 
-source "${HOME}/.airlab_profile" # Airlab configs
 
 ################################################################################
 # Aliases
