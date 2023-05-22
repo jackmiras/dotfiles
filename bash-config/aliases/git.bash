@@ -6,6 +6,7 @@ alias gd="git diff"
 alias gl="git pull"
 
 alias gp="git push"
+alias gpf="git push --force"
 
 alias gc="git commit"
 alias gcmsg='git commit --message'
