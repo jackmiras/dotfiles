@@ -353,7 +353,6 @@ function main() {
   install_golang
   install_nodejs
   install_python
-  install_haskell
 
   install_ag
   install_ccat

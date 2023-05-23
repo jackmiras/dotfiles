@@ -29,7 +29,6 @@ function asdf_plugins() {
     asdf plugin add golang
     asdf plugin add nodejs
     asdf plugin add python
-    asdf plugin add haskell
 }
 
 function asdf_tool_versions() {
@@ -39,7 +38,6 @@ function asdf_tool_versions() {
     echo "php 8.1.2"
     echo "ruby 3.0.2"
     echo "golang 1.19.5"
-    echo "haskell 9.0.1"
     echo "nodejs 18.13.0"
     echo "java openjdk-17"
     echo "python 3.11.3 2.7.18"
@@ -115,12 +113,4 @@ function install_python() {
 
   rm -rf "${HOME}/.asdf/shims/python"
   ln -s "${HOME}/.asdf/shims/python2" "${HOME}/.asdf/shims/python"
-}
-
-function install_haskell() {
-  echo "#######################################################################"
-  echo "# Installing Haskell                                                  #"
-  echo "#######################################################################"
-
-  asdf install haskell 9.0.1
 }
