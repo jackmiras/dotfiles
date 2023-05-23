@@ -44,7 +44,7 @@ function install_ctags() {
   echo "# Installing ctags                                                    #"
   echo "#######################################################################"
 
-  sudo apt-get install -y ctags
+  sudo apt-get install -y universal-ctags
 }
 
 function install_mycli() {
