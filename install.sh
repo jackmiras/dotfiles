@@ -229,20 +229,6 @@ function install_azure_cli(){
   curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 }
 
-function install_languagetool() {
-  echo "#######################################################################"
-  echo "# Installing LanguageTool                                             #"
-  echo "#######################################################################"
-
-  wget https://languagetool.org/download/LanguageTool-stable.zip
-
-  unzip LanguageTool-stable.zip && rm -rf LanguageTool-stable.zip
-
-  mv LanguageTool* languagetool && mv languagetool "${HOME}/.languagetool"
-
-  rm -rf LanguageTool*
-}
-
 function git_global_configs() {
   echo "#######################################################################"
   echo "# Configure Git globals                                               #"
@@ -368,7 +354,6 @@ function main() {
   install_kubectl
   install_linters
   install_azure_cli
-  install_languagetool
   git_global_configs
 
   install_snaps
