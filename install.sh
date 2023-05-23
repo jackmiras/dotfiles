@@ -89,20 +89,6 @@ function install_litecli() {
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/litecli" /usr/bin
 }
 
-function install_sqlfluff() {
-  echo "#######################################################################"
-  echo "# Installing litecli - SQLite CLI                                     #"
-  echo "#######################################################################"
-
-  pip3 install sqlfluff
-
-  if [[ -L "/usr/bin/sqlfluff" ]]; then
-    unlink /usr/bin/sqlfluff
-  fi
-
-  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/sqlfluff" /usr/bin
-}
-
 function install_docker() {
   echo "#######################################################################"
   echo "# Installing Docker                                                   #"
@@ -241,6 +227,13 @@ function install_linters() {
   echo "#######################################################################"
 
   sudo apt-get install -y yamllint
+
+  echo "#######################################################################"
+  echo "# Installing SQL linters                                              #"
+  echo "#######################################################################"
+
+  pip3 install sqlfluff
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/sqlfluff" /usr/bin || true # Continue if symlink exists
 }
 
 function install_azure_cli(){
@@ -383,7 +376,6 @@ function main() {
   install_mycli
   install_pgcli
   install_litecli
-  install_sqlfluff
   install_docker
   install_terraform
   install_neovim
