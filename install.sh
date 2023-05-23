@@ -53,12 +53,7 @@ function install_mycli() {
   echo "#######################################################################"
 
   pip3 install mycli
-
-  if [[ -L "/usr/bin/mycli" ]]; then
-    unlink /usr/bin/mycli
-  fi
-
-  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/mycli" /usr/bin
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/mycli" /usr/bin || true # Continue if symlink exists
 }
 
 function install_pgcli() {
@@ -67,12 +62,7 @@ function install_pgcli() {
   echo "#######################################################################"
 
   pip3 install pgcli
-
-  if [[ -L "/usr/bin/pgcli" ]]; then
-    unlink /usr/bin/pgcli
-  fi
-
-  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin || true # Continue if symlink exists
 }
 
 function install_litecli() {
@@ -81,12 +71,7 @@ function install_litecli() {
   echo "#######################################################################"
 
   pip3 install litecli
-
-  if [[ -L "/usr/bin/litecli" ]]; then
-    unlink /usr/bin/litecli
-  fi
-
-  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/litecli" /usr/bin
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/litecli" /usr/bin || true # Continue if symlink exists
 }
 
 function install_docker() {
