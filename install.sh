@@ -53,6 +53,12 @@ function install_mycli() {
   echo "#######################################################################"
 
   pip3 install mycli
+
+  if [[ -L "/usr/bin/mycli" ]]; then
+    unlink /usr/bin/mycli
+  fi
+
+  sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/mycli" /usr/bin
 }
 
 function install_pgcli() {
@@ -61,6 +67,11 @@ function install_pgcli() {
   echo "#######################################################################"
 
   pip3 install pgcli
+
+  if [[ -L "/usr/bin/pgcli" ]]; then
+    unlink /usr/bin/pgcli
+  fi
+
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin
 }
 
@@ -70,6 +81,11 @@ function install_litecli() {
   echo "#######################################################################"
 
   pip3 install litecli
+
+  if [[ -L "/usr/bin/litecli" ]]; then
+    unlink /usr/bin/litecli
+  fi
+
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/litecli" /usr/bin
 }
 
@@ -79,6 +95,11 @@ function install_sqlfluff() {
   echo "#######################################################################"
 
   pip3 install sqlfluff
+
+  if [[ -L "/usr/bin/sqlfluff" ]]; then
+    unlink /usr/bin/sqlfluff
+  fi
+
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/sqlfluff" /usr/bin
 }
 
