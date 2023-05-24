@@ -61,6 +61,7 @@ function install_os_dependencies() {
       wget \
       xsel \
       bison \
+      gnupg \
       unzip \
       libtool \
       sqlite3 \
