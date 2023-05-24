@@ -251,7 +251,7 @@ function install_dotfiles() {
 
   install_dotfiles_tmux
   install_dotfiles_neovim
-  # install_dotfiles_bash
+  install_dotfiles_bash
 }
 
 function install_dotfiles_tmux() {
