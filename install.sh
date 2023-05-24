@@ -79,9 +79,8 @@ function install_docker() {
   echo "# Installing Docker                                                   #"
   echo "#######################################################################"
 
-  readonly UBUNTU_RELEASE="focal"
-  readonly DOCKER_COMPOSE_RELEASE="1.29.2"
-  readonly DOCKER_MACHINE_VERSION="0.16.0"
+  readonly DOCKER_COMPOSE_RELEASE="2.18.1"
+  readonly DOCKER_MACHINE_VERSION="0.16.2"
 
   sudo apt-get remove runc || true # Continue if package is not present
   sudo apt-get remove docker || true # Continue if package is not present
@@ -89,10 +88,14 @@ function install_docker() {
   sudo apt-get remove containerd || true # Continue if package is not present
   sudo apt-get remove docker-engine || true # Continue if package is not present
 
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  sudo apt-key fingerprint 0EBFCD88
+  sudo install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-  sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu ${UBUNTU_RELEASE} stable"
+  echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
   sudo apt-get update
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io
