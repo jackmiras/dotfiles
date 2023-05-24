@@ -246,7 +246,7 @@ function install_dotfiles() {
   echo "# Installing dotfiles                                                 #"
   echo "#######################################################################"
 
-  mkdir "${HOME}/Projects" && cd "${HOME}/Projects"
+  mkdir -p "${HOME}/Projects" && cd "${HOME}/Projects"
   git clone https://github.com/jackmiras/dotfiles.git && cd dotfiles
 
   install_dotfiles_tmux
