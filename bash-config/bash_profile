@@ -62,8 +62,10 @@ export HISTIGNORE="ls:ll:la:cd:pwd:bg:fg:history" # Bash history results to igno
 # Apps starting
 ################################################################################
 
- # Automatically opening Tmux
-if [ "${TMUX}" = "" ]; then tmux; fi
+ # Tmux
+if [[ "${TMUX}" = "" ]]; then
+  tmux attach-session -t dotfiles || tmux new-session -t dotfiles
+fi
 
 # Loading asdf
 . "${HOME}/.asdf/asdf.sh"
