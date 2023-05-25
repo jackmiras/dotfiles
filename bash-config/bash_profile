@@ -113,7 +113,7 @@ docker() {
 }
 
 # Kubernetes autocomplete
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion bash); fi
+if [[ /usr/local/bin/kubectl ]]; then source <(kubectl completion bash); fi
 
 # Terraform autocomplete
 complete -C /usr/local/bin/terraform terraform
