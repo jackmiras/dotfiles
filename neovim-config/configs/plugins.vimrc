@@ -21,8 +21,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Fuzzy file search plugins
 Plug 'skwp/greplace.vim'
 Plug 'ludovicchabant/vim-gutentags'
-" Plug 'mileszs/ack.vim', {'on': 'Ack!'}
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'Yggdroot/LeaderF', {'do': ':LeaderfInstallCExtension'}
 
 " File tree plugins
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -34,26 +33,31 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Autocomplete plugin
-Plug 'roxma/nvim-yarp'
 Plug 'SirVer/ultisnips'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'deoplete-plugins/deoplete-jedi'
-" Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {
+		\ 'do': 'yarn install --frozen-lockfile' .
+			\ ' && yarn global add intelephense' .
+			\ ' && yarn global add bash-language-server' .
+			\ ' && brew install hashicorp/tap/terraform-ls' .
+			\ ' && yarn global add dockerfile-language-server-nodejs' ,
+		\ 'branch': 'master',
+	\}
 
-" JavaScript plugins
-" Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'yarn global add tern' }
+Plug 'pappasam/coc-jedi', {
+		\ 'for': 'python',
+		\ 'do': 'yarn install --frozen-lockfile && yarn build',
+		\ 'branch': 'main'
+	\}
 
 " Front-end plugins
-" Plug 'mattn/emmet-vim', {'for': ['html', 'vue', 'blade.php']}
-" Plug 'alvan/vim-closetag', {'for': ['javascript', 'php', 'html', 'vue']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'vue', 'blade.php']}
+Plug 'alvan/vim-closetag', {'for': ['javascript', 'php', 'html', 'vue']}
 
 " PHP plugins
-" Plug 'jwalton512/vim-blade', {'for': 'php'}
-" Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'jwalton512/vim-blade', {'for': 'php'}
 
-" Python plugins
-Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'pip3 install jedi'}
+" Go plugins
+Plug 'fatih/vim-go', {'for': ['go', 'golang'], 'do': ':GoUpdateBinaries'}
 
 " Markdown plugins
 Plug 'iamcco/markdown-preview.nvim', {'for': ['markdown', 'md'], 'do': 'cd app && yarn install'}
