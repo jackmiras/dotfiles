@@ -219,14 +219,6 @@ function install_linters() {
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/sqlfluff" /usr/bin || true # Continue if symlink exists
 }
 
-function install_azure_cli(){
-  echo "#######################################################################"
-  echo "# Installing Azure CLI                                                #"
-  echo "#######################################################################"
-
-  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-}
-
 function git_global_configs() {
   echo "#######################################################################"
   echo "# Configure Git globals                                               #"
@@ -352,7 +344,6 @@ function main() {
   install_aws_cli
   install_kubectl
   install_linters
-  install_azure_cli
   git_global_configs
 
   install_snaps
