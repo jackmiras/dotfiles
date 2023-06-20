@@ -34,14 +34,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Autocomplete plugin
 Plug 'SirVer/ultisnips'
-Plug 'neoclide/coc.nvim', {
-		\ 'do': 'yarn install --frozen-lockfile' .
-			\ ' && yarn global add intelephense' .
-			\ ' && yarn global add bash-language-server' .
-			\ ' && brew install hashicorp/tap/terraform-ls' .
-			\ ' && yarn global add dockerfile-language-server-nodejs' ,
-		\ 'branch': 'master',
-	\}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile', 'branch': 'master'}
 
 Plug 'pappasam/coc-jedi', {
 		\ 'for': 'python',
