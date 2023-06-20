@@ -218,6 +218,14 @@ function git_global_configs() {
   git config --global alias.glog "log --all --decorate --oneline --graph"
 }
 
+function install_starship() {
+  echo "#######################################################################"
+  echo "# Installing Starship Cross-Shell Prompt                              #"
+  echo "#######################################################################"
+
+  brew install starship
+}
+
 function install_dotfiles() {
   echo "#######################################################################"
   echo "# Installing dotfiles                                                 #"
@@ -331,6 +339,7 @@ function main() {
   install_kubectl
   install_linters
   git_global_configs
+  install_starship
 
   install_snaps
 
