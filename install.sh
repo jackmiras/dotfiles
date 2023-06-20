@@ -5,6 +5,28 @@ IFS=$'\n\t'
 source "./asdf/os-basics.sh"
 source "./asdf/asdf-install.sh"
 
+function install_snaps() {
+  echo "#######################################################################"
+  echo "# Install snaps                                                       #"
+  echo "#######################################################################"
+
+  sudo apt-get update -y
+  sudo apt-get install -y snapd
+
+  sudo snap install vlc
+  sudo snap install gimp
+  sudo snap install htop
+  sudo snap install drawio
+  sudo snap install discord
+  sudo snap install postman
+  sudo snap install keepassxc
+  sudo snap install simplenote
+  sudo snap install code --classic
+  sudo snap install helm --classic
+  sudo snap install slack --classic
+  sudo snap install sublime-text --classic
+}
+
 function install_ag() {
   echo "#######################################################################"
   echo "# Installing The Silver Searcher                                      #"
@@ -288,28 +310,6 @@ function install_dotfiles_bash() {
   bash -c "${HOME}/Projects/dotfiles/bash-config/install-config.sh"
 }
 
-function install_snaps() {
-  echo "#######################################################################"
-  echo "# Install snaps                                                       #"
-  echo "#######################################################################"
-
-  sudo apt-get update -y
-  sudo apt-get install -y snapd
-
-  sudo snap install vlc
-  sudo snap install gimp
-  sudo snap install htop
-  sudo snap install drawio
-  sudo snap install discord
-  sudo snap install postman
-  sudo snap install keepassxc
-  sudo snap install simplenote
-  sudo snap install code --classic
-  sudo snap install helm --classic
-  sudo snap install slack --classic
-  sudo snap install sublime-text --classic
-}
-
 function main() {
   homebrew
   clean_os
@@ -323,6 +323,8 @@ function main() {
   install_golang
   install_nodejs
   install_python
+
+  install_snaps
 
   install_ag
   install_ccat
@@ -340,8 +342,6 @@ function main() {
   install_linters
   git_global_configs
   install_starship
-
-  install_snaps
 
   # This have to be the last function call
   install_dotfiles
