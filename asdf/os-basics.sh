@@ -115,5 +115,24 @@ function install_os_dependencies() {
       software-properties-common
   elif [[ "$(uname -s)" == "Darwin" ]]; then
     xcode-select --install
+    brew install \
+      gd \
+      zlib \
+      krb5 \
+      re2c \
+      bison \
+      icu4c \
+      libpng \
+      libzip \
+      gettext \
+      libedit \
+      libjpeg \
+      libxml2 \
+      autoconf \
+      automake \
+      freetype \
+      libiconv \
+      pkg-config \
+      openssl@1.1
   fi
 }
