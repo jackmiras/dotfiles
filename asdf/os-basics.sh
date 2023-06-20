@@ -3,6 +3,28 @@ set -euo pipefail
 IFS=$'\n\t'
 
 
+function homebrew() {
+  echo "#######################################################################"
+  echo "# Installing Homebrew                                                 #"
+  echo "#######################################################################"
+
+  if [[ "$(uname -s)" == "Linux" ]]; then
+    sudo apt-get install -y curl git
+  fi
+
+  yes "" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || true
+
+  local config_files=("${HOME}/.bash_profile" "${HOME}/.bashrc" "${HOME}/.zshrc")
+
+  for config_file in "${config_files[@]}"; do
+    if [[ -e "$config_file" ]]; then
+      (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> "$config_file"
+    fi
+  done
+
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+}
+
 function clean_os() {
   echo "#######################################################################"
   echo "# Cleaning OS                                                         #"
