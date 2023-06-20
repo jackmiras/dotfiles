@@ -82,7 +82,6 @@ function install_docker() {
 
   if [[ "$(uname -s)" == "Linux" ]]; then
     readonly DOCKER_COMPOSE_RELEASE="2.18.1"
-    readonly DOCKER_MACHINE_VERSION="0.16.2"
 
     sudo apt-get remove runc || true # Continue if package is not present
     sudo apt-get remove docker || true # Continue if package is not present
@@ -113,15 +112,6 @@ function install_docker() {
       -o /usr/local/bin/docker-compose
 
     sudo chmod +x /usr/local/bin/docker-compose
-
-    echo "#######################################################################"
-    echo "# Installing docker-machine                                           #"
-    echo "#######################################################################"
-
-    readonly BASE="https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}" &&
-    curl -L "${BASE}/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine &&
-    sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
-    chmod +x /usr/local/bin/docker-machine
   elif [[ "$(uname -s)" == "Darwin" ]]; then
     brew install --cask docker
   fi
