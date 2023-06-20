@@ -60,7 +60,7 @@ function update_os() {
       && sudo apt-get upgrade -y \
       && sudo apt-get autoremove -y \
       && sudo apt-get autoclean -y
-  elif [[ "$(uname -s)" == "Linux" ]]; then
+  elif [[ "$(uname -s)" == "Darwin" ]]; then
     brew update -y \
       && brew upgrade -y \
       && brew cleanup -y
