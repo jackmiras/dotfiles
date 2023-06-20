@@ -12,4 +12,4 @@ fi
 
 ln -s "${HOME}/Projects/dotfiles/bash-config/starship.toml" "${HOME}/.config/starship.toml" || true # Continue if symlink exists
 
-echo 'Installation finished with success!'
+echo "Bash configuration was successfully installed!"

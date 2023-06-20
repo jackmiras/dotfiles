@@ -13,4 +13,4 @@ ln -s "${HOME}/Projects/dotfiles/neovim-config/init.vim" "$HOME/.config/nvim" ||
 ln -s "${HOME}/Projects/dotfiles/neovim-config/UltiSnips" "$HOME/.config/nvim" || true # Continue if symlink exists
 ln -s "${HOME}/Projects/dotfiles/neovim-config/coc-settings.json" "$HOME/.config/nvim" || true # Continue if symlink exists
 
-echo 'Installation finished with success!'
+echo "Neovim configuration was successfully installed!"

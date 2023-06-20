@@ -10,4 +10,4 @@ ln -s "${HOME}/Projects/dotfiles/tmux-config/themes" "${HOME}/.tmux/themes" || t
 ln -s "${HOME}/Projects/dotfiles/tmux-config/tmux.conf" "${HOME}/.tmux.conf" || true # Continue if symlink exists
 ln -s "${HOME}/Projects/dotfiles/tmux-config/plugins" "${HOME}/.tmux" || true # Continue if symlink exists
 
-echo 'Installation finished with success!'
+echo "TMUX configuration was successfully installed!"
