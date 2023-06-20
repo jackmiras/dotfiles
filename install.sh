@@ -10,7 +10,7 @@ function install_ag() {
   echo "# Installing The Silver Searcher                                      #"
   echo "#######################################################################"
 
-  sudo apt-get install silversearcher-ag
+  brew install the_silver_searcher
 }
 
 function install_ccat() {
@@ -28,7 +28,7 @@ function install_entr() {
   echo "# Installing entr                                                     #"
   echo "#######################################################################"
 
-  sudo apt-get install -y entr
+  brew install entr
 }
 
 function install_tmux() {
@@ -36,7 +36,7 @@ function install_tmux() {
   echo "# Installing tmux                                                     #"
   echo "#######################################################################"
 
-  sudo apt-get install -y tmux
+  brew install tmux
 }
 
 function install_ctags() {
@@ -44,7 +44,8 @@ function install_ctags() {
   echo "# Installing ctags                                                    #"
   echo "#######################################################################"
 
-  sudo apt-get install -y universal-ctags
+  brew tap universal-ctags/universal-ctags
+  brew install --HEAD universal-ctags
 }
 
 function install_mycli() {
@@ -79,47 +80,51 @@ function install_docker() {
   echo "# Installing Docker                                                   #"
   echo "#######################################################################"
 
-  readonly DOCKER_COMPOSE_RELEASE="2.18.1"
-  readonly DOCKER_MACHINE_VERSION="0.16.2"
+  if [[ "$(uname -s)" == "Linux" ]]; then
+    readonly DOCKER_COMPOSE_RELEASE="2.18.1"
+    readonly DOCKER_MACHINE_VERSION="0.16.2"
 
-  sudo apt-get remove runc || true # Continue if package is not present
-  sudo apt-get remove docker || true # Continue if package is not present
-  sudo apt-get remove docker.io || true # Continue if package is not present
-  sudo apt-get remove containerd || true # Continue if package is not present
-  sudo apt-get remove docker-engine || true # Continue if package is not present
+    sudo apt-get remove runc || true # Continue if package is not present
+    sudo apt-get remove docker || true # Continue if package is not present
+    sudo apt-get remove docker.io || true # Continue if package is not present
+    sudo apt-get remove containerd || true # Continue if package is not present
+    sudo apt-get remove docker-engine || true # Continue if package is not present
 
-  sudo install -m 0755 -d /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /etc/apt/keyrings/docker.gpg
-  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    sudo install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-  echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    echo \
+    "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-  sudo apt-get update
-  sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+    sudo apt-get update
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-  sudo usermod -aG docker "${USER}"
+    sudo usermod -aG docker "${USER}"
 
-  echo "#######################################################################"
-  echo "# Installing docker-compose                                           #"
-  echo "#######################################################################"
+    echo "#######################################################################"
+    echo "# Installing docker-compose                                           #"
+    echo "#######################################################################"
 
-  sudo curl \
-    -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" \
-    -o /usr/local/bin/docker-compose
+    sudo curl \
+      -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" \
+      -o /usr/local/bin/docker-compose
 
-  sudo chmod +x /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
 
-  echo "#######################################################################"
-  echo "# Installing docker-machine                                           #"
-  echo "#######################################################################"
+    echo "#######################################################################"
+    echo "# Installing docker-machine                                           #"
+    echo "#######################################################################"
 
-  readonly BASE="https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}" &&
-  curl -L "${BASE}/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine &&
-  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
-  chmod +x /usr/local/bin/docker-machine
+    readonly BASE="https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}" &&
+    curl -L "${BASE}/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine &&
+    sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+    chmod +x /usr/local/bin/docker-machine
+  elif [[ "$(uname -s)" == "Darwin" ]]; then
+    brew install --cask docker
+  fi
 }
 
 function install_terraform() {
@@ -127,19 +132,8 @@ function install_terraform() {
   echo "# Installing Terraform                                                #"
   echo "#######################################################################"
 
-  wget -O- https://apt.releases.hashicorp.com/gpg | \
-      gpg --dearmor | \
-      sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
-
-  gpg --no-default-keyring \
-      --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
-      --fingerprint
-
-  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
-      https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
-      sudo tee /etc/apt/sources.list.d/hashicorp.list
-
-  sudo apt update && sudo apt-get install terraform
+  brew tap hashicorp/tap
+  brew install hashicorp/tap/terraform
 }
 
 function install_neovim() {
@@ -148,7 +142,7 @@ function install_neovim() {
   echo "#######################################################################"
 
   source "${HOME}/.asdf/asdf.sh"
-  sudo apt-get install -y neovim
+  brew install neovim
 
   gem install neovim
   pip3 install pynvim
@@ -160,9 +154,7 @@ function install_kubectl() {
   echo "# Installing kubctl                                                   #"
   echo "#######################################################################"
 
-  readonly KUBECTL_URL="https://storage.googleapis.com/kubernetes-release/release"
-  curl -LO "${KUBECTL_URL}/$(curl -s ${KUBECTL_URL}/stable.txt)/bin/linux/amd64/kubectl"
-  sudo chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+  brew install kubectl
 }
 
 function install_aws_cli() {
@@ -170,9 +162,14 @@ function install_aws_cli() {
   echo "# Installing AWS CLI                                                  #"
   echo "#######################################################################"
 
-  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-  unzip awscliv2.zip && sudo ./aws/install --update
-  rm -rf awscliv2.zip && rm -rf aws
+  if [[ "$(uname -s)" == "Linux" ]]; then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip && sudo ./aws/install --update
+    rm -rf awscliv2.zip && rm -rf aws
+  elif [[ "$(uname -s)" == "Darwin" ]]; then
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg ./AWSCLIV2.pkg -target /
+  fi
 }
 
 function install_linters() {
@@ -200,21 +197,19 @@ function install_linters() {
   echo "# Installing Terraform linters                                        #"
   echo "#######################################################################"
 
-  readonly URL="https://api.github.com/repos/terraform-linters/tflint/releases/latest"
-  curl -L "$(curl -Ls "${URL}" | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip
-  unzip tflint.zip && rm tflint.zip && mv tflint "${HOME}/.local/bin/"
+  brew install tflint
 
   echo "#######################################################################"
   echo "# Installing Shellscript linters                                      #"
   echo "#######################################################################"
 
-  sudo apt-get install -y shellcheck
+  brew install shellcheck
 
   echo "#######################################################################"
   echo "# Installing YAML linters                                             #"
   echo "#######################################################################"
 
-  sudo apt-get install -y yamllint
+  brew install yamllint
 
   echo "#######################################################################"
   echo "# Installing SQL linters                                              #"
@@ -330,6 +325,7 @@ function install_snaps() {
 }
 
 function main() {
+  homebrew
   clean_os
   update_os
   install_os_dependencies
