@@ -248,6 +248,18 @@ function install_starship() {
   brew install starship
 }
 
+function install_lsp_language_servers() {
+  echo "#######################################################################"
+  echo "# Installing LSP language servers                                     #"
+  echo "#######################################################################"
+
+  yarn global add intelephense
+  yarn global add bash-language-server
+  yarn global add dockerfile-language-server-nodejs
+
+  brew install hashicorp/tap/terraform-ls
+}
+
 function install_dotfiles() {
   echo "#######################################################################"
   echo "# Installing dotfiles                                                 #"
@@ -342,6 +354,7 @@ function main() {
   install_linters
   git_global_configs
   install_starship
+  install_lsp_language_servers
 
   # This have to be the last function call
   install_dotfiles
