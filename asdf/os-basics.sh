@@ -45,7 +45,7 @@ function clean_os() {
       gnome-mahjongg
   fi
 
-  if [[ $(cat /etc/os-release | head -n 1 | awk -F= '{print $2}' | tr -d '"') == "Linux Mint" ]];then
+  if grep -q '^NAME="Linux Mint"$' /etc/os-release; then
     sudo rm /etc/apt/preferences.d/nosnap.pref
   fi
 }
