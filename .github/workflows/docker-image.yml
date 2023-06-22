@@ -2,20 +2,18 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "develop" ]
 
 jobs:
-
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: |
-          readonly DOCKER_TAG="dotfiles:$(date +%s)"
-          docker build -f Dockerfile -t $DOCKER_TAG . --no-cache
-          docker run $DOCKER_TAG
+  ubuntu-build:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: |
+            readonly DOCKER_TAG="dotfiles:$(date +%s)"
+            docker build -f Dockerfile -t $DOCKER_TAG . --no-cache
+            docker run $DOCKER_TAG
