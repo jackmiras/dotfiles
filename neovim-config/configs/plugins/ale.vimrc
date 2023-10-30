@@ -13,9 +13,9 @@ let g:ale_linters={
 \}
 
 let g:ale_fixers={
-	\ 'php': ['phpcbf'],
 	\ 'yml': ['prettier'],
 	\ 'yaml': ['prettier'],
+	\ 'php': ['php_cs_fixer'],
 	\ 'javascript': ['prettier'],
 	\ 'python': ['black', 'isort'],
 	\ '*': ['remove_trailing_lines', 'trim_whitespace']
@@ -42,12 +42,12 @@ let g:ale_php_phpmd_ruleset='./phpmd-rules.xml'
 
 let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
 let g:ale_php_phpstan_configuration='./phpstan.neon'
-let g:ale_php_phpstan_level=7
+let g:ale_php_phpstan_level=9
 
 let g:ale_php_psalm_executable='./vendor/bin/psalm'
 
-let g:ale_php_phpcbf_executable='./vendor/bin/phpcbf'
-let g:ale_php_phpcbf_standard='PSR1,PSR2'
+let g:ale_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
+let g:ale_php_cs_fixer_options='--config=./.php-cs-fixer.php --using-cache=no'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " A.L.E JavaScript - Settings
