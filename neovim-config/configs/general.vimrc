@@ -37,6 +37,17 @@ set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
 
+" Disable mouse in normal, insert, and visual modes
+set mouse=
+
+" Disable mouse in command-line mode
+cnoremap <expr> <Esc> "\e"
+
+" Disable mouse scrolling
+nnoremap <ScrollWheelUp> <NOP>
+nnoremap <ScrollWheelDown> <NOP>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
