@@ -85,6 +85,8 @@ function install_pgcli() {
   echo "#######################################################################"
 
   pip3 install pgcli
+  pip3 install psycopg
+  pip3 install psycopg-binary
   sudo ln -s "${HOME}/.asdf/installs/python/3.*/bin/pgcli" /usr/bin || true # Continue if symlink exists
 }
 
