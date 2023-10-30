@@ -1,0 +1,110 @@
+snippet html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8">
+    <title>${1:Document}</title>
+    <style>$2</style>
+</head>
+<body>
+    $3
+</body>
+</html>
+endsnippet
+
+snippet form
+<form method="POST" action="${1:#}">
+    @csrf
+    $0
+</form>
+endsnippet
+
+snippet forminput
+<div class="$1">
+    <label class="$2" for="$3">
+        $4
+    </label>
+
+    <input class="$5"
+            type="text"
+            name="$6"
+            id="$6"
+            required
+    >
+
+    @error("$7")
+        <p class="$8">$9</p>
+    @enderror
+</div>
+endsnippet
+
+snippet php
+@php
+    $0
+@endphp
+endsnippet
+
+snippet if
+@if ($$1)
+    ${0:# code...}
+@endif
+endsnippet
+
+snippet else
+@else
+    ${0:# code...}
+endsnippet
+
+snippet foreach
+@foreach ($${1:array} as $${2:value})
+    $0
+@endforeach
+endsnippet
+
+snippet section
+@section("${1:name}")
+    $0
+@endsection
+endsnippet
+
+snippet yield
+@yield("$0")
+endsnippet
+
+snippet extends
+@extends("$0")
+endsnippet
+
+snippet include
+@include("$1")
+endsnippet
+
+snippet props
+@props($1)
+endsnippet
+
+snippet csrf
+@csrf
+endsnippet
+
+snippet method
+@method("$0")
+endsnippet
+
+snippet guest
+@guest
+    $0
+@endguest
+endsnippet
+
+snippet auth
+@auth
+    $0
+@endauth
+endsnippet
+
+snippet error
+@error($1)
+    $0
+@enderror
+endsnippet
