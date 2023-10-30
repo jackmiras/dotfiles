@@ -24,15 +24,27 @@ function () {
 endsnippet
 
 snippet closure1 "Anonymous function with one parameter" i
-function (${2:typeHint} $${3:param}) {
+function (${1:typeHint} $${2:param}) {
     ${0:# code...}
 }
 endsnippet
 
 snippet closure2 "Anonymous function with two parameter" i
-function (${2:typeHint} $${3:param1}, ${4:typeHint} $${5:param2}) {
+function (${1:typeHint} $${2:param1}, ${3:typeHint} $${4:param2}) {
     ${0:# code...}
 }
+endsnippet
+
+snippet fn "Arrow function with no parameters" i
+fn() => ${0:# code...}
+endsnippet
+
+snippet fn1 "Arrow function with one parameter" i
+fn(${1:typeHint} ${2:param1}) => ${0:# code...}
+endsnippet
+
+snippet fn2 "Arrow function with two parameter" i
+fn(${1:typeHint} ${2:param1}, ${3:typeHint} ${4:param1}) => ${0:# code...}
 endsnippet
 
 snippet pubf "Public function with no parameters" i
@@ -128,11 +140,11 @@ public function ${1:name}(${2:typeHint} $${3:param}): ${4:void};
 endsnippet
 
 snippet pubfi2 "Interface public function with two parameters"
-public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}): ${5:void};
+public function ${1:name}(${2:typeHint} $${3:param}, ${4:typeHint} $${5:param}): ${6:void};
 endsnippet
 
 snippet pubfi3 "Interface public function with three parameters"
-public function ${1:name}(${2:typeHint} $${3:param}, ${3:typeHint} $${4:param}, ${4:typeHint} $${5:param}): ${6:void};
+public function ${1:name}(${2:typeHint} $${3:param}, ${4:typeHint} $${5:param}, ${6:typeHint} $${7:param}): ${8:void};
 endsnippet
 
 snippet try "Try catch block"
@@ -241,6 +253,12 @@ endsnippet
 
 snippet forek "Foreach loop with key value params"
 foreach ($${1:array} as $${2:key} => $${3:value}) {
+    ${0:# code...}
+}
+endsnippet
+
+snippet while "While-loop (PHP Language Basics)" i
+while (${1:$a} ${2:<=} ${3:10}) {
     ${0:# code...}
 }
 endsnippet
@@ -458,12 +476,43 @@ trait ${3:TraitName}
 }
 endsnippet
 
+snippet controller "A Laravel controller class"
+<?php
+
+namespace App\Http\Controllers;
+
+class ${1:ControllerName} extends Controller
+{
+    ${0:# code...}
+}
+endsnippet
+
+snippet fstate
+    public function ${1:state}(): Factory
+    {
+        return $this->state(fn() => [
+            ${0},
+        ]);
+    }
+endsnippet
+
+snippet fstate
+public function ${1:state}(): Factory
+{
+    return $this->state(function (${2:array $attributes}) {
+        return [
+            ${0},
+        ];
+    });
+}
+
+endsnippet
 snippet fcreate "Factory function that create any amount of objects"
-$${1:object} = factory(${2:Model}::class, ${3:amount})->create(${4:attributes});
+$${1:object} = ${2:Model}::factory(${3:amount})->create([${4:attributes}]);
 endsnippet
 
 snippet fmake "Factory function that make any amount of objects"
-$${1:object} = factory(${2:Model}::class, ${3:amount})->make(${4:attributes});
+$${1:object} = ${2:Model}::factory(${3:amount})->make([${4:attributes}]);
 endsnippet
 
 snippet mutator "Defining A Mutator"
@@ -675,36 +724,6 @@ public function scope${1:Name}(Builder $query, ${2:TypeHint} $${3:param2}, ${4:T
 endsnippet
 
 ################################################################################
-# Blade snippets                                                               #
-################################################################################
-
-snippet html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF8">
-    <title>${1:Document}</title>
-    <style>$2</style>
-</head>
-<body>
-    $3
-</body>
-</html>
-endsnippet
-
-snippet @php
-@php
-    $0
-@endphp
-endsnippet
-
-snippet @foreach
-@foreach
-    $0
-@endforeach
-endsnippet
-
-################################################################################
 # PHPUnit snippets                                                             #
 ################################################################################
 
@@ -734,4 +753,31 @@ public function test${1:Case}(): ${2:void}
 {
     ${0:# code...}
 }
+endsnippet
+
+################################################################################
+# Pest snippets                                                                #
+################################################################################
+
+snippet beforeEach "Pest beforeEach function"
+beforeEach(function () {
+	${0:# code...}
+});
+endsnippet
+
+snippet it "Pest test function"
+it('${1:description...}', function () {
+	${0:# code...}
+});
+endsnippet
+
+snippet expect "Pest expectation function"
+expect($${1:value})->${0};
+endsnippet
+
+snippet describe "Pest describe function"
+describe('${1:description...}', function () {
+	${0:# code...}
+});
+
 endsnippet
