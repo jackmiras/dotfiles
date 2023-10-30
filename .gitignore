@@ -113,3 +113,6 @@ vpn
 
 ### Tmux ###
 tmux-config/plugins/*
+
+### Neovim ###
+neovim-config/autoload/*
