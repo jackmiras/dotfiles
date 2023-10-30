@@ -2,16 +2,24 @@
 " Color scheme - space-vim-dark
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme space-vim-dark
-let g:space_vim_dark_background = 234
+" colorscheme space-vim-dark
+" let g:space_vim_dark_background = 234
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color scheme - Solarized
+" Color scheme - Tokyo Night
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" set background=dark
-" set background=light
-" colorscheme solarized8
+" colorscheme tokyonight
+" colorscheme tokyonight-night
+" colorscheme tokyonight-storm
+" colorscheme tokyonight-day
+colorscheme tokyonight-moon
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color scheme - Dracula
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" colorscheme dracula
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vertical line delimiter setting

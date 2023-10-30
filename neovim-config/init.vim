@@ -12,7 +12,7 @@ source $HOME/Projects/dotfiles/neovim-config/configs/treesitter.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/colorscheme.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/remap.vimrc
 
-source $HOME/Projects/dotfiles/neovim-config/configs/plugins/vim-airline.vimrc
+source $HOME/Projects/dotfiles/neovim-config/configs/plugins/lightline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/indentline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ale.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/leaderf.vimrc

@@ -2,13 +2,15 @@
 " Plug plugins list
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " Theme releated plugins
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 " Color schemes
-Plug 'liuchengxu/space-vim-dark'
+Plug 'folke/tokyonight.nvim'
+Plug 'jackmiras/space-vim-dark'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " General coding plugins
 Plug 'w0rp/ale'
@@ -46,7 +48,7 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'vue', 'blade.php']}
 Plug 'alvan/vim-closetag', {'for': ['javascript', 'php', 'html', 'vue']}
 
 " PHP plugins
-Plug 'jwalton512/vim-blade', {'for': 'php'}
+Plug 'jwalton512/vim-blade', {'for': ['php', 'blade.php', 'blade']}
 
 " Go plugins
 Plug 'fatih/vim-go', {'for': ['go', 'golang'], 'do': ':GoUpdateBinaries'}
