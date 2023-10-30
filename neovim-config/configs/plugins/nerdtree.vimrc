@@ -4,8 +4,9 @@
 
 let g:NERDTreeWinSize=60
 
-let NERDTreeShowHidden=1
-let NERDTreeNodeDelimiter="\u263a" " smiley face
+let g:NERDTreeShowHidden=1
+let g:NERDTreeNodeDelimiter="\u263a" " smiley face
+let g:NERDTreeIndicatorSymbol = '->'
 let g:NERDTreeGitStatusIndicatorMapCustom={
 	\'Modified'  : '✹',
 	\'Staged'    : '✚',
@@ -19,7 +20,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom={
 	\'Unknown'   : '?'
 \}
 
-let NERDTreeIgnore=['__pycache__', '\~$']
+let g:NERDTreeIgnore=['__pycache__', '\~$']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree re-mappings
