@@ -18,3 +18,5 @@ alias gst="git status"
 
 alias gco="git checkout"
 alias gcoa="git checkout ."
+
+alias gb="git branch"
