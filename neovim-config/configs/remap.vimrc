@@ -72,8 +72,11 @@ nmap <leader><space> :noh<cr>
 " Exit terminal mode
 :tnoremap <esc> <c-\><c-n>
 
-" Sort PHP use statements
+" Sort the lines from shortest to longest
 vmap <leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>'" }'"
+
+" Sort the lines from longest to shortest
+vmap <leader>us ! awk '{ print length(), $0 \| "sort -rn \| cut -d\\  -f2-" }'<cr>'" }'"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Deactivated keys
