@@ -117,11 +117,12 @@ function install_os_dependencies() {
     xcode-select --install
     brew install \
       gd \
-      zlib \
       krb5 \
       re2c \
+      zlib \
       bison \
       icu4c \
+      libpq \
       libpng \
       libzip \
       gettext \
