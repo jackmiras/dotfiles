@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 readonly PHP_VERSION=8.2.12
 readonly RUBY_VERSION=3.2.2
+readonly GOLANG_VERSION=1.21.3
 
 function install_asdf() {
   echo "#######################################################################"
@@ -40,7 +41,7 @@ function asdf_tool_versions() {
     echo "pip3 3.11"
     echo "php ${PHP_VERSION}"
     echo "ruby ${RUBY_VERSION}"
-    echo "golang 1.20.5"
+    echo "golang ${GOLANG_VERSION}"
     echo "nodejs 18.16.0"
     echo "java openjdk-17"
     echo "python 3.11.3 2.7.18"
@@ -68,7 +69,7 @@ function install_golang() {
   echo "# Installing Go                                                       #"
   echo "#######################################################################"
 
-  asdf install golang 1.20.5
+  asdf install golang "${GOLANG_VERSION}"
 }
 
 function install_nodejs() {
