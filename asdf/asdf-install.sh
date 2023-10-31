@@ -6,6 +6,7 @@ readonly PHP_VERSION=8.2.12
 readonly RUBY_VERSION=3.2.2
 readonly GOLANG_VERSION=1.21.3
 readonly NODEJS_VERSION=20.9.0
+readonly JAVA_VERSION="openjdk-21.0.1"
 
 function install_asdf() {
   echo "#######################################################################"
@@ -44,7 +45,7 @@ function asdf_tool_versions() {
     echo "ruby ${RUBY_VERSION}"
     echo "golang ${GOLANG_VERSION}"
     echo "nodejs ${NODEJS_VERSION}"
-    echo "java openjdk-17"
+    echo "java ${JAVA_VERSION}"
     echo "python 3.11.3 2.7.18"
   } >> "${HOME}/.tool-versions"
 }
@@ -87,8 +88,8 @@ function install_java() {
   echo "# Installing Java                                                     #"
   echo "#######################################################################"
 
-  asdf install java openjdk-17
-  asdf global java openjdk-17
+  asdf install java "${JAVA_VERSION}"
+  asdf global java "${JAVA_VERSION}"
 }
 
 function install_python3() {
