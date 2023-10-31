@@ -1,11 +1,11 @@
-FROM ubuntu:kinetic
+FROM ubuntu:lunar
 
 USER root
 WORKDIR /app
 ENV USER root
 ENV ASDF_DIR /root/.asdf
 
-RUN apt-get update && apt-get install -y vim
+RUN apt-get update -y && apt-get install -y vim
 
 COPY . ./
 
