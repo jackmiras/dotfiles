@@ -7,6 +7,10 @@ readonly RUBY_VERSION=3.2.2
 readonly GOLANG_VERSION=1.21.3
 readonly NODEJS_VERSION=20.9.0
 readonly JAVA_VERSION="openjdk-21.0.1"
+readonly PIP2_VERISON=2.7
+readonly PYTHON2_VERISON=2.7.18
+readonly PIP3_VERISON=3.12
+readonly PYTHON3_VERISON=3.12.0
 
 function install_asdf() {
   echo "#######################################################################"
@@ -39,14 +43,14 @@ function asdf_plugins() {
 
 function asdf_tool_versions() {
   {
-    echo "pip 2.7"
-    echo "pip3 3.11"
+    echo "pip ${PIP2_VERISON}"
+    echo "pip3 ${PIP3_VERISON}"
     echo "php ${PHP_VERSION}"
     echo "ruby ${RUBY_VERSION}"
     echo "golang ${GOLANG_VERSION}"
     echo "nodejs ${NODEJS_VERSION}"
     echo "java ${JAVA_VERSION}"
-    echo "python 3.11.3 2.7.18"
+    echo "python ${PYTHON3_VERISON} ${PYTHON2_VERISON}"
   } >> "${HOME}/.tool-versions"
 }
 
@@ -97,7 +101,7 @@ function install_python3() {
   echo "# Installing Python3                                                  #"
   echo "#######################################################################"
 
-  asdf install python 3.11.3
+  asdf install python "${PYTHON3_VERISON}"
 }
 
 function install_python2() {
@@ -105,14 +109,14 @@ function install_python2() {
   echo "# Installing Python2                                                  #"
   echo "#######################################################################"
 
-  asdf install python 2.7.18
+  asdf install python "${PYTHON2_VERISON}"
 }
 
 function install_python() {
   install_python2
   install_python3
 
-  asdf global python 2.7.18 3.11.3
+  asdf global python "${PYTHON2_VERISON}" "${PYTHON3_VERISON}"
 
   "${HOME}/.asdf/shims/pip" install --upgrade pip
   "${HOME}/.asdf/shims/pip3" install --upgrade pip
