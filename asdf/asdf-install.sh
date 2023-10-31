@@ -5,6 +5,7 @@ IFS=$'\n\t'
 readonly PHP_VERSION=8.2.12
 readonly RUBY_VERSION=3.2.2
 readonly GOLANG_VERSION=1.21.3
+readonly NODEJS_VERSION=20.9.0
 
 function install_asdf() {
   echo "#######################################################################"
@@ -42,7 +43,7 @@ function asdf_tool_versions() {
     echo "php ${PHP_VERSION}"
     echo "ruby ${RUBY_VERSION}"
     echo "golang ${GOLANG_VERSION}"
-    echo "nodejs 18.16.0"
+    echo "nodejs ${NODEJS_VERSION}"
     echo "java openjdk-17"
     echo "python 3.11.3 2.7.18"
   } >> "${HOME}/.tool-versions"
@@ -77,7 +78,7 @@ function install_nodejs() {
   echo "# Installing NodeJs                                                   #"
   echo "#######################################################################"
 
-  asdf install nodejs 18.16.0
+  asdf install nodejs "${NODEJS_VERSION}"
   npm install --global yarn
 }
 
