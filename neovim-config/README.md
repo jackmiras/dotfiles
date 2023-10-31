@@ -25,64 +25,56 @@ script with the command shown down bellow.
 	./install-config.sh
 ```
 
-## Color scheme
-* liuchengxu/space-vim-dark [[link]](https://github.com/liuchengxu/space-vim-dark)
-
 ## Plugins
 
 ### Theme related plugins
-* vim-airline/vim-airline [[link]](https://github.com/vim-airline/vim-airline)
-* luochen1990/rainbow [[link]](https://github.com/luochen1990/rainbow)
-* RRethy/vim-illuminate [[link]](https://github.com/RRethy/vim-illuminate)
-* lilydjwg/colorizer [[link]](https://github.com/lilydjwg/colorizer)
-* luochen1990/rainbow [[link]](https://github.com/luochen1990/rainbow)
+* ryanoasis/vim-devicons [[link]](https://github.com/ryanoasis/vim-devicons)
+* itchyny/lightline.vim [[link]](https://github.com/itchyny/lightline.vim)
+
+### Color schemes
+* folke/tokyonight.nvim [[link]](https://github.com/folke/tokyonight.nvim)
+* jackmiras/space-vim-dark [[link]](https://github.com/jackmiras/space-vim-dark)
+* dracula/vim [[link]](https://draculatheme.com/vim)
 
 ### General coding plugins
-* jiangmiao/auto-pairs [[link]](https://github.com/jiangmiao/auto-pairs)
+* w0rp/ale [[link]](https://github.com/w0rp/ale)
 * tpope/vim-surround [[link]](https://github.com/tpope/vim-surround)
 * Yggdroot/indentLine [[link]](https://github.com/Yggdroot/indentLine)
-* w0rp/ale [[link]](https://github.com/w0rp/ale)
+* jiangmiao/auto-pairs [[link]](https://github.com/jiangmiao/auto-pairs)
+* preservim/nerdcommenter [[link]](https://github.com/preservim/nerdcommenter)
+* nvim-treesitter/nvim-treesitter [[link]](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ### Fuzzy file search plugins
-* ctrlpvim/ctrlp.vim [[link]](https://github.com/kien/ctrlp.vim)
 * skwp/greplace.vim [[link]](https://github.com/skwp/greplace.vim)
-* mileszs/ack.vim [[link]](https://github.com/mileszs/ack.vim)
-* scrooloose/nerdtree [[link]](https://github.com/scrooloose/nerdtree)
-* Xuyuanp/nerdtree-git-plugin [[link]](https://github.com/Xuyuanp/nerdtree-git-plugin)
-* ryanoasis/vim-devicons [[link]](https://github.com/ryanoasis/vim-devicons)
-* tiagofumo/vim-nerdtree-syntax-highlight [[link]](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
-* scrooloose/nerdcommenter [[link]](https://github.com/scrooloose/nerdcommenter)
 * ludovicchabant/vim-gutentags [[link]](https://github.com/ludovicchabant/vim-gutentags)
+* Yggdroot/LeaderF [[link]](https://github.com/Yggdroot/LeaderF)
+
+### File tree plugins
+* preservim/nerdtree [[link]](https://github.com/preservim/nerdtree)
+* Xuyuanp/nerdtree-git-plugin [[link]](https://github.com/Xuyuanp/nerdtree-git-plugin)
 
 ### Git related plugins
-* airblade/vim-gitgutter [[link]](https://github.com/airblade/vim-gitgutter)
 * tpope/vim-fugitive [[link]](https://github.com/tpope/vim-fugitive)
+* airblade/vim-gitgutter [[link]](https://github.com/airblade/vim-gitgutter)
 
-### JavaScript plugins
-* pangloss/vim-javascript [[link]](https://github.com/pangloss/vim-javascript)
+### Autocomplete plugins
+* SirVer/ultisnips [[link]](https://github.com/SirVer/ultisnips)
+* neoclide/coc.nvim [[link]](https://github.com/neoclide/coc.nvim)
+* pappasam/coc-jedi [[link]](https://github.com/pappasam/coc-jedi)
 
 ### Front-end Plugins
-* ap/vim-css-color [[link]](https://github.com/ap/vim-css-color)
-* posva/vim-vue [[link]](https://github.com/posva/vim-vue)
+* mattn/emmet-vim [[link]](https://github.com/mattn/emmet-vim)
+* alvan/vim-closetag [[link]](https://github.com/alvan/vim-closetag)
 
 ### PHP plugins
-* phpactor/phpactor [[link]](https://github.com/phpactor/phpactor)
-* StanAngeloff/php.vim [[link]](https://github.com/StanAngeloff/php.vim)
 * jwalton512/vim-blade [[link]](https://github.com/jwalton512/vim-blade)
-* swekaj/php-foldexpr.vim [[link]](https://github.com/swekaj/php-foldexpr.vim)
-
-### Kotlin plugins
-* udalov/kotlin-vim [[link]](https://github.com/udalov/kotlin-vim)
 
 ### Go plugins
 * fatih/vim-go [[link]](https://github.com/fatih/vim-go)
 
-### Autocomplete plugin
-* Shougo/deoplete.nvim [[link]](https://github.com/Shougo/deoplete.nvim)
-* kristijanhusak/deoplete-phpactor [[link]](https://github.com/kristijanhusak/deoplete-phpactor)
-* SirVer/ultisnips [[link]](https://github.com/SirVer/ultisnips)
+### Markdown plugins
+* iamcco/markdown-preview.nvim [[link]](https://github.com/iamcco/markdown-preview.nvim)
 
 ### Container related plugins
-* ekalinin/Dockerfile.vim [[link]](https://github.com/ekalinin/Dockerfile.vim)
-* mrk21/yaml-vim [[link]](https://github.com/mrk21/yaml-vim)
 * chr4/nginx.vim [[link]](https://github.com/chr4/nginx.vim)
+* hashivim/vim-terraform [[link]](https://github.com/hashivim/vim-terraform)
