@@ -3,6 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 readonly PHP_VERSION=8.2.12
+readonly RUBY_VERSION=3.2.2
 
 function install_asdf() {
   echo "#######################################################################"
@@ -38,7 +39,7 @@ function asdf_tool_versions() {
     echo "pip 2.7"
     echo "pip3 3.11"
     echo "php ${PHP_VERSION}"
-    echo "ruby 3.0.2"
+    echo "ruby ${RUBY_VERSION}"
     echo "golang 1.20.5"
     echo "nodejs 18.16.0"
     echo "java openjdk-17"
@@ -59,7 +60,7 @@ function install_ruby() {
   echo "# Installing Ruby                                                     #"
   echo "#######################################################################"
 
-  asdf install ruby 3.0.2
+  asdf install ruby "${RUBY_VERSION}"
 }
 
 function install_golang() {
