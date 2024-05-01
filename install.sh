@@ -248,7 +248,6 @@ function install_lsp_language_servers() {
   echo "#######################################################################"
 
   yarn global add intelephense
-  yarn global add bash-language-server
   yarn global add dockerfile-language-server-nodejs
 
   brew install hashicorp/tap/terraform-ls

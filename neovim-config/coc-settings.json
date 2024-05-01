@@ -18,12 +18,6 @@
 
     "intelephense.licenceKey": "004HLA394H79ZF5",
 
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh", "bash"]
-    },
-
     "terraform": {
       "command": "terraform-ls",
       "args": ["serve"],
