@@ -51,7 +51,7 @@ nnoremap <ScrollWheelDown> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number " Show line numbers
+set relativenumber " Show line numbers
 set autoindent " Automatically set indent of new line
 set smartindent " Automatically inserts one extra level of indentation in some cases
 set ttyfast " Faster redrawing
