@@ -127,6 +127,7 @@ augroup auto_language_selection
     autocmd Filetype groovy setlocal ts=4 sw=4 expandtab colorcolumn=121 textwidth=120
     autocmd Filetype yaml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
     autocmd Filetype yml setlocal ts=2 sw=2 expandtab colorcolumn=81 textwidth=80 foldmethod=indent
+    autocmd BufNewFile,BufRead .env* setf bash
     autocmd BufNewFile,BufRead *.neon setf yaml
     autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 augroup END
