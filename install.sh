@@ -252,6 +252,8 @@ function install_lsp_language_servers() {
   yarn global add dockerfile-language-server-nodejs
 
   brew install hashicorp/tap/terraform-ls
+
+  go install golang.org/x/tools/gopls@latest
 }
 
 function install_dotfiles() {
