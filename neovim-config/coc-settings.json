@@ -16,14 +16,7 @@
       "args": ["--stdio"]
     },
 
-    "intelephense": {
-      "command": "intelephense",
-      "args": ["--stdio"],
-      "filetypes": ["php"],
-      "initializationOptions": {
-        "storagePath": "/tmp/intelephense"
-      }
-    },
+    "intelephense.licenceKey": "004HLA394H79ZF5",
 
     "bash": {
       "command": "bash-language-server",
