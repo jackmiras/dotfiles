@@ -16,6 +16,7 @@ source $HOME/Projects/dotfiles/neovim-config/configs/plugins/lightline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/indentline.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ale.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/leaderf.vimrc
+source $HOME/Projects/dotfiles/neovim-config/configs/plugins/fzf.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/markdown-preview.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/greplace.vimrc
 source $HOME/Projects/dotfiles/neovim-config/configs/plugins/ack.vimrc

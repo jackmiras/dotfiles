@@ -21,9 +21,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Fuzzy file search plugins
-Plug 'skwp/greplace.vim'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Yggdroot/LeaderF', {'do': ':LeaderfInstallCExtension'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " File tree plugins
 Plug 'preservim/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
