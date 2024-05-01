@@ -66,6 +66,15 @@ function asdf_tool_versions() {
   } >> "${HOME}/.tool-versions"
 }
 
+function install_lua() {
+  echo "#######################################################################"
+  echo "# Installing Lua                                                      #"
+  echo "#######################################################################"
+
+  # TODO: Write an asdf plugin to handle lua installation.
+  brew install lua
+}
+
 function install_php() {
   echo "#######################################################################"
   echo "# Installing PHP                                                      #"
