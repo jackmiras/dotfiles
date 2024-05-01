@@ -128,16 +128,6 @@ function install_docker() {
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
     sudo usermod -aG docker "${USER}"
-
-    echo "#######################################################################"
-    echo "# Installing docker-compose                                           #"
-    echo "#######################################################################"
-
-    sudo curl \
-      -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" \
-      -o /usr/local/bin/docker-compose
-
-    sudo chmod +x /usr/local/bin/docker-compose
   elif [[ "$(uname -s)" == "Darwin" ]]; then
     brew install --cask docker
   fi
