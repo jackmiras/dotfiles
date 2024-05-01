@@ -6,6 +6,7 @@ let g:ale_linters={
 	\ 'go': ['gopls'],
 	\ 'yml': ['yamllint'],
 	\ 'yaml': ['yamllint'],
+	\ 'sh': ['shellcheck'],
 	\ 'javascript': ['eslint'],
 	\ 'python': ['bandit', 'flake8'],
 	\ 'terraform': ['fmt', 'tflint'],
@@ -99,9 +100,8 @@ let g:ale_terraform_tflint_options='--module -f json'
 let g:ale_terraform_tflint_executable="/home/jackmiras/.local/bin/tflint"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bash - Settings
+" sh - Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Disable rule SC2034 to .env and .env.example files
-autocmd BufEnter PKGBUILD,.env,.env.example
-    \   let b:ale_sh_shellcheck_exclusions = 'SC2034'
+" Disable rule SC2034 to .env files
+autocmd BufEnter *.env* let b:ale_sh_shellcheck_exclusions = 'SC1037,SC2034,SC2154,SC2209'
