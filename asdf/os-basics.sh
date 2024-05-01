@@ -61,15 +61,15 @@ function update_os() {
       && sudo apt-get autoremove -y \
       && sudo apt-get autoclean -y
   elif [[ "$(uname -s)" == "Darwin" ]]; then
-    brew update -y \
-      && brew upgrade -y \
-      && brew cleanup -y
+    brew update \
+      && brew upgrade \
+      && brew cleanup
   fi
 }
 
 function install_os_dependencies() {
   echo "#######################################################################"
-  echo "# Installing Linux dependencies                                       #"
+  echo "# Installing OS dependencies                                          #"
   echo "#######################################################################"
 
   if [[ "$(uname -s)" == "Linux" ]]; then
@@ -114,9 +114,9 @@ function install_os_dependencies() {
       libcurl4-openssl-dev \
       software-properties-common
   elif [[ "$(uname -s)" == "Darwin" ]]; then
-    xcode-select --install
     brew install \
       gd \
+      gmp \
       krb5 \
       re2c \
       zlib \
@@ -133,7 +133,9 @@ function install_os_dependencies() {
       automake \
       freetype \
       libiconv \
-      pkg-config \
-      openssl@1.1
+      libsodium \
+      openssl@1.1 \
+      imagemagick \
+      pkg-config
   fi
 }
