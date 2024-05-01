@@ -27,9 +27,21 @@ function install_asdf() {
     source "${HOME}/.asdf/asdf.sh"
     source "${HOME}/.asdf/completions/asdf.bash"
 
+    asdfrc
     asdf_plugins
     asdf_tool_versions
   fi
+}
+
+function asdfrc() {
+    {
+        echo "legacy_version_file = no"
+        echo "use_release_candidates = no"
+        echo "always_keep_download = no"
+        echo "plugin_repository_last_check_duration = 60"
+        echo "disable_plugin_short_name_repository = no"
+        echo "concurrency = auto"
+    } >> "${HOME}/.asdfrc"
 }
 
 function asdf_plugins() {
