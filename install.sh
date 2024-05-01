@@ -307,6 +307,8 @@ function install_dotfiles_neovim() {
   nvim --headless -c "TSInstall markdown" -c "qall"
   nvim --headless -c "TSInstall dockerfile" -c "qall"
   nvim --headless -c "TSInstall javascript" -c "qall"
+  nvim --headless -c "CocInstall coc-json" -c "qall"
+  nvim --headless -c "CocInstall coc-phpls" -c "qall"
   rm -rf init.vim && mv init-backup.vim init.vim
 }
 
