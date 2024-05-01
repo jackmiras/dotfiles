@@ -10,21 +10,23 @@ function install_snaps() {
   echo "# Install snaps                                                       #"
   echo "#######################################################################"
 
-  sudo apt-get update -y
-  sudo apt-get install -y snapd
+  if [[ "$(uname -s)" == "Linux" ]]; then
+    sudo apt-get update -y
+    sudo apt-get install -y snapd
 
-  sudo snap install vlc
-  sudo snap install gimp
-  sudo snap install htop
-  sudo snap install drawio
-  sudo snap install discord
-  sudo snap install postman
-  sudo snap install keepassxc
-  sudo snap install simplenote
-  sudo snap install code --classic
-  sudo snap install helm --classic
-  sudo snap install slack --classic
-  sudo snap install sublime-text --classic
+    sudo snap install vlc
+    sudo snap install gimp
+    sudo snap install htop
+    sudo snap install drawio
+    sudo snap install discord
+    sudo snap install postman
+    sudo snap install keepassxc
+    sudo snap install simplenote
+    sudo snap install code --classic
+    sudo snap install helm --classic
+    sudo snap install slack --classic
+    sudo snap install sublime-text --classic
+  fi
 }
 
 function install_ag() {
