@@ -20,5 +20,7 @@ alias gcoa="git checkout ."
 
 alias gb="git branch"
 
+alias gm="git merge"
+
 alias gr="git reset"
 alias grh1="git reset HEAD~1"
