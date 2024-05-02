@@ -95,6 +95,7 @@ export ANDROID_HOME="${HOME}/Library/Android/sdk"
 source "${PROJECTS}/dotfiles/bash-config/aliases/aws.bash"
 source "${PROJECTS}/dotfiles/bash-config/aliases/general.bash"
 source "${PROJECTS}/dotfiles/bash-config/aliases/git.bash"
+source "${PROJECTS}/dotfiles/bash-config/aliases/ignorable.bash"
 source "${PROJECTS}/dotfiles/bash-config/aliases/php.bash"
 source "${PROJECTS}/dotfiles/bash-config/aliases/unix.bash"
 

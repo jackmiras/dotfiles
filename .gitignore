@@ -116,3 +116,6 @@ tmux-config/plugins/*
 
 ### Neovim ###
 neovim-config/autoload/*
+
+### Bash ###
+bash-config/aliases/ignorable.bash
