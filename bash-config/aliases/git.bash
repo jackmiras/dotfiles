@@ -1,6 +1,5 @@
 alias ga="git add"
 alias gaa="git add ."
-alias gaam="git add $(git status | grep -i 'modified:' | awk '{print $2}')"
 
 alias gd="git diff"
 
